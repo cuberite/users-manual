@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import string
-import codecs
 import os
 
 ## TODO:
@@ -26,12 +25,12 @@ def main():
 		for ss in sections[s]:
 			sections[s][ss] = linkify(sections[s][ss])
 	print(sections)
+	# Generate the Table of Contents
+	toc = generate_toc(sections)
+	print(toc)
 
 def load_template():
-	with codecs.open(
-		os.path.join(input_directory, "template.html"),
-		"r", encoding="UTF-8"
-	) as template_file:
+	with open(os.path.join(input_directory, "template.html"), "r") as template_file:
 		# Read all of the data from the file and return it.
 		return template_file.read()
 
@@ -49,24 +48,21 @@ def load_sections():
 	# }
 	sections = {}
 	# Now we go through all of the section directories.
-	for f in os.listdir(os.path.join(input_directory, "book")):
+	for s in os.listdir(os.path.join(input_directory, "book")):
 		# We only want directories, not any other files hanging around in the
 		# book subfolder.
-		if not os.path.isdir(os.path.join(input_directory, "book", f)):
+		if not os.path.isdir(os.path.join(input_directory, "book", s)):
 			continue
 		# Add the section to the dictionary.
-		sections[f] = {}
+		sections[s] = {}
 		# Run through all of the subsections in that section and load them.
-		for ss in os.listdir(os.path.join(input_directory, "book", f)):
+		for ss in os.listdir(os.path.join(input_directory, "book", s)):
 			# If we're not looking at a file, ignore it.
-			if not os.path.isfile(os.path.join(input_directory, "book", f, ss)):
+			if not os.path.isfile(os.path.join(input_directory, "book", s, ss)):
 				continue
 			# Load the subsection and insert it into the sections dict.
-			with codecs.open(
-				os.path.join(input_directory, "book", f, ss),
-				"r", encoding="UTF-8"
-			) as ss_file:
-				sections[f][ss_file] = ss_file.read()
+			with open(os.path.join(input_directory, "book", s, ss), "r") as ss_file:
+				sections[s][ss] = ss_file.read()
 	# Return the generated sections.
 	return sections
 
@@ -91,6 +87,18 @@ def linkify(text):
 		sst[0] = generate_link(sst[0])
 		text = st[0] + sst[0] + sst[1]
 	return text
+
+def generate_toc(sections):
+	toc = ["<h1 id=\"toc\">Table of Contents</h1>", "<ul>"]
+	for s in sections:
+		# Add the Section Header.
+		toc += ["<li>", s, "<ul>"]
+		# Now the subsections.
+		for ss in sections[s]:
+			toc.append("<li>" + generate_link(ss) + "</li>")
+		toc += ["</ul></li>"]
+	toc.append("</ul>")
+	return "\n".join(toc)
 
 # Run the main function.
 main()
