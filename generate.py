@@ -5,7 +5,6 @@ import os
 
 ## TODO:
 # Copy static assets (perhaps copy into file iteslf) function.
-# Generate Table of Contents Function
 # Writing to outfolder function.
 # Generate headings with ids to be linked to.
 
