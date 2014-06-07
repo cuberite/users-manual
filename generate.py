@@ -30,10 +30,14 @@ def main():
 	content = generate_content(toc, sections)
 	# Get the timestamp.
 	timestamp = generate_timestamp()
+	# Titles are hardcoded for now, change this when we add multipage support.
+	title = "MCServer User Guide"
+	head_title = title
 	with open(os.path.join(output_directory, "index.html"), "w") as f:
-		f.write(template.safe_substitute(title="LOL",
-		content=content,
-		timestamp=timestamp))
+		f.write(template.safe_substitute(content=content,
+		timestamp=timestamp,
+		title=title,
+		head_title=head_title))
 
 def load_template():
 	with open(os.path.join(input_directory, "template.html"), "r") as template_file:
