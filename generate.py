@@ -3,6 +3,7 @@
 import string
 import time
 import os
+import shutil
 
 ## TODO:
 # Copy static assets (perhaps copy into file iteslf) function.
@@ -33,11 +34,14 @@ def main():
 	# Titles are hardcoded for now, change this when we add multipage support.
 	title = "MCServer User Guide"
 	head_title = title
+	# Write the actual content.
 	with open(os.path.join(output_directory, "index.html"), "w") as f:
 		f.write(template.safe_substitute(content=content,
 		timestamp=timestamp,
 		title=title,
 		head_title=head_title))
+	# Copy the static stuff to the out directory.
+	os.system("cp -r " + input_directory + "/static/* " + output_directory + "/")
 
 def load_template():
 	with open(os.path.join(input_directory, "template.html"), "r") as template_file:
