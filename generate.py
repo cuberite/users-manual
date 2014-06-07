@@ -99,7 +99,7 @@ def linkify(text):
 	return text
 
 def generate_toc(sections):
-	toc = ["<h1 id=\"toc\">Table of Contents</h1>", "<ul>"]
+	toc = ["<h2 id=\"toc\">Table of Contents</h1>", "<ul>"]
 	for s in sorted(sections):
 		# Add the Section Header.
 		toc += ["<li>", s, "<ul>"]
@@ -115,9 +115,9 @@ def generate_content(toc, sections):
 		content = []
 		content.append(toc)
 		for s in sorted(sections):
-			content.append("<h1 id=\"" + split_section(s)[0] + "\">"  + s + "</h1>")
+			content.append("<h2 id=\"" + split_section(s)[0] + "\">"  + s + "</h1>")
 			for ss in sorted(sections[s]):
-				content.append("<h2 id=\"" + split_section(s)[0] + "\">" + ss + "</h2>")
+				content.append("<h3 id=\"" + split_section(s)[0] + "\">" + ss + "</h2>")
 				content.append(sections[s][ss])
 		return "\n".join(content)
 
