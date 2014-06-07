@@ -23,15 +23,22 @@ def main():
 	for s in sections:
 		for ss in sections[s]:
 			sections[s][ss] = linkify(sections[s][ss])
-	print(sections)
 	# Generate the Table of Contents
 	toc = generate_toc(sections)
-	print(toc)
+	content = [toc]
+	for s in sorted(sections):
+		content.append("<h1 id=\"" + split_section(s)[0] + "\">"  + s + "</h1>")
+		for ss in sorted(sections[s]):
+			content.append("<h2 id=\"" + split_section(s)[0] + "\">" + ss + "</h2>")
+			content.append(sections[s][ss])
+	content = "\n".join(content)
+	with open(os.path.join(output_directory, "index.html"), "w") as f:
+		f.write(template.safe_substitute(title="LOL", content=content))
 
 def load_template():
 	with open(os.path.join(input_directory, "template.html"), "r") as template_file:
 		# Read all of the data from the file and return it.
-		return template_file.read()
+		return string.Template(template_file.read())
 
 def load_sections():
 	# First, define an empty dictionary to contain the section data.
@@ -61,7 +68,7 @@ def load_sections():
 				continue
 			# Load the subsection and insert it into the sections dict.
 			with open(os.path.join(input_directory, "book", s, ss), "r") as ss_file:
-				sections[s][ss] = ss_file.read()
+				sections[s][os.path.splitext(ss)[0]] = ss_file.read()
 	# Return the generated sections.
 	return sections
 
@@ -89,11 +96,11 @@ def linkify(text):
 
 def generate_toc(sections):
 	toc = ["<h1 id=\"toc\">Table of Contents</h1>", "<ul>"]
-	for s in sections:
+	for s in sorted(sections):
 		# Add the Section Header.
 		toc += ["<li>", s, "<ul>"]
 		# Now the subsections.
-		for ss in sections[s]:
+		for ss in sorted(sections[s]):
 			toc.append("<li>" + generate_link(ss) + "</li>")
 		toc += ["</ul></li>"]
 	toc.append("</ul>")
