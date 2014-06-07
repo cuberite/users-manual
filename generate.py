@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import string
+import time
 import os
 
 ## TODO:
@@ -25,15 +26,14 @@ def main():
 			sections[s][ss] = linkify(sections[s][ss])
 	# Generate the Table of Contents
 	toc = generate_toc(sections)
-	content = [toc]
-	for s in sorted(sections):
-		content.append("<h1 id=\"" + split_section(s)[0] + "\">"  + s + "</h1>")
-		for ss in sorted(sections[s]):
-			content.append("<h2 id=\"" + split_section(s)[0] + "\">" + ss + "</h2>")
-			content.append(sections[s][ss])
-	content = "\n".join(content)
+	# Combine the TOC and Sections to form the Content.
+	content = generate_content(toc, sections)
+	# Get the timestamp.
+	timestamp = generate_timestamp()
 	with open(os.path.join(output_directory, "index.html"), "w") as f:
-		f.write(template.safe_substitute(title="LOL", content=content))
+		f.write(template.safe_substitute(title="LOL",
+		content=content,
+		timestamp=timestamp))
 
 def load_template():
 	with open(os.path.join(input_directory, "template.html"), "r") as template_file:
@@ -105,6 +105,20 @@ def generate_toc(sections):
 		toc += ["</ul></li>"]
 	toc.append("</ul>")
 	return "\n".join(toc)
+
+def generate_content(toc, sections):
+	if single_page:
+		content = []
+		content.append(toc)
+		for s in sorted(sections):
+			content.append("<h1 id=\"" + split_section(s)[0] + "\">"  + s + "</h1>")
+			for ss in sorted(sections[s]):
+				content.append("<h2 id=\"" + split_section(s)[0] + "\">" + ss + "</h2>")
+				content.append(sections[s][ss])
+		return "\n".join(content)
+
+def generate_timestamp():
+	return time.strftime("%d %B %Y", time.localtime(time.time()))
 
 # Run the main function.
 main()
