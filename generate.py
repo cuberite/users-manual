@@ -85,11 +85,11 @@ def split_section(section):
 def generate_link(section):
 	if single_page:
 		return "".join(
-			["<a href=\"#", split_section(section)[0], "\">", section, "</a>"]
+			["<a href=\"#", split_section(section)[0], "\">", split_section(section)[1], "</a>"]
 		)
 	else:
 		return "".join(
-			["<a href=\"", split_section(section)[0], ".html\">", section, "</a>"]
+			["<a href=\"", split_section(section)[0], ".html\">", split_section(section)[1], "</a>"]
 		)
 
 def linkify(text):
