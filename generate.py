@@ -105,10 +105,12 @@ def generate_toc(sections):
 	toc = ["<h2 id=\"toc\">Table of Contents</h1>", "<ul>"]
 	for s in sorted(sections):
 		# Add the Section Header.
-		toc += ["<li>", s, "<ul>"]
+		toc.append("<li>")
+		toc.append(generate_link(split_section(s)[0] + " - " + s))
+		toc.append("<ul>")
 		# Now the subsections.
 		for ss in sorted(sections[s]):
-			toc.append("<li>" + generate_link(ss) + "</li>")
+			toc.append("<li>" + generate_link(split_section(ss)[0] + " - " + ss) + "</li>")
 		toc += ["</ul></li>"]
 	toc.append("</ul>")
 	return "\n".join(toc)
