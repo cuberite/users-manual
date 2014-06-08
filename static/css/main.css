@@ -4,9 +4,11 @@
 
 body {
 	font-family: "Open Sans", sans-serif;
-	width: 80%;
-	max-width: 800px;
-	min-width: 500px;
+	width: 85%;
+	max-width: 824px;
+	min-width: 524px;
+	padding-left: 12px;
+	padding-right: 12px;
 	margin: 0 auto;
 	background-color: beige;
 }
