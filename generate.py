@@ -6,9 +6,8 @@ import os
 import shutil
 
 ## TODO:
-# Copy static assets (perhaps copy into file iteslf) function.
-# Writing to outfolder function.
-# Generate headings with ids to be linked to.
+# Fix the static asset copying.
+# Make a multi-page generator.
 
 # Temporary global variables for the input and output directories.
 input_directory = "."
