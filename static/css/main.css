@@ -14,3 +14,17 @@ body {
 h1, h2, h3, h4 {
 	font-family: "Ubuntu", sans-serif;
 }
+
+.infobox {
+	background-color: white;
+	border-color: blue;
+	border-width: 5px;
+	border-style: solid;
+}
+
+.warnbox {
+	background-color: orange;
+	border-color: red;
+	border-width: 5px;
+	border-style: solid;
+}
