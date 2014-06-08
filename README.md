@@ -21,6 +21,15 @@ A sample input directory structure would be:
 
 The idea is that the generator, combines the files to form 2 outputs - one standalone HTML page with all sections integrated and internal links, and another with each file (or section?) being a seperate page. At the moment the generator only compiles to a single page, but multiple page is planned.
 
-Here is a small indication of features:
+Here is a guide to writing:
 
 Links to another section are automatically generated like so - `{{Section Number - Text of Link}}`.
+
+Although they are not styled yet, these HTML elements should be used:
+
+ * `<p>` For Paragraphs
+ * `<h4>` For Headings
+ * `<aside class="infobox">` For information tangentially related to the content.
+ * `<aside class="warnbox">` For a warning related to the content.
+ * `<figure class="codebox">` For a code sample, with nested `<pre>` and `<code>` tags. Optionally with a `<figcaption>` for a caption.
+ * `<figure class="imgbox"` For an image/screenshot. Optionally with a `<figcaption>` for a caption.
