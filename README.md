@@ -21,6 +21,6 @@ A sample input directory structure would be:
 
 The idea is that the generator, combines the files to form 2 outputs - one standalone HTML page with all sections integrated and internal links, and another with each file (or section?) being a seperate page. At the moment the generator only compiles to a single page, but multiple page is planned.
 
-This generator would have to include the following features:
+Here is a small indication of features:
 
 Links to another section are automatically generated like so - `{{Section Number - Text of Link}}`.
