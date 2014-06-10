@@ -109,7 +109,7 @@ def generate_toc(sections):
 		toc.append("<ul>")
 		# Now the subsections.
 		for ss in sorted(sections[s]):
-			toc.append("<li>" + generate_link(split_section(s + "." + ss)[0] + " - " + s + "." ss) + "</li>")
+			toc.append("<li>" + generate_link(split_section(split_section(s)[0] + "." + ss)[0] + " - " + split_section(s)[0] + "." + ss) + "</li>")
 		toc += ["</ul></li>"]
 	toc.append("</ul>")
 	return "\n".join(toc)
