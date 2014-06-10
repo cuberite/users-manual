@@ -7,7 +7,7 @@ A User's Manual for MCServer
 Developers' Area
 ----------------
 
-This book is structured as individual HTML snippets with metadata header.
+This book is structured as individual HTML snippets for each chapter. The filename describes the section number and also the name of the section, seperated by " - ".
 
 A sample input directory structure would be:
 
