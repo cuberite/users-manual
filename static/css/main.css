@@ -25,6 +25,7 @@ h1, h2, h3, h4 {
 	margin-left: 40px;
 	min-width: 350px;
 	width: 70%;
+	min-height: 80px;
 	background-repeat: no-repeat;
 	background-position: 5px center;
 	background-size: 70px 70px;
