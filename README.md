@@ -12,12 +12,12 @@ This book is structured as individual HTML snippets for each chapter. The filena
 A sample input directory structure would be:
 
     /
-    |> 0/
-    |   |> 0.1 - Intro.html
-    |   |> 0.2 - Notes.html
-    |> 1/
-    |   |> 1.1 - Downloading.html
-    |   |> 1.2 - Running.html
+    |> 0 - Introduction/
+    |   |> 1 - Intro.html
+    |   |> 2 - Notes.html
+    |> 1 - Setting Up/
+    |   |> 1 - Downloading.html
+    |   |> 2 - Running.html
 
 The idea is that the generator, combines the files to form 2 outputs - one standalone HTML page with all sections integrated and internal links, and another with each file (or section?) being a seperate page. At the moment the generator only compiles to a single page, but multiple page is planned.
 
