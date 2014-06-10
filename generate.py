@@ -3,7 +3,6 @@
 import string
 import time
 import os
-import shutil
 
 ## TODO:
 # Fix the static asset copying.
