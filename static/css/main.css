@@ -5,8 +5,8 @@
 body {
 	font-family: "Open Sans", sans-serif;
 	width: 85%;
-	max-width: 824px;
-	min-width: 524px;
+	max-width: 800px;
+	min-width: 500px;
 	padding-left: 12px;
 	padding-right: 12px;
 	margin: 0 auto;
@@ -17,16 +17,27 @@ h1, h2, h3, h4 {
 	font-family: "Ubuntu", sans-serif;
 }
 
-.infobox {
-	background-color: white;
-	border-color: blue;
-	border-width: 5px;
+.infobox,
+.warnbox
+{
+	padding-left: 80px;
+	padding-right: 5px;
+	margin-left: 40px;
+	min-width: 350px;
+	width: 70%;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	background-size: 70px 70px;
+	border-width: 2px;
 	border-style: solid;
 }
 
+.infobox {
+	background-image: url(../img/info.png);
+	border-color: blue;
+}
+
 .warnbox {
-	background-color: orange;
+	background-image: url(../img/warning.png);
 	border-color: red;
-	border-width: 5px;
-	border-style: solid;
 }
