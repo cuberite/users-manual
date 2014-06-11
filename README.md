@@ -25,7 +25,7 @@ Here is a guide to writing:
 
 Links to another section are automatically generated like so - `{{Section Number - Text of Link}}`.
 
-Although they are not styled yet, these HTML elements should be used:
+Here is a list of semantically correct and styled HTML elements for specific purposes:
 
  * `<p>` For Paragraphs
  * `<h4>` For Headings
