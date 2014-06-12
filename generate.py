@@ -123,7 +123,7 @@ def generate_content(toc, sections):
 			content.append("<h2 id=\"" + split_section(s)[0] + "\">"  + s + "</h1>")
 			for ss in sorted(sections[s]):
 				content.append("<section>")
-				content.append("<h3 id=\"" + split_section(s)[0] + split_section(ss)[0] + "\">" + ss + "</h2>")
+				content.append("<h3 id=\"" + split_section(s)[0] + "." + split_section(ss)[0] + "\">" + ss + "</h2>")
 				content.append(sections[s][ss])
 				content.append("</section>")
 			content.append("</section>")
