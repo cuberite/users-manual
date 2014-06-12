@@ -3,6 +3,8 @@ mcs-book
 
 A User's Manual for MCServer
 
+There is an automatically updated version of the manual at [mcs-book.nfshost.com](http://mcs-book.nfshost.com), which updates every time a commit is pushed to this repository.
+
 
 Developers' Area
 ----------------
