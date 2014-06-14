@@ -1,0 +1,80 @@
+<p>
+	Compiling yourself takes longer and is more involved, but on modern processors can lead to a speed of 1.5 to 3x the speed of the pre-compiled versions.
+</p>
+
+<aside class="warnbox">
+	Warning: This process requires use of the command line. If you are not familiar with it, it is recommended that you use the {{1.1 - pre-compiled builds}} instead.
+</aside>
+
+<h4 id="compilinglinux">Linux / *nix</h4>
+
+<p>
+	Compiling on Linux and related operating systems is easy and simple, although it does require some tools before you can get started. You need a C++ compiler (Clang++ or G++), a C compiler (Clang or GCC), Git, CMake and Make. A simple command to make sure these tools are installed (on Ubuntu/Debian based OSes) is:<br>
+	<code>sudo apt-get install clang git cmake build-essentials</code>
+</p>
+
+<p>
+	Once the tools are installed, you should clone the Git repo:<br>
+	<code>git clone https://github.com/mc-server/MCServer.git</code>
+</p>
+
+<p>
+	You should change into the directory of the repository you cloned, and then run the CMake process and compile:<br>
+	<pre><code>cmake . -DCMAKE_BUILD_TYPE=RELEASE
+make . -j 2</code></pre>
+</p>
+
+<aside class="warnbox">
+	This step may take longer on slow hardware like Raspberry Pis, up to several hours in some cases. However, subsequent compiles will be faster.
+</aside>
+
+<p>
+	For a more detailed look at Build Flags and their utility (especially if you are compiling a build on a different machine than the one your are running it on), see <a href="#buildflags">below</a>.
+</p>
+
+<p>
+	Once the compilation process is finished, MCServer will be ready to use inside a folder called <code>MCServer</code> inside the repository that you downloaded. You can copy this folder anywhere you like and use MCServer.
+</p>
+
+<h4 id="compilingwindows">Windows</h4>
+
+<p>
+	Windows Stuff Here
+</p>
+
+<h4 id="buildflags">Build Flags</h4>
+
+<p>
+	MCServer's build process supports a large number of flags for customising the builds. This section documents there meanings.
+	Use these flags by adding <code>-DFlag_name=Value</code> to the cmake configuration command. For example to enable test 
+	generation using the <code>SELF_TEST</code> flag add: <code>-DSELF_TEST=ON</code>
+<p>
+
+<dl>
+	<dt>BUILD_TOOLS</dt>
+	<dd>
+		Adds the MCServer tools to the build. At the moment only MCADefrag and ProtoProxy are added. Define as <code>ON</code> to
+		enable. Define as <code>OFF</code> to disable.
+	</dd>
+	<dt>BUILD_UNSTABLE_TOOLS</dt>
+	<dd>
+		Adds tools that are not working yet to the build. Currently is only Generator Performance Test. Used for developing these
+		tools. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
+	</dd>
+	<dt>SELF_TEST</dt>
+	<dd>
+		Enables generation of tests and self-test startup code. Tests can be run with <code>ctest</code> and with makefiles 
+		<code>make test</code>. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
+	</dd>
+	<dt>FORCE_32</dt>
+	<dd>
+		Forces the build to use 32 bit builds on *nix systems. Define as <code>ON</code> to enable. Define as <code>OFF</code> to
+		disable.
+	</dd>
+	<dt>CROSSCOMPILE</dt>
+	<dd>
+		Disables optimizations for the build host. This is important when building on a different machine from the one you will
+		run MCServer on as the build machine may support instructions the final machine does not. This flag only has any effect
+		on linux. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
+	</dd>
+</dl>
