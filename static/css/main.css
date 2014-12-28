@@ -36,6 +36,10 @@ table, th, td {
 	border-collapse: collapse;
 }
 
+th {
+	background-color: lightgray;
+}
+
 .infobox,
 .warnbox
 {
