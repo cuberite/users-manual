@@ -71,11 +71,11 @@ th {
 	border-color: red;
 }
 
-p a[href^="http://"]:after, p a[href^="https://"]:after {
+a[href^="http://"]:after, p a[href^="https://"]:after {
 	content: " (" attr(href) ")";
 	font-size: 90%;
 }
 
-p a[href^="#"]:after {
+a[href^="#"]:after {
 	content: " (" attr(href) ")";
 }
