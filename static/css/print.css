@@ -26,8 +26,8 @@ code {
 pre {
 	background-color: lightgray;
 	white-space: pre-wrap;
-	padding-left: 2em;
-	text-indent: -2em;
+	text-align:start;
+	text-indent:5em;
 }
 
 table, th, td {
