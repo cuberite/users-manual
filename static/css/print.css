@@ -1,3 +1,67 @@
 @page {
 	margin: 2cm;
 }
+
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic);
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 14pt;
+}
+
+h1, h2, h3, h4 {
+	font-family: "Ubuntu", serif;
+}
+
+p {
+	text-align: justify;
+}
+
+code {
+	background-color: lightgray;
+}
+
+pre {
+	background-color: lightgray;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 6px;
+}
+
+th {
+	background-color: lightgray;
+}
+
+.infobox,
+.warnbox
+{
+	padding-left: 80px;
+	padding-right: 5px;
+	margin-left: 40px;
+	min-width: 350px;
+	width: 70%;
+	min-height: 80px;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	background-size: 70px 70px;
+	border-width: 2px;
+	border-style: solid;
+}
+
+.infobox {
+	background-image: url(../img/info.png);
+	border-color: blue;
+}
+
+.warnbox {
+	background-image: url(../img/warning.png);
+	border-color: red;
+}
