@@ -30,7 +30,7 @@ def main():
 	# Get the timestamp.
 	timestamp = generate_timestamp()
 	# Titles are hardcoded for now, change this when we add multipage support.
-	title = "MCServer User Guide"
+	title = "MCServer User's Manual"
 	head_title = title
 	# Write the actual content.
 	with open(os.path.join(output_directory, "index.html"), "w") as f:
