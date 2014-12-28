@@ -24,6 +24,10 @@ p {
 
 code {
 	background-color: lightgray;
+}
+
+pre {
+	background-color: lightgray;
 	overflow: auto;
 }
 
