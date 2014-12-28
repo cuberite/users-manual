@@ -28,6 +28,7 @@ code {
 
 pre {
 	background-color: lightgray;
+	max-height: 600px;
 	overflow: auto;
 }
 
