@@ -24,7 +24,7 @@ p {
 
 code {
 	background-color: lightgray;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .infobox,
