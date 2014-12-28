@@ -77,5 +77,5 @@ a:link, a:visited {
 
 a:after{
 	content: " (" attr(href) ")";
-	font-size: 90%;
+	font-size: 80%;
 }
