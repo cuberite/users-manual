@@ -45,6 +45,10 @@ th {
 	background-color: lightgray;
 }
 
+a:link, a:visited {
+	color: black;
+}
+
 .infobox,
 .warnbox
 {
