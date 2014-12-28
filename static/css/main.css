@@ -23,7 +23,8 @@ p {
 }
 
 code {
-	background-color: gray;
+	background-color: lightgray;
+	overflow: scroll;
 }
 
 .infobox,
