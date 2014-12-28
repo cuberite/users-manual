@@ -70,3 +70,8 @@ th {
 	background-image: url(../img/warning.png);
 	border-color: red;
 }
+
+p a[href^="http://"]:after {
+	content: " (" attr(href) ")";
+	font-size: 90%;
+}
