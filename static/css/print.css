@@ -1,6 +1,6 @@
 @page {
 	margin: 2.75cm;
-	@bottom-center {
+	@bottom-right {
 		content: counter(page) "/" counter(pages);
 	}
 }
