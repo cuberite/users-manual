@@ -8,8 +8,7 @@
 	It takes care of the compilation process for you. You only need to copy this command to your Bash terminal:
 </p>
 
-<figure class="codebox"><pre><code>bash -c "$(wget -O - https://raw.githubusercontent.com/SafwatHalaby/cubeDown/master/cubeDown.sh)"
-</code></pre></figure>
+<figure class="codebox"><pre><code>bash -c "$(wget -O - https://raw.githubusercontent.com/SafwatHalaby/cubeDown/master/cubeDown.sh)"</code></pre></figure>
 
 <p>	
 	The rest of this section is for those who prefer to manually compile.
@@ -25,23 +24,24 @@
 	Compiling on Linux and related operating systems is easy and simple, although it does require some tools before you can get started. You need a C++ compiler (Clang++ or G++), a C compiler (Clang or GCC), Git, CMake and Make. A simple command to make sure these tools are installed (Ubuntu/Debian) is:
 </b>
 
-<pre><code>sudo apt-get install clang git cmake build-essential</code></pre>
+<figure class="codebox"><pre><code>sudo apt-get install clang git cmake build-essential</code></pre></figure>
 
 <p>
 	Once the tools are installed, you should clone the Git repo:
 </p>
 
-<pre><code>git clone https://github.com/mc-server/MCServer.git
+<figure class="codebox"><pre><code>git clone https://github.com/mc-server/MCServer.git
 cd MCServer
 git submodule update --init
-</code></pre>
+</code></pre></figure>
 
 <p>
 	You should then run the CMake process and compile:
 </p>
 
-<pre><code>cmake . -DCMAKE_BUILD_TYPE=RELEASE
-make . -j 2</code></pre>
+<figure class="codebox"><pre><code>cmake . -DCMAKE_BUILD_TYPE=RELEASE
+make . -j 2
+</code></pre></figure>
 
 <aside class="warnbox">
 	This step may take longer on slow hardware like Raspberry Pis, up to several hours in some cases. However, subsequent compiles will be faster.
