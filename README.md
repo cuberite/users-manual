@@ -1,7 +1,7 @@
 users-manual
 ============
 
-A User's Manual for MCServer
+A User's Manual for Cuberite
 
 There is an automatically updated version of the manual at [book.mc-server.org](http://book.mc-server.org), which updates every time a commit is pushed to this repository.
 
