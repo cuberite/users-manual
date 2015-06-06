@@ -1,5 +1,5 @@
 <p>
-	MCServer supports several storage schemas. Note that MCServer tries to load chunks from all storage schemas, no matter what this setting is set to. But only the storage set here will be used for saving chunks. This means that a world can be primed with MCA files from a Notchian server and still use the Compact schema for saving.
+	Cuberite supports several storage schemas. Note that Cuberite tries to load chunks from all storage schemas, no matter what this setting is set to. But only the storage set here will be used for saving chunks. This means that a world can be primed with MCA files from a Notchian server and still use the Compact schema for saving.
 </p>
 
 <h4>Available Options</h4>
@@ -45,12 +45,12 @@
 	<tr>
 		<td>Compact</td>
 		<td>.pak</td>
-		<td>Native MCServer schema that takes up a bit less space than Anvil and generally loads and saves a tiny bit faster. This schema is also cached, so it performs less Disk IO operations than Anvil (but takes up more RAM)</td>
+		<td>Native Cuberite schema that takes up a bit less space than Anvil and generally loads and saves a tiny bit faster. This schema is also cached, so it performs less Disk IO operations than Anvil (but takes up more RAM)</td>
 	</tr>
 	<tr>
 		<td>Forgetful</td>
 		<td>N/A</td>
-		<td>Doesn'​t save chunks. Changes to the world are lost as soon as the chunks are unloaded, making this useful for read-only public servers. Please note that MCServer will still load chunks using other schemas.</td>
+		<td>Doesn'​t save chunks. Changes to the world are lost as soon as the chunks are unloaded, making this useful for read-only public servers. Please note that Cuberite will still load chunks using other schemas.</td>
 	</tr>
 </table>
 </figure>

@@ -1,6 +1,6 @@
 <p>
 	Compiling yourself takes longer and is more involved, but on modern processors can lead to a speed increase of up to 1.5 to 3x.
-	If your operating system is not officially supported, compiling may be the only way to run MCServer.
+	If your operating system is not officially supported, compiling may be the only way to run Cuberite.
 </p>
 
 <p>
@@ -52,7 +52,7 @@ make . -j 2
 </aside>
 
 <p>
-	Once the compilation process is finished, the MCServer executable will be placed inside the <code>MCServer</code> inside the repository that you downloaded. You can copy this folder anywhere you like, just make sure to copy the supporting files otherwise the server will not work properly.
+	Once the compilation process is finished, the Cuberite executable will be placed inside the <code>MCServer</code> inside the repository that you downloaded. You can copy this folder anywhere you like, just make sure to copy the supporting files otherwise the server will not work properly.
 </p>
 
 <h4 id="compilingwindows">Windows</h4>
@@ -64,7 +64,7 @@ make . -j 2
 <h4 id="buildflags">Build Flags</h4>
 
 <p>
-	MCServer's build process supports a large number of flags for customising the builds. This section documents there meanings.
+	Cuberite's build process supports a large number of flags for customising the builds. This section documents there meanings.
 	Use these flags by adding <code>-DFlag_name=Value</code> to the cmake configuration command. For example to enable test 
 	generation using the <code>SELF_TEST</code> flag add: <code>-DSELF_TEST=ON</code>
 <p>
@@ -72,7 +72,7 @@ make . -j 2
 <dl>
 	<dt>BUILD_TOOLS</dt>
 	<dd>
-		Adds the MCServer tools to the build. At the moment only MCADefrag and ProtoProxy are added. Define as <code>ON</code> to
+		Adds the Cuberite tools to the build. At the moment only MCADefrag and ProtoProxy are added. Define as <code>ON</code> to
 		enable. Define as <code>OFF</code> to disable.
 	</dd>
 	<dt>BUILD_UNSTABLE_TOOLS</dt>
@@ -93,7 +93,7 @@ make . -j 2
 	<dt>CROSSCOMPILE</dt>
 	<dd>
 		Disables optimizations for the build host. This is important when building on a different machine from the one you will
-		run MCServer on as the build machine may support instructions the final machine does not. This flag only has any effect
+		run Cuberite on as the build machine may support instructions the final machine does not. This flag only has any effect
 		on linux. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
 	</dd>
 </dl>
