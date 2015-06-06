@@ -1,5 +1,5 @@
-mcs-book
-========
+users-manual
+============
 
 A User's Manual for MCServer
 
