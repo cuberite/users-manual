@@ -3,7 +3,7 @@ users-manual
 
 A User's Manual for Cuberite
 
-There is an automatically updated version of the manual at [book.mc-server.org](http://book.mc-server.org), which updates every time a commit is pushed to this repository.
+There is an automatically updated version of the manual at [book.cuberite.org](http://book.cuberite.org), which updates every time a commit is pushed to this repository.
 
 
 Developers' Area
