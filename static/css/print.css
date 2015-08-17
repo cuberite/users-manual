@@ -70,12 +70,12 @@ a:link, a:visited {
 
 .infobox {
 	background-image: url(../img/info.png);
-	border-color: blue;
+	border-color: #2981BA;
 }
 
 .warnbox {
 	background-image: url(../img/warning.png);
-	border-color: red;
+	border-color: #F39E12;
 }
 
 a:after{
