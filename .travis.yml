@@ -1,0 +1,7 @@
+language: python
+python:
+ - "2.7"
+install:
+ - "pip install html5validator"
+before-script: "python generate.py"
+script: "html5validator --root out/"
