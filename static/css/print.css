@@ -82,3 +82,7 @@ a:after{
 	content: " (" attr(href) ")";
 	font-size: 80%;
 }
+
+dt {
+	font-weight: bold;
+}
