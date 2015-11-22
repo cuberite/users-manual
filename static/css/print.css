@@ -12,6 +12,7 @@
 body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 10pt;
+	-webkit-print-color-adjust: exact;
 }
 
 h1, h2, h3, h4 {
