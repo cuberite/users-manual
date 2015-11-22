@@ -1,0 +1,48 @@
+<p>
+	Cuberite can be configured by editing various configuration files. Below is a list of all configuration files.
+</p>
+
+<dl>
+	<dt>settings.ini</dt>
+	<dd>
+		The main configuration file, it contains server-wide configuration variables. 
+	</dd>
+	<dt>webadmin.ini</dt>
+	<dd>
+		Allows you to tweak the web admin interface, which is available at <code>http://localhost:8080</code> or <code>http://&lt;Server IP address&gt;:8080</code> by default.
+	</dd>
+	<dt>world/world.ini</dt>
+	<dd>
+		This file configures world-specific aspects. Note that if you have multiple worlds, you'll have multiple <code>world.ini</code> files, each stored in <code>*World name*/world.ini</code>.
+	</dd>
+	<dt>monsters.ini</dt>
+	<dd>
+		Allows you to tweak monster behaviour.
+	</dd>
+	<dt>motd.txt</dt>
+	<dd>
+		The Message of the Day, which is shown to players upon joining your server.
+	</dd>
+	<dt>crafting.txt , brewing.txt , furance.txt</dt>
+	<dd>
+		These three files allow to tweak crafting, brewing, and furance recipes.
+	</dd>
+	<dt>plugins/...</dt>
+	<dd>
+		Many plugins have their own configuration files. For instance, the WorldEdit config is <code>plugins/WorldEdit/config.cfg</code>
+	</dd>
+	<dt>items.ini</dt>
+	<dd>
+		Edit item IDs. You probably shouldn't edit this file unless you know what you're doing.
+	</dd>
+</dl>
+
+<aside class="infobox">
+	Note that in all <code>.ini</code> files, lines starting with <code>;</code> are comments, and in all <code>.txt</code> files, lines starting with <code>#</code> are comments.
+</aside>
+
+<h4>Permissions</h4>
+
+<p>
+Setting up permissions is most easily done via the web admin. You can also use the <code>rank &lt;playername&gt;</code> command from the server console.
+</p>

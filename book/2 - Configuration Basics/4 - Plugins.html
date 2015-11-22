@@ -14,5 +14,23 @@
 <p>
 	Cuberite has a <a href="http://forum.mc-server.org/forumdisplay.php?fid=15">plugin repository</a>
 	where you can upload your plugins publicly and download plugins others have
-	released. We will cover the use of this plugin repository in the next section.
+	released.
 </p>
+
+<h4>Activating a plugin</h4>
+
+<p>
+	After downloading a plugin, you need to put it in the <code>plugins/</code> directory.
+	You should then edit the `plugins` sections of the <code>settings.ini</code> file and add a plugin entry there.
+	Below is an example of adding a plugin called <code>MyNewPlugin</code>.
+</p>
+
+<figure class="codebox">
+<pre><code>
+[Plugins]
+Plugin=Core
+Plugin=TransApi
+Plugin=MyNewPlugin
+;Plugin=MyDisabledPlugin
+</code></pre>
+</figure>
