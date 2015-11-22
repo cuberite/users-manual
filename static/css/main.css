@@ -45,6 +45,10 @@ th {
 	background-color: lightgray;
 }
 
+dt {
+	font-weight: bold;
+}
+
 .infobox,
 .warnbox
 {
