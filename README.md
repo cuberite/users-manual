@@ -3,13 +3,13 @@ users-manual
 
 A User's Manual for Cuberite
 
-There is an automatically updated version of the manual at [book.cuberite.org](http://book.cuberite.org), which updates every hour if a new commit has been pushed to this repository.
+There is an automatically updated version of the manual at [book.cuberite.org](https://book.cuberite.org), which updates every hour if a new commit has been pushed to this repository.
 
 
 Developers' Area
 ----------------
 
-This book is structured as individual HTML snippets for each chapter. The filename describes the section number and also the name of the section, seperated by " - ".
+This book is structured as individual HTML snippets for each chapter. The filename describes the section number and also the name of the section, separated by " - ".
 
 A sample input directory structure would be:
 
@@ -21,7 +21,7 @@ A sample input directory structure would be:
     |   |> 1 - Downloading.html
     |   |> 2 - Running.html
 
-The idea is that the generator, combines the files to form 2 outputs - one standalone HTML page with all sections integrated and internal links, and another with each file (or section?) being a seperate page. At the moment the generator only compiles to a single page, but multiple page is planned.
+The idea is that the generator, combines the files to form 2 outputs - one standalone HTML page with all sections integrated and internal links, and another with each file (or section?) being a separate page. At the moment the generator only compiles to a single page, but multiple page is planned.
 
 Here is a guide to writing:
 
