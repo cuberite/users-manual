@@ -1,38 +1,3 @@
 <p>
-	By default, there is only one world. That world can be tweaked by editing the file <code>world/world.ini</code>. You can use this file to edit things like the spawn point location and the game mode. See {{3 - Configuring world.ini}} for details.
+	By default, there is only one world. That world can be tweaked by editing the file <code>world/world.ini</code>. You can use this file to edit things like the spawn point location, the game mode, and the diffculty level. See {{3 - Configuring world.ini}} for details.
 </p>
-
-<h4>Multiple worlds</h4>
-
-<aside class="warnbox">
-	Having multiple worlds is not stable yet. You may encounter bugs. Only do this if you are adventurous!
-</aside>
-
-<p>
-	Additional Worlds can be added by editing <code>server.ini</code>. See the example below.
-</p>
-
-<figure class="codebox">
-<pre><code>[Worlds]
-DefaultWorld=world
-World=myNewWorld
-World=HappyLand
-</code></pre>
-</figure>
-
-<p>
-	In the example above, 2 extra worlds are added to the server. Note that this automatically creates 2 additional configuration files, namely <code>myNewWorld/world.ini</code> and <code>HappyLand/world.ini</code>.
-</p>
-
-<h4>Traveling between worlds</h4>
-
-<p>
-	If you have the permission, you may use the following command to travel between worlds: <code>/portal Worldname</code>
-</p>
-
-<h4>Linking worlds with portals</h4>
-
-<p>
-	TODO
-</p>
-
