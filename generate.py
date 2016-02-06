@@ -3,7 +3,6 @@
 import string
 import time
 import os
-import re
 
 ## TODO:
 # Fix the static asset copying.
@@ -121,11 +120,9 @@ def generate_content(toc, sections):
 		content.append(toc)
 		for s in sorted(sections):
 			content.append("<section>")
-			content.append("<a hd=\"" + slugify(split_section(s)[1]) + "\"></a>")
 			content.append("<h2 id=\"" + split_section(s)[0] + "\">"  + s + "</h2>")
 			for ss in sorted(sections[s]):
 				content.append("<section>")
-				content.append("<a hd=\"" + "sub-" + slugify(split_section(ss)[1]) + "\"></a>")
 				content.append("<h3 id=\"" + split_section(s)[0] + "." + split_section(ss)[0] + "\">" + ss + "</h3>")
 				content.append(sections[s][ss])
 				content.append("</section>")
@@ -134,11 +131,6 @@ def generate_content(toc, sections):
 
 def generate_timestamp():
 	return time.strftime("%d %B %Y", time.localtime(time.time()))
-	
-def slugify(txt):
-	slug = txt.lower()
-	slug = re.sub(r'[^a-z0-9]+', '-', slug).strip('-')
-	return re.sub(r'[-]+', '-', slug)
 
 # Run the main function.
 main()
