@@ -1,5 +1,5 @@
 <p>
-	Cuberite supports several storage schemas. Note that Cuberite tries to load chunks from all storage schemas, no matter what this setting is set to. But only the storage set here will be used for saving chunks. This means that a world can be primed with MCA files from a Notchian server and still use the Compact schema for saving.
+	This section specifies if Cuberite should save world chunks or not, as well as the compression level for world files.
 </p>
 
 <h4>Available Options</h4>
@@ -13,7 +13,7 @@
 	</tr>
 	<tr>
 		<td>Schema</td>
-		<td>Schema used for saving chunks. May be one of "Default", "Compact", "Anvil" and "Forgetful". See table below for their description.</td>
+		<td>Specifies if world chunks should be saved or not. May be one of "Default", "Anvil" and "Forgetful". See table below for their description.</td>
 		<td>Default</td>
 	</tr>
 	<tr>
@@ -40,12 +40,7 @@
 	<tr>
 		<td>Anvil</td>
 		<td>.mca</td>
-		<td>Storage is compatible with other Minecraft-related tools and programs. MCA files are stored in the "region" subfolder of the world folder, and a "level.dat" file is generated inside the world folder.</td>
-	</tr>
-	<tr>
-		<td>Compact</td>
-		<td>.pak</td>
-		<td>Native Cuberite schema that takes up a bit less space than Anvil and generally loads and saves a tiny bit faster. This schema is also cached, so it performs less Disk IO operations than Anvil (but takes up more RAM)</td>
+		<td>Saves chunks. Storage is compatible with other Minecraft-related tools and programs. MCA files are stored in the "region" subfolder of the world folder, and a "level.dat" file is generated inside the world folder.</td>
 	</tr>
 	<tr>
 		<td>Forgetful</td>
