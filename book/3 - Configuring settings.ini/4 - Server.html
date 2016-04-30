@@ -53,7 +53,8 @@
 	Increasing this improves performance but consumes more RAM.
 	Note that this is a rough estimation. In reality the chunk data will consume more than the specified amount.
 	If too many players are online, this setting is ignored, and Cuberite will resort to saving and/or unloading chunks
-	as soon as players leave them.
+	as soon as players leave them. The precise pattern of RAM consumption is determined by <code>MinimizeRAM</code>.<br/>
+	See the next setting.
     </td>
     <td>30</td>
   </tr>
@@ -62,10 +63,13 @@
     <td>
 	If set to 1, Cuberite will strive to not reach MaxChunkRAM. This is achieved by unloading clean chunks as soon
 	as players leave them, and by saving and then unloading dirty chunks if MaxChunkRAM is ever reached.<br/>
-	If set to 0, Cuberite will use all the RAM specified in MaxChunkRAM as a chunk cache. This significantly 
-	improves performance, Cuberite will constantly use the entirety of the amount specified in MaxChunkRAM.
-	This is done by unloading or saving as few chunks as possible. 0 is recommended for dedicated servers.
-	Note that in both cases, all chunks are saved at least once every 5 minutes to prevent data loss.
+	If set to 0, Cuberite will be greedy; it will strive to reach MaxChunkRAM and stay there. The extra RAM is used
+	as a chunk cache. This significantly improves performance, but the amount specified in MaxChunkRAM will be dedicated
+	to Cuberite. This is done by unloading or saving as few chunks as possible whenever MaxChunkRAM is exceeded.
+	This is recommended for dedicated servers and/or when you don't mind dedicating some RAM solely to Cuberite.<br/>
+	Note that in both cases, all chunks are saved at least once every 5 minutes to prevent data loss.<br/>
+	Also note that in both cases, when too many players are online and maintaining MaxChunkRAM is impossible, Cuberite
+	resorts to unloading and saving chunks as soon as players leave them.
     </td>
     <td>1</td>
   </tr>
