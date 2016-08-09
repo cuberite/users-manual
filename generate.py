@@ -101,23 +101,23 @@ def linkify(text):
 	return text
 
 def generate_toc(sections):
-	toc = ["<h2 id=\"toc\">Table of Contents</h2>", "<ul>"]
+	toc = ["<div id=\"toc\">"]
 	for s in sorted(sections):
 		# Add the Section Header.
-		toc.append("<li>")
-		toc.append(generate_link(split_section(s)[0] + " - " + s))
+		toc.append("<a href=\"#" + split_section(s)[0] + "\" class=\"section-header\">"  + s + "</a>")
 		toc.append("<ul>")
 		# Now the subsections.
 		for ss in sorted(sections[s]):
 			toc.append("<li>" + generate_link(split_section(split_section(s)[0] + "." + ss)[0] + " - " + split_section(s)[0] + "." + ss) + "</li>")
-		toc += ["</ul></li>"]
-	toc.append("</ul>")
+		toc += ["</ul>"]
+	toc.append("</div>")
 	return "\n".join(toc)
 
 def generate_content(toc, sections):
 	if single_page:
 		content = []
 		content.append(toc)
+		content.append("<div id=\"manual-content\">")
 		for s in sorted(sections):
 			content.append("<section>")
 			content.append("<h2 id=\"" + split_section(s)[0] + "\">"  + s + "</h2>")
@@ -127,6 +127,7 @@ def generate_content(toc, sections):
 				content.append(sections[s][ss])
 				content.append("</section>")
 			content.append("</section>")
+		content.append("</div>")
 		return "\n".join(content)
 
 def generate_timestamp():
