@@ -1,0 +1,77 @@
+<p>
+	Basic server settings are configured here.
+</p>
+
+<h5>Available Options</h5>
+
+<figure>
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Meaning</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>The description which appears in the Minecraft client server list</td>
+    <td>Cuberite - in C++!</td>
+  </tr>
+  <tr>
+    <td>AllowBungeeCord</td>
+    <td>See {{5.5 - Bungeecord}}</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>MaxPlayers</td>
+    <td>The maximum amount of players allowed to join the server</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>HardcoreEnabled</td>
+    <td>In Hardcore mode, players who die are banned from the server. 0 is standard, 1 is Hardcore</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>AllowMultiLogin</td>
+    <td>TODO</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Ports</td>
+    <td>Which ports should Cuberite listen to</td>
+    <td>25565</td>
+  </tr>
+  <tr>
+    <td>DefaultViewDistance</td>
+    <td>The maximum view distance a player may have, in chunks. Lower this to improve performance</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>MaxChunkRAM</td>
+    <td>
+	The (soft) maximum amount of RAM which can be used by chunk data. 
+	Increasing this improves performance but consumes more RAM.
+	Note that this is a rough estimation. In reality the chunk data will consume more than the specified amount.
+	If too many players are online, this setting is ignored, and Cuberite will resort to saving and/or unloading chunks
+	as soon as players leave them. The precise pattern of RAM consumption is determined by <code>MinimizeRAM</code>.<br/>
+	See the next setting.
+    </td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>MinimizeRAM</td>
+    <td>
+	If set to 1, Cuberite will strive to not reach MaxChunkRAM. This is achieved by unloading clean chunks as soon
+	as players leave them, and by saving and then unloading dirty chunks if MaxChunkRAM is ever reached.<br/>
+	If set to 0, Cuberite will be greedy; it will strive to reach MaxChunkRAM and stay there. The extra RAM is used
+	as a chunk cache. This significantly improves performance, but the amount specified in MaxChunkRAM will be dedicated
+	to Cuberite. This is done by unloading or saving as few chunks as possible whenever MaxChunkRAM is exceeded.
+	This is recommended for dedicated servers and/or when you don't mind dedicating some RAM solely to Cuberite.<br/>
+	Note that in both cases, all chunks are saved at least once every 5 minutes to prevent data loss.<br/>
+	Also note that in both cases, when too many players are online and maintaining MaxChunkRAM is impossible, Cuberite
+	resorts to unloading and saving chunks as soon as players leave them.
+    </td>
+    <td>1</td>
+  </tr>
+</table>
+</figure>

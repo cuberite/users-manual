@@ -1,0 +1,39 @@
+<p>
+	Specifies whether the server should attempt to contact the Mojang server and authenticate players.
+	You may want to disable authentication if you want to play on LAN, or if you want to allow cracked
+	clients to join your server. If authentication is disabled, consider using a login plugin to prevent
+	players logging in as other players.
+</p>
+
+<h5>Available Options</h5>
+
+<figure>
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Meaning</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td>Authenticate</td>
+    <td>0 disables authentication, 1 enables it</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>AllowBungeeCord</td>
+    <td>See {{5.5 - Bungeecord}}</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Server</td>
+    <td>The domain name of the authentication server</td>
+    <td>sessionserver.mojang.com</td>
+  </tr>
+  <tr>
+    <td>Server</td>
+    <td>The address of the authentication server</td>
+    <td>/session/minecraft/hasJoined?username=%USERNAME%&serverId=%SERVERID%</td>
+  </tr>
+</table>
+</figure>
+
