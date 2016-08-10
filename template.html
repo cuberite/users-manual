@@ -1,50 +1,74 @@
 <!doctype html>
-
-<html>
-
+<html lang="en">
 <head>
-
-	<meta charset="UTF-8">
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>${head_title}</title>
-
-	<meta name="description" content="${description}">
-
-	<link rel="canonical" href="https://book.cuberite.org">
-
-	<link rel="stylesheet" href="css/main.css" media="screen">
-	<link rel="stylesheet" href="css/print.css" media="print">
-
+	<meta name="description" content="This is the Cuberite User's Manual. It is intended as a guide on how to operate the basics of Cuberite, as well as an introduction to some advanced features.">
+	<link rel="canonical" href="https://book.cuberite.org/">
+	<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-	<span style="float: right;">Generated on ${timestamp}</span>
-
-	<h1>${title}</h1>
-
-	<article>
-
-		${content}
-
-	</article>
-
-	<!-- Piwik -->
+	<div id="navigation">
+		<div id="logo">
+			<a href="https://cuberite.org/">Cuberite</a>
+		</div>
+		<div id="navigation-links">
+			<a href="https://forum.cuberite.org/" class="forum">Forum</a>
+			<a href="https://book.cuberite.org/" class="manual active">Manual</a>
+			<a href="https://cuberite.org/support/" class="support">Support</a>
+			<a href="https://cuberite.org/plugins/" class="plugins">Plugins</a>
+			<a href="https://cuberite.org/contribute/" class="contribute">Contribute</a>
+		</div>
+	</div>
+	<div id="manual">
+		<div id="manual-body">
+			<h2 class="manual">${title}</h2>
+			<p>Generated on ${timestamp}</p>
+			${content}
+		</div>
+	</div>
+	<div id="footer">
+		<div id="mobile-links">
+			<a href="https://cuberite.org/" class="home show-mobile">Home</a>
+			<a href="https://book.cuberite.org/" class="manual show-mobile active">Manual</a>
+			<a href="https://cuberite.org/support/" class="support show-mobile">Support</a>
+			<a href="https://cuberite.org/plugins/" class="plugins show-mobile">Plugins</a>
+			<input type="checkbox" id="footer-links-toggle"/>
+			<div id="footer-links">
+				<label for="footer-links-toggle">More</label>
+				<div id="footer-links-body">
+					<a href="https://cuberite.org/about/">About</a>
+					<a href="https://forum.cuberite.org/" class="show-mobile-block">Forum</a>
+					<a href="https://cuberite.org/contribute/" class="show-mobile-block">Contribute</a>
+					<a href="https://cuberite.org/news/">News</a>
+					<a href="https://salt.bountysource.com/teams/cuberite">Donate</a>
+					<a href="https://webchat.freenode.net/?channels=cuberite">IRC</a>
+					<a href="http://api-docs.cuberite.org/">API Docs</a>
+					<a href="https://cuberite.org/privacy/">Privacy</a>
+					<div id="media-links">
+						<a href="https://plus.google.com/+cuberiteorg" id="google"></a>
+						<a href="https://twitter.com/cuberiteproject" id="twitter"></a>
+						<a href="https://www.youtube.com/c/cuberiteorg" id="youtube"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<noscript>
+			<img src="https://analytics.cuberite.org/piwik.php?idsite=2&amp;rec=1" alt=""/>
+		</noscript>
+	</div>
 	<script type="text/javascript">
-	  var _paq = _paq || [];
-	  _paq.push(['trackPageView']);
-	  _paq.push(['enableLinkTracking']);
-	  (function() {
-	    var u="https://analytics.cuberite.org/";
-	    _paq.push(['setTrackerUrl', u+'piwik.php']);
-	    _paq.push(['setSiteId', 2]);
-	    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-	    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-	  })();
+		var _paq = _paq || [];
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+			var u="https://analytics.cuberite.org/";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', 2]);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		})();
 	</script>
-	<noscript><p><img src="https://analytics.cuberite.org/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
-	<!-- End Piwik Code -->
-
 </body>
-
 </html>
