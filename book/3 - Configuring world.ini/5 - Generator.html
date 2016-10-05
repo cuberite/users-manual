@@ -1,0 +1,120 @@
+
+<p>
+	This section specifies all the options for Cuberite's world generator.
+</p>
+
+<h3>World Generators</h3>
+<p>Cuberite allows multiple world generators. Currently there is only one, the ComposableGenerator.</p>
+<ul>
+	<li>
+		<p>ComposableGenerator: The ComposableGenerator allows an admin to mix and match multiple different biome, shape, composition and finishers with each other allowing great freedom in what you let the generator create.</p>
+		<table>
+			<tr><th>Options</th><th>Description</th></tr>
+			<tr><td>BiomeGen </td><td> The biome generator used by the ComposableGenerator</td></tr>
+			<tr><td>ShapeGen </td><td> The shape generator used by the ComposableGenerator</td></tr>
+			<tr><td>CompositionGen </td><td> The shape generator used by the ComposableGenerator</td></tr>
+			<tr><td>Finishers </td><td> All the structures, foliage and other things that come after composition</td></tr>
+		</table>
+	</li>
+</ul>
+
+<h3>Biome Generators</h3>
+<p>Cuberite has multiple biome generators. Some are for developers to make their life easier. To specify the biome generator you want to use you set the BiomeGen value to one of the available options.</p>
+
+<h4>Constant</h4>
+<p>Allow only one biome in the world, the one you specify. This is usefull if you want a superflat world</p>
+<table>
+	<tr><th>Options</th><th>Description</th></tr>
+	<tr><td>ConstantBiome </td><td> The name of the biome you want to use. For instance, Forest or SavannaPlateauM</td></tr>
+</table>
+
+<h4>Checkerboard</h4>
+<p>Generates specified biomes in a checkerboard shape. This is intended for developers.</p>
+<table>
+	<tr><th>Options</th><th>Description</th></tr>
+	<tr><td>CheckerBoardBiomes </td><td> The biomes you want to generate separated by a comma.</td></tr>
+	<tr><td>CheckerboardBiomeSize </td><td> The size of each square.</td></tr>
+</table>
+
+<h4>Voronoi</h4>
+<p>Generates biomes based on a voronoi diagram. The borders from this generator are straight which can be really notable. Furthermore unrelated biomes can easily come next to each other (Taiga next to a jungle). This generator is outdated and not recommended for general use.</p>
+<table>
+	<tr><th>Options</th><th>Description</th></tr>
+	<tr><td>VoronoiCellSize </td><td> Roughly the size of each biome</td></tr>
+	<tr><td>VoronoiJitterSize </td><td> TODO</td></tr>
+	<tr><td>VoronoiOddRowOffset </td><td> TODO</td></tr>
+	<tr><td>VoronoiBiomes </td><td> The biomes you want to generate separated by a comma.</td></tr>
+</table>
+
+<h4>DistortedVoronoi</h4>
+<p>Generates biomes based on a voronoi diagram. Unlike the Voronoi generator the borders look more natural. Just like with Voronoi unrelated biomes can easily come next to each other (Taiga next to a jungle). This generator is outdated and not recommended for general use.</p>
+<table>
+	<tr><th>Options</th><th>Description</th></tr>
+	<tr><td>DistortedVoronoiCellSize </td><td> Roughly the size of each biome</td></tr>
+	<tr><td>DistortedVoronoiBiomes </td><td> The biomes you want to generate separated by a comma.</td></tr>
+</table>
+
+<h4>MultiStepMap</h4>
+<p>Cuberite's pre-1.7 biome generator</p>
+<table>
+	<tr><th>Options</th><th>Description</th></tr>
+	<tr><td>MultiStepMapOceanCellSize</td><td>Roughly the size of oceans in blocks</td></tr>
+	<tr><td>MultiStepMapMushroomIslandSize</td><td>Roughly the size of mushroom islands in blocks</td></tr>
+	<tr><td>MultiStepMapRiverWidth</td><td>Roughly the width of rivers.</td></tr>
+	<tr><td>MultiStepMapRiverCellSize</td><td>Roughly the size of rivers.</td></tr>
+	<tr><td>MultiStepMapLandBiomeSize</td><td>Roughly the size of land.</td></tr>
+</table>
+
+<h4>TwoLevel</h4>
+<p>Cuberite's first 1.7 biome generator. There are a few things missing in this generator like rivers. Unlike the DistortedVoronoi and Voronoi generator unrelated biomes do not generate next to each other.</p>
+<table>
+	<tr><th>Options</th><th>Description</th></tr>
+	<tr><td>TwoLevelLargeCellSize </td><td> TODO</td></tr>
+	<tr><td>TwoLevelSmallCellSize </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortXOctave1Freq </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortXOctave1Amp </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortXOctave2Freq </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortXOctave2Amp </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortXOctave3Freq </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortXOctave3Amp </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortZOctave1Freq </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortZOctave1Amp </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortZOctave2Freq </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortZOctave2Amp </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortZOctave3Freq </td><td> TODO</td></tr>
+	<tr><td>TwoLevelDistortZOctave3Amp </td><td> TODO</td></tr>
+</table>
+
+<h4>Grown</h4>
+<p>Cuberite's latest, fastest and most complete 1.7 biome generator.</p>
+This biome generator currently does not have any options you can customize.
+
+<h4>GrownProt</h4>
+<p>Identical to Grown, but aimed at developers. It's a little bit slower, but the source is more readable.</p>
+This biome generator currently does not have any options you can customize.
+
+
+<h3>Shape Generators</h3>
+<p>Shape generators tell the world if a block is air or something else.</p>
+
+
+<h4>BiomalNoise3D</h4>
+<p>Cuberite's overworld shape generator</p>
+<table>
+	<tr><td>BiomalNoise3DFrequencyX</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DFrequencyY</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DFrequencyZ</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DBaseFrequencyX</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DBaseFrequencyZ</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DChoiceFrequencyX</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DChoiceFrequencyY</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DChoiceFrequencyZ</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DAirThreshold</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DNumChoiceOctaves</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DNumDensityOctaves</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DNumBaseOctaves</td><td>TODO</td></tr>
+	<tr><td>BiomalNoise3DBaseAmplitude</td><td>TODO</td></tr>
+</table>
+
+<h3>Composition Generators</h3>
+<p>Composition generators provide the blocks to use.
