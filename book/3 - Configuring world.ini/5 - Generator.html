@@ -4,7 +4,7 @@
 </p>
 
 <h3>World Generators</h3>
-<p>Cuberite allows multiple world generators. Currently there is only one, the ComposableGenerator.</p>
+<p>Cuberite allows multiple world generators. Currently there are two, but the most advanced and most used is the ComposableGenerator.</p>
 <ul>
 	<li>
 		<p>ComposableGenerator: The ComposableGenerator allows an admin to mix and match multiple different biome, shape, composition and finishers with each other allowing great freedom in what you let the generator create.</p>
@@ -12,8 +12,14 @@
 			<tr><th>Options</th><th>Description</th></tr>
 			<tr><td>BiomeGen </td><td> The biome generator used by the ComposableGenerator</td></tr>
 			<tr><td>ShapeGen </td><td> The shape generator used by the ComposableGenerator</td></tr>
-			<tr><td>CompositionGen </td><td> The shape generator used by the ComposableGenerator</td></tr>
+			<tr><td>CompositionGen </td><td> The terrain composition generator used by the ComposableGenerator</td></tr>
 			<tr><td>Finishers </td><td> All the structures, foliage and other things that come after composition</td></tr>
+		</table>
+	</li>
+	<li>
+		<p>Noise3D: TODO</p>
+		<table>
+			<tr><th>Options</th><th>Description</th></tr>
 		</table>
 	</li>
 </ul>
@@ -101,6 +107,7 @@ This biome generator currently does not have any options you can customize.
 <h4>BiomalNoise3D</h4>
 <p>Cuberite's overworld shape generator</p>
 <table>
+	<tr><th>Options</th><th>Description</th></tr>
 	<tr><td>BiomalNoise3DFrequencyX</td><td>TODO</td></tr>
 	<tr><td>BiomalNoise3DFrequencyY</td><td>TODO</td></tr>
 	<tr><td>BiomalNoise3DFrequencyZ</td><td>TODO</td></tr>
@@ -116,5 +123,40 @@ This biome generator currently does not have any options you can customize.
 	<tr><td>BiomalNoise3DBaseAmplitude</td><td>TODO</td></tr>
 </table>
 
+<h4>HeightMap</h4>
+<p>Tells Cuberite to switch to the old method of generating shapes. Instead of telling if a block is an air block or something else we tell the server the height of a column in a chunk. Overhangs using HeightMaps were difficult and slow to create which is why we moved to shape generators.</p>
+<table>
+	<tr><th>HeightGenerators</th><th>Description</th></tr>
+	<tr><td>Flat</td><td>Generate the world at a fixed height. Usefull for SuperFlat maps</td></tr>
+	<tr><td>Classic</td><td>An older generator which is not recommended for general use.</td></tr>
+	<!--<tr><td>DistortedHeightMap</td><td></td></tr>-->
+	<!--<tr><td>End</td><td></td></tr>-->
+	<tr><td>MinMax</td><td>A generator which was an experiment, but didn't have what we wanted.</td></tr>
+	<tr><td>Mountains</td><td>Mountains as far as the eye can see.</td></tr>
+	<!--<tr><td></td><td></td></tr>-->
+	<tr><td>Steppy</td><td>Generates high mountains</td></tr>
+	<!--<tr>Noise3D<td></td><td></td></tr>-->
+	<tr><td>Biomal</td><td>Generates terrain that keep biomes in mind. Unlike the BiomalNoise3D generator.</td></tr>
+</table>
+
+<h4>DistortedHeightmap</h4>
+<p>Cuberite's previous overworld generator. It's slower than the BiomalNoise3D and generates other terrain</p>
+<table>
+	<tr><th>Option</th><th>Description</th></tr>
+	<tr><td>DidstortedHeightmapFrequencyX</td><td>TODO</td></tr>
+	<tr><td>DidstortedHeightmapFrequencyY</td><td>TODO</td></tr>
+	<tr><td>DidstortedHeightmapFrequencyZ</td><td>TODO</td></tr>
+</table>
+
+<h4>End</h4>
+<p>Generates a shape for the End</p>
+<table>
+	<tr><th>Option</th><th>Description</th></tr>
+	<tr><td>EndGenFrequencyX</td><td>TODO</td></tr>
+	<tr><td>EndGenFrequencyY</td><td>TODO</td></tr>
+	<tr><td>EndGenFrequencyZ</td><td>TODO</td></tr>
+</table>
+
 <h3>Composition Generators</h3>
-<p>Composition generators provide the blocks to use.
+<p>Composition generators provide the blocks to use.</p>
+
