@@ -1,4 +1,4 @@
-<code>UnusedChunkCap</code> can be used to optimize RAM. In short: A lower value uses less RAM and saves
+<p><code>UnusedChunkCap</code> can be used to optimize RAM. In short: A lower value uses less RAM and saves
 chunks more often to disk. A value of 0 means chunks should be unloaded and saved to disk as soon as players
 leave them. A higher value saves to disk less often and offers more performance, but it uses more RAM. Note
 that if your value is too high and the server is busy, RAM may be overused, causing paging and making
@@ -19,4 +19,4 @@ Causing a RAM drop even before the 5 minute mark.
 In summary, a very high <code>UnusedChunkCap</code> means dirty chunk saves and unloads occur every 5
 minutes. A value of 0 means the save cycle occurs constantly, and chunks get saved and unloaded as
 soon as players leave them. A moderate value means saves usually happen every 5 minutes, but if
-there's too much activity, saves start happening more often.
+there's too much activity, saves start happening more often.</p>
