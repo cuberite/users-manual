@@ -1,11 +1,22 @@
-The <code>UnusedChunkCap</code> can be used to optimize RAM. In short: A lower value uses less RAM and saves chunks more often to disk. A value of 0 means chunks should be unloaded and saved to disk as soon as players leave them. A higher value saves to disk less often and offers more performance, but it uses more RAM. Note that if your value is too high and the server is loaded, RAM may be overused, causing paging and making performance much worse. The rest of this section explains how exactly the value affects the chunk save cycle. 
+The <code>UnusedChunkCap</code> can be used to optimize RAM. In short: A lower value uses less RAM and saves
+chunks more often to disk. A value of 0 means chunks should be unloaded and saved to disk as soon as players
+leave them. A higher value saves to disk less often and offers more performance, but it uses more RAM. Note
+that if your value is too high and the server is loaded, RAM may be overused, causing paging and making
+performance much worse. The rest of this section explains how exactly the value affects the chunk save cycle. 
 
-"Unused chunks" are chunks that have no player nearby and have no special attributes like ChunkStay. Unused chunks are unloaded quickly by Cuberite.
+"Unused chunks" are chunks that have no player nearby and have no special attributes like ChunkStay. Unused
+chunks are unloaded quickly by Cuberite.
 
-"Dirty chunks" are chunks that have had their contents changed. Dirty chunks must not unload because they need saving. Therefore, RAM usage gradually increases as players play and cause more and more dirty chunks.
+"Dirty chunks" are chunks that have had their contents changed. Dirty chunks must not unload because they
+need saving. Therefore, RAM usage gradually increases as players play and cause more and more dirty chunks.
 
-Cuberite saves all dirty chunks to disk every 5 minutes. The save converts many "dirty and unused chunks" into "unused chunks" and those are unloaded quickly. This means RAM usage drops significantly every 5 minutes.
+Cuberite saves all dirty chunks to disk every 5 minutes. The save converts many "dirty and unused chunks"
+into "unused chunks" and those are unloaded quickly. This means RAM usage drops significantly every 5 minutes.
 
-If the number of dirty unused chunks exceeds <code>UnusedChunkCap</code>, the save cycle is force-executed. Causing a RAM drop even before the 5 minute mark.
+If the number of dirty unused chunks exceeds <code>UnusedChunkCap</code>, the save cycle is force-executed.
+Causing a RAM drop even before the 5 minute mark.
 
-In summary, a very high <code>UnusedChunkCap</code> means dirty chunk saves and unloads occur every 5 minutes. A value of 0 means the save cycle occurs constantly, and chunks get saved and unloaded as soon as players leave them. A moderate value means saves usually happen every 5 minutes, but if there's too much activity, saves start happening more often.
+In summary, a very high <code>UnusedChunkCap</code> means dirty chunk saves and unloads occur every 5
+minutes. A value of 0 means the save cycle occurs constantly, and chunks get saved and unloaded as
+soon as players leave them. A moderate value means saves usually happen every 5 minutes, but if
+there's too much activity, saves start happening more often.
