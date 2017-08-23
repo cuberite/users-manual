@@ -31,7 +31,7 @@ def main():
 	# Get the timestamp.
 	timestamp = generate_timestamp()
 	# Get the first 7 of git commit SHA
-	commit_approx = generate_commit_approx()
+	commit_id = generate_commit_id()
 	# Titles are hardcoded for now, change this when we add multipage support.
 	title = "Cuberite User's Manual"
 	head_title = title
@@ -41,7 +41,7 @@ def main():
 		timestamp=timestamp,
 		title=title,
 		head_title=head_title,
-		commit_approx=commit_approx))
+		commit_id=commit_id))
 	# Copy the static stuff to the out directory.
 	os.system("cp -r " + input_directory + "/static/* " + output_directory + "/")
 
@@ -137,7 +137,7 @@ def generate_content(toc, sections):
 def generate_timestamp():
 	return time.strftime("%d %B %Y", time.localtime(time.time()))
 
-def generate_commit_approx():
+def generate_commit_id():
 	return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip()
 
 # Run the main function.
