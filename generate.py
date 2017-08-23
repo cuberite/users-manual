@@ -3,6 +3,7 @@
 import string
 import time
 import os
+import subprocess
 
 ## TODO:
 # Fix the static asset copying.
@@ -29,6 +30,8 @@ def main():
 	content = generate_content(toc, sections)
 	# Get the timestamp.
 	timestamp = generate_timestamp()
+	# Get the first 7 of git commit SHA
+	commit_id = generate_commit_id()
 	# Titles are hardcoded for now, change this when we add multipage support.
 	title = "Cuberite User's Manual"
 	head_title = title
@@ -37,7 +40,8 @@ def main():
 		f.write(template.safe_substitute(content=content,
 		timestamp=timestamp,
 		title=title,
-		head_title=head_title))
+		head_title=head_title,
+		commit_id=commit_id))
 	# Copy the static stuff to the out directory.
 	os.system("cp -r " + input_directory + "/static/* " + output_directory + "/")
 
@@ -48,8 +52,8 @@ def load_template():
 
 def load_sections():
 	# First, define an empty dictionary to contain the section data.
-	# This dictionary will consist of keys of section names, with values of 
-	# dictionaries with keys of subsection names and values containing 
+	# This dictionary will consist of keys of section names, with values of
+	# dictionaries with keys of subsection names and values containing
 	# subsection data. An example:
 	#
 	# dict = {
@@ -132,6 +136,9 @@ def generate_content(toc, sections):
 
 def generate_timestamp():
 	return time.strftime("%d %B %Y", time.localtime(time.time()))
+
+def generate_commit_id():
+	return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip()
 
 # Run the main function.
 main()
