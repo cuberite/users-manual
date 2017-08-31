@@ -135,10 +135,12 @@ def generate_content(toc, sections):
 		return "\n".join(content)
 
 def generate_timestamp():
-	return time.strftime("%d %B %Y", time.localtime(time.time()))
+	date = time.strptime(subprocess.check_output(['git', 'log', '-1', '--format=%cd']).strip().decode(),
+	"%a %b %d %H:%M:%S %Y %z")
+	return time.strftime("%d %B %Y", date)
 
 def generate_commit_id():
-	return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip()
+	return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode()
 
 # Run the main function.
 main()
