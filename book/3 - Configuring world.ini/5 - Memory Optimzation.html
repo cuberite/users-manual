@@ -1,5 +1,5 @@
 <p>
-	A chunk is a 16x16x256 area of blocks. Cuberite performs a save cycle every 5 minutes.
+	A chunk is a 16x16x256 segment of blocks. Cuberite performs a save cycle every 5 minutes.
 	In a save cycle, all unused chunks are saved to disk and then removed from RAM. Saves cause
 	a drop in memory usage. If the number of unused chunks waiting to be saved exceeds 
 	<code>UnusedChunkCap</code>, Cuberite will perform an early save cycle to free RAM earlier.
@@ -8,12 +8,8 @@
 <p>
 	If Cuberite is using too much RAM when the server is under load, lowering <code>UnusedChunkCap</code>
 	from its default of 1000 may help significantly. Setting the value to 0 means chunks are always saved
-	immediately when they are no longer used.
-</p>
-
-<p>
-	Alternatively, if you'd like Cuberite to maximize performance and utilize more RAM, 
-	increase <code>UnusedChunkCap</code>.
+	immediately when they are no longer used. Alternatively, if you'd like Cuberite to maximize performance
+	and utilize more RAM, increase <code>UnusedChunkCap</code>.
 </p>
 
 <p>
