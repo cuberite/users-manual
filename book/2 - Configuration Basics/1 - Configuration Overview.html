@@ -1,48 +1,87 @@
-<p>
+<p lang="en">
 	Cuberite can be configured by editing various files. Below is a list of all such files:
+</p>
+<p lang="ko">
+	Cuberite는 다양한 파일을 편집하여 구성 할 수 있습니다. 아래는 파일들의 목록입니다.
 </p>
 
 <dl>
 	<dt>settings.ini</dt>
-	<dd>
+	<dd lang="en">
 		The main configuration file, which contains server-wide configuration variables.
 	</dd>
+	<dd lang="ko">
+		서버 전체의 구성 변수를 포함하는 주 구성 파일입니다.
+	</dd>
+
 	<dt>webadmin.ini</dt>
-	<dd>
+	<dd lang="en">
 		Allows you to tweak the web admin interface, which is available at <code>http://localhost:8080</code> or <code>http://&lt;Server IP address&gt;:8080</code> by default.
 	</dd>
+	<dd lang="ko">
+		기본적으로 <code> http : // localhost : 8080 </code> 또는 <code> http : // <서버 IP 주소> : 8080 </code>을 통해 웹 관리 인터페이스를 조정할 수 있습니다.
+	</dd>
+
 	<dt>&lt;World name&gt;/world.ini</dt>
-	<dd>
+	<dd lang="en">
 		This file configures world-specific aspects. This is where you choose your game mode. See {{3.3 - GameMode}}.
 		Note that each world has its own <code>world.ini</code> file, each stored in <code>&lt;World name&gt;/world.ini</code>.
 	</dd>
+	<dd lang="ko">
+		이 파일은 세계의 구체적인 설정을합니다. 이 파일에서 게임 모드를 선택하세요. {{3.3 - 게임모드}}를보세요.
+		각 세계에는 <code> & lt; World name & gt; / world.ini </code>에 각각의 <code> world.ini </code> 파일이 있습니다.
+	</dd>
+
 	<dt>monsters.ini</dt>
-	<dd>
+	<dd lang="en">
 		Allows you to tweak monster behaviour.
 	</dd>
+	<dd  lang="ko">
+		몬스터의 행동을 바꿀 수 있는 파일입니다.
+	</dd>
+
 	<dt>motd.txt</dt>
-	<dd>
+	<dd lang="en">
 		The Message of the Day, which is shown to players upon joining your server.
 	</dd>
+	<dd lang="ko">
+		플레이어가 서버에 접속할 때 보여지는 메세지 설정 파일입니다.
+	</dd>
+
 	<dt>crafting.txt, brewing.txt, furnace.txt</dt>
 	<dd>
 		These three files allow you to tweak crafting, brewing, and furnace recipes.
 	</dd>
 	<dt>plugins/...</dt>
-	<dd>
+	<dd lang="en">
 		Many plugins have their own configuration files. For instance, the WorldEdit config is <code>plugins/WorldEdit/config.cfg</code>
 	</dd>
+	<dd lang="ko">
+		많은 플러그인들은 자체 구성 파일이 있습니다. 예를 들어 WorldEdit 구성은 <code> plugins / WorldEdit / config.cfg </code>입니다.
+	</dd>
+
 	<dt>favicon.png</dt>
-	<dd>
+	<dd lang="en">
 		This is the icon that will appear in the Minecraft server list. You may replace it with your own.
 		The icon dimensions musts be 64x64.
 	</dd>
+	<dd lang="ko">
+		이것은 Minecraft 서버 목록에 나타날 아이콘입니다. 원하는 아이콘으로 변경하셔도 되지만,
+		아이콘 크기는 64x64 이어야합니다.
+	</dd> 
+
 	<dt>items.ini</dt>
-	<dd>
+	<dd lang="en">
 		Edit item IDs. You probably shouldn't edit this file unless you know what you're doing.
+	</dd>
+	<dd lang="ko">
+		아이템 ID를 수정하는 파일입니다. 잘 모르는 경우 건드리지 마세요.
 	</dd>
 </dl>
 
-<aside class="infobox">
+<aside lang="en" class="infobox">
 	In all <code>.ini</code> files, lines starting with <code>;</code> are comments, and in all <code>.txt</code> files, lines starting with <code>#</code> are comments.
+</aside>
+<aside lang="ko" class="infobox">
+	모든 <code> .ini </code> 파일에서는 <code>; </code>로 시작하는 줄은 주석이며 모든 <code> .txt </code> 파일에서 <code>#</code>로 시작하는 줄ㄹ은 주석입니다.
 </aside>
