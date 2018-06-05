@@ -1,0 +1,42 @@
+<p lang="ko">
+	Cuberite는 다중 세계를 지원합니다. 각 세계에는 자체 <code> world.ini </code> 파일이 있습니다.
+	<code> settings.ini </code>를 편집하여 세계를 추가 할 수 있습니다.
+	이 방법의 예제는 아래와 같습니다.
+</p>
+
+<h4 lang="ko">세계 추가하기</h4>
+
+<figure class="codebox">
+<pre><code>[Worlds]
+DefaultWorld=world
+World=world_nether
+World=world_the_end
+World=myNewWorld
+World=HappyLand
+</code></pre>
+</figure>
+
+<p lang="ko">
+	위의 예에서는 서버에 2 개의 추가 세계가 추가되었습니다.
+	이 작업은 자동으로 <code> myNewWorld / world.ini </code> 및 <code> HappyLand / world.ini </code> 
+	라는 두 개의 설정 파일을 생성합니다.
+</p>
+
+<h4 lang="ko">차원들 (세계 타입)</h4>
+
+<p lang="ko">
+	nether 유형의 세계를 만들려면 월드 네임에 <code> _nether </code>를 뒤에 추가해야합니다.
+	예 : <code> World = myHellishWorld_nether </code>. 이렇게하면 nether로 미리 구성된 <code> world.ini </code>가 만들어집니다.
+	최종 세계의 경우 동일한 규칙이 적용되며, <code> _the_end </code> 를 뒤에 추가하십시오.
+	기본 <code> world.ini </code>가 만들어지면 마음대로 변경할 수 있습니다.		
+</p>
+
+<p lang="ko">
+	<code> _nether </code> 및 <code> _the_end </code>는 <code> world.ini </code>가 있는 경우에만 사용됩니다.
+	서버는 기본 world.ini를 사용하도록 지정합니다. world.ini가 있으면 다른 옵션은 작동하지 않으며 차원은 <code> world.ini </code>의 <code> Dimension </code> 옵션으로
+	<code> _end </code>옵션은 이전 Cuberite 버전과의 호환성을 위해 <code> _the_end </code>옵션과 같이 취급됩니다.
+</p>
+
+<p lang="ko">
+	이 섹션의 나머지 부분은 세계를 연결시키고 그 안에서 플레이하는 것을 다룹니다.
+</p>

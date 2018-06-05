@@ -1,0 +1,68 @@
+<p lang="ko">
+		이 섹션에서는 Cuberite가 월드 청크를 저장할지 여부와 세계 파일의 압축 수준을 지정합니다.
+</p>
+
+<h4 lang="ko">가능한 옵션들</h4>
+
+<figure>
+<table>
+	<thead>
+		<tr>
+			<th lang="ko">변수</th>
+			<th lang="ko">의미</th>
+			<th lang="ko">기본값</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td lang="ko" data-label="Variable">스키마</td>
+			<td lang="ko" data-label="Meaning">월드 청크를 저장할지 여부를 선택합니다. "Default", "Anvil" and "Forgetful" 세개중 하나를 고르세요. 자세한 설명은 아래 표를 참고하세요.</td>
+			<td lang="ko" data-label="Default">기본t</td>
+		</tr>
+		<tr>
+			<td lang="ko" data-label="Variable">압축률</td>
+			<td lang="ko" data-label="Meaning">월드 파일의 압축률을 정합니다. 숫자가 낮을수록 파일 크기가 커지지만,퍼포먼스가 약간 증가합니다. 숫자가 클수록 파일 크기는 작아지지만, 퍼포먼스가 낮아집니다. 기본설정으로 두는 걸 추천합니다.</td>
+		</tr>
+	</tbody>
+</table>
+</figure>
+
+<h4 lang="ko">스키마 옵션들</h4>
+
+<figure>
+<table>
+	<thead>
+		<tr>
+			<th lang="ko">스키마</th>
+			<th lang="ko">파일 형식</th>
+			<th lang="ko">설명</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td lang="ko" data-label="Schema">기본</td>
+			<td lang="ko" data-label="File Type">.mca</td>
+			<td lang="ko" data-label="Description">이것은 Anvil의 별명입니다.</td>
+		</tr>
+		<tr>
+			<td lang="ko" data-label="Schema">Anvil</td>
+			<td lang="ko" data-label="File Type">.mca</td>
+			<td lang="ko" data-label="Description">청크를 저장합니다. 스토리지는 다른 Minecraft 관련 도구 및 프로그램과 호환됩니다. MCA 파일은 world 폴더의 "region"하위 폴더에 저장되고 "level.dat"파일은 world 폴더 내에 생성됩니다.</td>
+		</tr>
+		<tr>
+			<td lang="ko" data-label="Schema">Forgetful</td>
+			<td lang="ko" data-label="File Type">N/A</td>
+			<td lang="ko" data-label="Description">청크를 저장하지 않습니다. 청크가 로드되지 않으면 변경된 값들은 없어집니다. 공용서버에서 사용하는데 적합합니다. Cuberite는 자체 스키마로 청크를 로드한다는 것을 명심하세요.</td>
+		</tr>
+	</tbody>
+</table>
+</figure>
+
+<h4 lang="ko">기본 설정</h4>
+
+<figure class="codebox">
+<pre><code>[Storage]
+Schema=Default
+CompressionFactor=6
+</code></pre>
+</figure>

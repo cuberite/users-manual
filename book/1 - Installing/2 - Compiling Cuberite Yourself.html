@@ -2,18 +2,10 @@
     Compiling yourself takes longer and is more involved, but on modern processors can lead to a speed increase of up to 1.5 to 3x.
     If your operating system or hardware is not officially supported, compiling may be the only way to run Cuberite.
 </p>
-<p lang="ko">
-    직접 컴파일하는 데 시간이 오래 걸리고 복잡하지만 현대 프로세서에서는 최대 1.5-3 배까지 속도가 향상됩니다.
-    운영 체제 또는 하드웨어가 공식적으로 지원되지 않는 경우 컴파일링만으로 Cuberite를 실행할 수 있습니다.
-</p>
 
 <p lang="en">
     The automatic compilation script is recommended for *nix users. Windows users should see the {{compilingother - Other Systems}} subsection for instructions.
     The automatic compilation script takes care of the compilation process for you. You only need to copy this command to your terminal:
-</p>
-<p lang="ko">
-    자동 컴파일 스크립트는 * nix 사용자에게 권장됩니다. Windows 사용자를 위한 안내는 {{compiling other - 다른 운영체제들}} 에 가면 하위 섹션에 있습니다.
-    자동 컴파일 스크립트는 컴파일 프로세스를 처리해줍니다. 아래 명령을 터미널에 복사하기만 하면 됩니다.
 </p>
 
 <figure class="codebox"><pre><code>sh -c "$(wget -O - https://compile.cuberite.org)"</code></pre></figure>
@@ -21,34 +13,21 @@
 <p lang="en">
     The rest of this section is for those who prefer to manually compile.
 </p>
-<p lang="ko">
-    이 섹션의 나머지 부분은 수동으로 컴파일하는 것을 선호하는 분들을 위한 부분입니다.
-</p>
 
 <aside  lang="en" class="warnbox">
     This process requires use of the command line. If you are not familiar with it, it is recommended that you use the {{1.1 - pre-compiled builds}} instead.
 </aside>
-<aside  lang="ko" class="warnbox">
-    이 프로세스는 명령 행을 사용해야합니다. 익숙하지 않은 경우 {{1.1 - 사전 컴파일 된 빌드}}를 대신 사용하는 것이 좋습니다.
-</aside>
 
 <h4  lang="en" id="compilinglinux">Linux/Mac/BSD</h4>
-<h4 lang="ko" id="compilinglinux">Linux/Mac/BSD</h4>
 
 <p lang="en">
     Compiling on Linux and related operating systems is easy and simple, although it does require some tools before you can get started. You need a C++ compiler (Clang++ or G++), a C compiler (Clang or GCC), Git, CMake and Make. A simple command to make sure these tools are installed (Ubuntu/Debian) is:
-</p>
-<p lang="ko">
-    Linux 및 관련 운영 체제에서 컴파일하는 것은 쉽고 간단하지만 시작하기 전에 몇 가지 도구가 필요합니다. C ++ 컴파일러 (Clang ++ 또는 G ++), C 컴파일러 (Clang 또는 GCC), Git, CMake 및 Make가 필요합니다. Ubuntu 와 Debian에서 이 도구들이 설치되었는지 확인하는 간단한 명령은 아래와 같습니다.
 </p>
 
 <figure class="codebox"><pre><code>sudo apt-get install clang git cmake make</code></pre></figure>
 
 <p lang="en">
     Once the tools are installed, you should clone the Git repo:
-</p>
-<p lang="ko">
-    필요한 것들이 다 설치되면, 아래의 명령어를 실행하세요.
 </p>
 
 <figure class="codebox">
@@ -60,9 +39,6 @@ cd cuberite
 <p lang="en">
     You should then run the CMake process and compile:
 </p>
-<p lang="ko">
-    그 다음, 아래의 명령어를 이용해 CMake로 컴파일하세요.
-</p>
 
 <figure class="codebox">
     <pre><code>cmake . -DCMAKE_BUILD_TYPE=RELEASE
@@ -73,45 +49,26 @@ make -j 2
 <aside lang="en" class="warnbox">
     This step may take a while on slow hardware like Raspberry Pis, up to several hours in some cases. However, subsequent compiles will be faster.
 </aside>
-<aside lang="ko" class="warnbox">
-    이 단계는 Raspberry Pis와 같은 느린 하드웨어에서 경우에 따라 수 시간이 걸릴 수 있습니다. 업데이트를 통해 컴파일은 더 빨라질 것입니다.
-</aside>
 
 <aside lang="en" class="infobox">
     For a more detailed look at Build Flags and their utility (especially if you are compiling a build on a different machine than the one your are running it on), see <a href="#buildflags">below</a>.
-</aside>
-<aside lang="ko" class="infobox">
-    Build Flags와 그 유틸리티에 대한 자세한 내용은 (특히 여러분이 사용하고있는 것과 다른 시스템에서 빌드를 컴파일하는 경우) 아래의 <a href="#buildflags">를 참조하십시오 </a>.
 </aside>
 
 <p lang="en">
     Once the compilation process is finished, the Cuberite executable will be placed inside the <code>Server</code> inside the repository that you downloaded. You can copy this folder anywhere you like, just make sure to copy the supporting files otherwise the server will not work properly.
 </p>
-<p lang="ko">
-    컴파일 프로세스가 완료되면 Cuberite 실행 파일은 다운로드 한 저장소의 <code> Server </code> 안에 배치됩니다. 원하는 위치에 폴더를 복사 할 수 있지만 지원 파일을 꼭 복사하세요. 그렇지 않으면 서버가 제대로 작동하지 않습니다.
-</p>
 
 <h4 lang="en" id="compilingother">Other Systems</h4>
-<h4 lang="ko" id="compilingother">다른 운영체제들</h4>
 
 <p lang="en">
     For compiling on Windows or other systems, please see <a href="https://github.com/cuberite/cuberite/blob/master/COMPILING.md">COMPILING.md</a> in the main repository.
 </p>
-<p lang="ko">
-    Windows 또는 다른 시스템에서 컴파일하는 경우 기본 저장소의 <a href="https://github.com/cuberite/cuberite/blob/master/COMPILING.md"> COMPILING.md </a>를 참조하십시오.
-</p>
 
 <h4 lang="en" id="compilingother">Other Systems</h4>
-<h4 lang="ko" id="buildflags">Build Flags</h4>
 
 <p lang="en">
     For compiling on Windows or other systems, please see <a href="https://github.com/cuberite/cuberite/blob/master/COMPILING.md">COMPILING.md</a> in the main repository.
 </p>
-<p lang="ko">
-    Cuberite의 빌드 프로세스는 빌드를 커스터마이징 하기위한 수 많은 플래그들을 지원합니다.
-    CMake 구성 명령에 <code>-DFlag_name = Value </code>를 추가하여 이 플래그를 사용하세요.
-    예를 들어 테스트를 활성화하려면<code> SELF_TEST </code>에 다음 플래그를 사용하여 하세요.<code> -DSELF_TEST = ON </code>
-<p>
 
     <dl>
         <dt lang="en">BUILD_TOOLS</dt>
@@ -139,31 +96,5 @@ make -j 2
             Disables optimizations for the build host. This is important when building on a different machine from the one you will
             run Cuberite on as the build machine may support instructions the final machine does not. This flag only has any effect
             on linux. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
-        </dd>
-    </dl>
-    <dl>
-        <dt>BUILD_TOOLS</dt>
-        <dd lang="ko">
-            Cuberite 도구를 빌드에 추가합니다. 현재 MCADefrag 및 ProtoProxy 만 추가됩니다.
-            활성화는 <code>ON </code>로 비활성화는 <code> OFF </code>로 정의하세요.
-        </dd>
-        <dt>BUILD_UNSTABLE_TOOLS</dt>
-        <dd lang="ko">
-            빌드에 아직 작동하지 않는 도구를 추가합니다. 현재 이것은 Generator 성능 테스트입니다. 이도구들은 개발하는 데 사용됩니다.
-            도구. 활성화는 <code> ON </code>로 비활성은 <code> OFF </code>로 정의하세요.
-        </dd>
-        <dt>SELF_TEST</dt>
-        <dd lang="ko">
-            테스트 및 자체 테스트 시작 코드 생성을 가능하게 해줍니다. 테스트는 <code>ctest </code>와 <code> make test </code>으로 makefile을 사용하여 실행할 수 있습니다.
-            활성화는 <code> ON </code>로 비활성화는 <0code> OFF </0code>로 정의하세요.
-        </dd>
-        <dt>FORCE_32</dt>
-        <dd lang="ko">
-            *nix 시스템에서 32 비트 빌드를 사용하도록 빌드합니다. 활성화는 <code> ON </code>로 비활성화는 <code>OFF </code>로 정의하세요.
-        </dd>
-        <dt>NO_NATIVE_OPTIMIZATION</dt>
-        <dd lang="ko">
-            빌드 호스트에 대한 최적화를 비활성화합니다. 이 플래그는 사용자가 Cuberite를 실행할 컴퓨터와 빌드하는 컴퓨터가 다른 경우 중요합니다.
-            이 플래그는 리눅스에서만 작동합니다. 활성은 <code> ON </code>로 비활성화는 <code> OFF </code>로 정의하세요.
         </dd>
     </dl>
