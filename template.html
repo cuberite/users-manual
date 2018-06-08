@@ -60,6 +60,12 @@
 		</noscript>
 	</div>
 	<script type="text/javascript">
+
+		var userLang = navigator.language || navigator.userLanguage; 
+		if(userLang == "en-US")
+		{
+			<a href="https://book.cuberite.org/" class="manual active">Manual</a>
+		}
 		var _paq = _paq || [];
 		_paq.push(['trackPageView']);
 		_paq.push(['enableLinkTracking']);

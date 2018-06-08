@@ -64,20 +64,20 @@ def load_sections():
 	# }
 	sections = {}
 	# Now we go through all of the section directories.
-	for s in os.listdir(os.path.join(input_directory, "book")):
+	for s in os.listdir(os.path.join(input_directory, "book_ko")):
 		# We only want directories, not any other files hanging around in the
 		# book subfolder.
-		if not os.path.isdir(os.path.join(input_directory, "book", s)):
+		if not os.path.isdir(os.path.join(input_directory, "book_ko", s)):
 			continue
 		# Add the section to the dictionary.
 		sections[s] = {}
 		# Run through all of the subsections in that section and load them.
-		for ss in os.listdir(os.path.join(input_directory, "book", s)):
+		for ss in os.listdir(os.path.join(input_directory, "book_ko", s)):
 			# If we're not looking at a file, ignore it.
-			if not os.path.isfile(os.path.join(input_directory, "book", s, ss)):
+			if not os.path.isfile(os.path.join(input_directory, "book_ko", s, ss)):
 				continue
 			# Load the subsection and insert it into the sections dict.
-			with open(os.path.join(input_directory, "book", s, ss), "r") as ss_file:
+			with open(os.path.join(input_directory, "book_ko", s, ss), "r") as ss_file:
 				sections[s][os.path.splitext(ss)[0]] = ss_file.read()
 	# Return the generated sections.
 	return sections
