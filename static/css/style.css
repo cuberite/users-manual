@@ -277,6 +277,13 @@ h2.manual {
 	font-style: normal;
 	font-weight: normal;
 }
+.codebox code::selection {
+    background: #eee;
+}
+.codebox code::-moz-selection {
+    background: #eee;
+}
+
 .infobox, .warnbox {
 	font-size: 0.938em;
 	padding: 1.000em;
