@@ -6,59 +6,18 @@
 	<title>${head_title}</title>
 	<meta name="description" content="This is the Cuberite User's Manual. It is intended as a guide on how to operate the basics of Cuberite, as well as an introduction to some advanced features.">
 	<link rel="canonical" href="https://book.cuberite.org/">
-	<link rel="stylesheet" href="css/style.css">
+	<style>
+		${css}
+	</style>
 </head>
 <body>
-	<div id="navigation">
-		<div id="logo">
-			<a href="https://cuberite.org/">Cuberite</a>
-		</div>
-		<div id="navigation-links">
-			<a href="https://forum.cuberite.org/" class="forum">Forum</a>
-			<a href="https://book.cuberite.org/" class="manual active">Manual</a>
-			<a href="https://cuberite.org/support/" class="support">Support</a>
-			<a href="https://cuberite.org/plugins/" class="plugins">Plugins</a>
-			<a href="https://cuberite.org/contribute/" class="contribute">Contribute</a>
-		</div>
-	</div>
-	<div id="manual">
-		<div id="manual-body">
-			<h2 class="manual">${title}</h2>
-			<p>Updated on ${timestamp}, Commit: <a href="https://github.com/cuberite/users-manual/commit/${commit_id}">${commit_id}</a></p>
-			${content}
-		</div>
-	</div>
-	<div id="footer">
-		<div id="mobile-links">
-			<a href="https://cuberite.org/" class="home show-mobile">Home</a>
-			<a href="https://book.cuberite.org/" class="manual show-mobile active">Manual</a>
-			<a href="https://cuberite.org/support/" class="support show-mobile">Support</a>
-			<a href="https://cuberite.org/plugins/" class="plugins show-mobile">Plugins</a>
-			<input type="checkbox" id="footer-links-toggle"/>
-			<div id="footer-links">
-				<label for="footer-links-toggle">More</label>
-				<div id="footer-links-body">
-					<a href="https://cuberite.org/about/">About</a>
-					<a href="https://forum.cuberite.org/" class="show-mobile-block">Forum</a>
-					<a href="https://cuberite.org/contribute/" class="show-mobile-block">Contribute</a>
-					<a href="https://cuberite.org/news/">News</a>
-					<a href="https://salt.bountysource.com/teams/cuberite">Donate</a>
-					<a href="https://webchat.freenode.net/?channels=cuberite">IRC</a>
-					<a href="http://api-docs.cuberite.org/">API Docs</a>
-					<a href="https://cuberite.org/privacy/">Privacy</a>
-					<a href="https://github.com/cuberite/users-manual/">Book Source</a>
-					<div id="media-links">
-						<a href="https://plus.google.com/+cuberiteorg" id="google"></a>
-						<a href="https://twitter.com/cuberiteproject" id="twitter"></a>
-						<a href="https://www.youtube.com/c/cuberiteorg" id="youtube"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<noscript>
-			<img src="https://analytics.cuberite.org/piwik.php?idsite=2&amp;rec=1" alt=""/>
-		</noscript>
-	</div>
+	<a class="return-link" href="https://cuberite.org/">&lt;- Return to Cuberite.org</a>
+	<h1>${title}</h1>
+	<p>Updated on ${timestamp}, Commit: <a href="https://github.com/cuberite/users-manual/commit/${commit_id}">${commit_id}</a></p>
+	${content}
+	<noscript>
+		<img class="hidden" src="https://analytics.cuberite.org/piwik.php?idsite=2&amp;rec=1" alt=""/>
+	</noscript>
 	<script type="text/javascript">
 		var _paq = _paq || [];
 		_paq.push(['trackPageView']);
