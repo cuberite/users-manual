@@ -300,7 +300,8 @@ button {
 		content: " (" attr(href) ")";
 		font-size: 80%;
 	}
-	.return-link {
+	.return-link,
+	.top-button {
 		display: none;
 	}
 	.infobox, .warnbox {
