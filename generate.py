@@ -44,6 +44,8 @@ def main():
 		title=title,
 		head_title=head_title,
 		commit_id=commit_id))
+	# Copy the static stuff to the out directory.
+	os.system("cp -r " + input_directory + "/static/* " + output_directory + "/")
 
 def load_template():
 	with open(os.path.join(input_directory, "template.html"), "r") as template_file:
