@@ -32,16 +32,14 @@
 }
 html {
 	animation: fadein .7s;
-	margin: 0 auto;
-	max-width: 46em;
-	padding: 5% 1.250em 5em;
-	text-align: justify;
-}
-body {
 	background: #F4F7F6;
 	color: #464646;
 	font-family: montserratregular,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	line-height: 1;
+	font-size: calc(0.875em + .2vw);
+	line-height: 1.625em;
+	margin: 0 auto;
+	max-width: 46em;
+	padding: 4% 1.250em 5em;
 }
 h1,
 h2,
@@ -52,7 +50,7 @@ dt,
 .section-header {
 	font-style: normal;
 	font-weight: normal;
-	text-align: left;
+	line-height: 1.250em;
 	text-transform: uppercase;
 }
 h1:before {
@@ -62,8 +60,8 @@ h1:before {
 	vertical-align: top;
 }
 h1 {
-	font-size: 1.8em;
-	margin: 0 0 0.625em 0;
+	font-size: 1.750em;
+	margin: 0 0 0.500em 0;
 }
 h2 {
 	font-size: 1.500em;
@@ -85,8 +83,8 @@ h5, dt {
 	margin: 1.125em 0 0.625em 0;
 }
 p {
-	line-height: 1.6;
 	margin: 0 0 0.938em 0;
+	text-align: justify;
 }
 em {
 	font-style: italic;
@@ -95,15 +93,14 @@ strong {
 	font-weight: bold;
 }
 pre {
-	margin: 0;
 	white-space: pre-line;
 }
 dd {
 	margin: 0 0 0 2.000em;
 }
 ul {
-	line-height: 1.6;
 	margin: 0 0 1.563em 0;
+	padding: 0;
 }
 li {
 	margin: 0 0 0 2.000em;
@@ -114,13 +111,13 @@ table {
 }
 th {
 	background: #CFCFCF;
-	padding: 1.000em;
+	padding: 0.750em 1.000em;
 	text-transform: uppercase;
 	white-space: nowrap;
 }
 td {
 	background: #DEDEDE;
-	padding: 1.000em;
+	padding: 0.750em 1.000em;
 }
 code {
 	font-style: italic;
@@ -136,7 +133,7 @@ a:focus {
 }
 .return-link {
 	display: block;
-	margin: 0 0 1.125em;
+	margin: 0 0 0.875em;
 	text-align: right;
 }
 /* Combined Rules */
@@ -157,14 +154,12 @@ dd,
 .warnbox,
 input {
 	font-family: montserratlight,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	line-height: 1.6;
 }
 /* Boxes */
 .codebox {
 	background: #DEDEDE;
 	display: block;
 	font-family: monospace;
-	line-height: 1.6;
 	max-height: 15.000em;
 	overflow: auto;
 	padding: 0.625em;
@@ -231,7 +226,6 @@ input {
 }
 input {
 	background: #fff;
-	line-height: 1.625em;
 	margin: 0.938em 0 0 0;
 	width: 13.750em;
 }
