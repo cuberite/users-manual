@@ -39,7 +39,7 @@ html {
 	line-height: 1.625em;
 	margin: 0 auto;
 	max-width: 46em;
-	padding: 4% 1.250em;
+	padding: 4% 1.250em 5em;
 }
 h1,
 h2,
@@ -195,6 +195,25 @@ input {
 	color: #4D4433;
 	background: #EDDDB0;
 }
+.top-button {
+	background: #464646;
+	border-radius: 4em;
+	box-shadow: 0 0.125em 0.125em rgba(0, 0, 0, .15);
+	color: #F4F7F6;
+	font-size: 2em;
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.375em;
+	text-align: center;
+}
+.top-button:hover,
+.top-button:focus {
+	background: #545454;
+	color: #F4F7F6;
+}
 /* Inputs */
 button,
 input {
@@ -276,7 +295,8 @@ button {
 		content: " (" attr(href) ")";
 		font-size: 80%;
 	}
-	.return-link {
+	.return-link,
+	.top-button {
 		display: none;
 	}
 	.infobox, .warnbox {

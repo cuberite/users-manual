@@ -19,6 +19,7 @@ single_page = True
 def main():
 	# First off, load all of the data from disk into memory.
 	template = load_template()
+	css = load_css()
 	sections = load_sections()
 	# Run through the sections and linkify.
 	for s in sections:
@@ -37,7 +38,8 @@ def main():
 	head_title = title
 	# Write the actual content.
 	with open(os.path.join(output_directory, "index.html"), "w") as f:
-		f.write(template.safe_substitute(content=content,
+		f.write(template.safe_substitute(css=css,
+		content=content,
 		timestamp=timestamp,
 		title=title,
 		head_title=head_title,
@@ -49,6 +51,11 @@ def load_template():
 	with open(os.path.join(input_directory, "template.html"), "r") as template_file:
 		# Read all of the data from the file and return it.
 		return string.Template(template_file.read())
+
+def load_css():
+	with open(os.path.join(input_directory, "style.css"), "r") as css_file:
+		# Read all of the data from the file and return it.
+		return css_file.read()
 
 def load_sections():
 	# First, define an empty dictionary to contain the section data.
