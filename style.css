@@ -112,6 +112,7 @@ table {
 th {
 	background: #CFCFCF;
 	padding: 0.750em 1.000em;
+	text-align: left;
 	text-transform: uppercase;
 	white-space: nowrap;
 }
