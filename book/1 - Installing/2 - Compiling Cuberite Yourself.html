@@ -38,8 +38,10 @@ cd cuberite
 	You should then run the CMake process and compile:
 </p>
 
-<figure class="codebox"><pre><code>cmake . -DCMAKE_BUILD_TYPE=RELEASE
-make -j 2
+<figure class="codebox"><pre><code>mkdir Release
+cd Release
+cmake -DCMAKE_BUILD_TYPE=RELEASE ..
+make -j`nproc`
 </code></pre></figure>
 
 <aside class="warnbox">
