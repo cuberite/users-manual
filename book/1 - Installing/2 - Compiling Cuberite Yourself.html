@@ -4,95 +4,16 @@
 </p>
 
 <p>
-	The automatic compilation script is recommended for *nix users. Windows users should see the {{compilingother - Other Systems}} subsection for instructions.
+	The automatic compilation script is recommended for *nix users. 
 	The automatic compilation script takes care of the compilation process for you. You only need to copy this command to your terminal:
 </p>
 
 <figure class="codebox"><pre><code>sh -c "$(wget -O - https://compile.cuberite.org)"</code></pre></figure>
 
 <p>
-	The rest of this section is for those who prefer to manually compile.
+	If you prefer to manually compile, or want to compile for Windows, please see <a href="https://github.com/cuberite/cuberite/blob/master/COMPILING.md">COMPILING.md</a> in the main repository.
 </p>
 
 <aside class="warnbox">
 	This process requires use of the command line. If you are not familiar with it, it is recommended that you use the {{1.1 - pre-compiled builds}} instead.
 </aside>
-
-<h4 id="compilinglinux">Linux/Mac/BSD</h4>
-
-<p>
-	Compiling on Linux and related operating systems is easy and simple, although it does require some tools before you can get started. You need a C++ compiler (Clang++ or G++), a C compiler (Clang or GCC), Git, CMake and Make. A simple command to make sure these tools are installed (Ubuntu/Debian) is:
-</p>
-
-<figure class="codebox"><pre><code>sudo apt-get install clang git cmake make</code></pre></figure>
-
-<p>
-	Once the tools are installed, you should clone the Git repo:
-</p>
-
-<figure class="codebox"><pre><code>git clone --recursive https://github.com/cuberite/cuberite.git
-cd cuberite
-</code></pre></figure>
-
-<p>
-	You should then run the CMake process and compile:
-</p>
-
-<figure class="codebox"><pre><code>cmake . -DCMAKE_BUILD_TYPE=RELEASE
-make -j 2
-</code></pre></figure>
-
-<aside class="warnbox">
-	This step may take a while on slow hardware like Raspberry Pis, up to several hours in some cases. However, subsequent compiles will be faster.
-</aside>
-
-<aside class="infobox">
-	For a more detailed look at Build Flags and their utility (especially if you are compiling a build on a different machine than the one your are running it on), see <a href="#buildflags">below</a>.
-</aside>
-
-<p>
-	Once the compilation process is finished, the Cuberite executable will be placed inside the <code>Server</code> inside the repository that you downloaded. You can copy this folder anywhere you like, just make sure to copy the supporting files otherwise the server will not work properly.
-</p>
-
-<h4 id="compilingother">Other Systems</h4>
-
-<p>
-	For compiling on Windows or other systems, please see <a href="https://github.com/cuberite/cuberite/blob/master/COMPILING.md">COMPILING.md</a> in the main repository.
-</p>
-
-<h4 id="buildflags">Build Flags</h4>
-
-<p>
-	Cuberite's build process supports a large number of flags for customising the builds.
-	Use these flags by adding <code>-DFlag_name=Value</code> to the cmake configuration command. For example to enable test
-	generation using the <code>SELF_TEST</code> flag add: <code>-DSELF_TEST=ON</code>
-<p>
-
-<dl>
-	<dt>BUILD_TOOLS</dt>
-	<dd>
-		Adds the Cuberite tools to the build. At the moment only MCADefrag and ProtoProxy are added. Define as <code>ON</code> to
-		enable. Define as <code>OFF</code> to disable.
-	</dd>
-	<dt>BUILD_UNSTABLE_TOOLS</dt>
-	<dd>
-		Adds tools that are not working yet to the build. Currently this is only the Generator Performance Test. Used for developing these
-		tools. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
-	</dd>
-	<dt>SELF_TEST</dt>
-	<dd>
-		Enables generation of tests and self-test startup code. Tests can be run with <code>ctest</code> and with makefiles
-		<code>make test</code>. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
-	</dd>
-	<dt>FORCE_32</dt>
-	<dd>
-		Forces the build to use 32 bit builds on *nix systems. Define as <code>ON</code> to enable. Define as <code>OFF</code> to
-		disable.
-	</dd>
-	<dt>NO_NATIVE_OPTIMIZATION</dt>
-	<dd>
-		Disables optimizations for the build host. This is important when building on a different machine from the one you will
-		run Cuberite on as the build machine may support instructions the final machine does not. This flag only has any effect
-		on linux. Define as <code>ON</code> to enable. Define as <code>OFF</code> to disable.
-	</dd>
-</dl>
