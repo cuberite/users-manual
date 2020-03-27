@@ -20,17 +20,17 @@
 <h4>Activating a plugin</h4>
 
 <p>
-	After downloading a plugin, you need to put it in the <code>plugins/</code> directory.
+	After downloading a plugin, you need to put it in the <code>Plugins/</code> directory.
 	You should then edit the <code>[Plugins]</code> sections of the <code>settings.ini</code> file and add a plugin entry there.
 	Below is an example of adding a plugin called <code>MyNewPlugin</code>.
 </p>
 
 <figure class="codebox">
 <pre><code>[Plugins]
-Plugin=Core
-Plugin=TransApi
-Plugin=MyNewPlugin
-;Plugin=MyDisabledPlugin
+Core=1
+ChatLog=1
+MyNewPlugin=1
+MyDisabledPlugin=0
 </code></pre>
 </figure>
 
