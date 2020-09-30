@@ -25,7 +25,7 @@ The idea is that the generator, combines the files to form 2 outputs - one stand
 
 Here is a guide to writing:
 
-Links to another section are automatically generated like so - `{{Section Number - Text of Link}}`.
+Links to another section are automatically generated like so --> `{{Section Number - Text of Link}}`.
 
 Here is a list of semantically correct and styled HTML elements for specific purposes:
 
