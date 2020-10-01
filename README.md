@@ -1,12 +1,12 @@
-users-manual
+Users_Manual
 ============
 
-A User's Manual for Cuberite
+A User's Manual for `CUBERITE`
 
 There is an automatically updated version of the manual at [book.cuberite.org](https://book.cuberite.org), which updates every hour if a new commit has been pushed to this repository.
 
 
-Developers' Area
+Developer's Area
 ----------------
 
 This book is structured as individual HTML snippets for each chapter. The filename describes the section number and also the name of the section, separated by " - ".
