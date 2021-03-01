@@ -16,7 +16,7 @@
         <tbody>
         <tr>
             <td data-label="Variable">DeepSnow</td>
-            <td data-label="Meaning"></td>
+            <td data-label="Meaning">Enables/Disables that snow can stack up on itself during downfall.</td>
             <td data-label="Default">1</td>
         </tr>
         <tr>
@@ -26,17 +26,36 @@
         </tr>
         <tr>
             <td data-label="Variable">TNTShrapnelLevel</td>
-            <td data-label="Meaning"></td>
+            <td data-label="Meaning">
+                Sets the blocks that should fly away after an explosion. This is disables at the moment.<br>
+                0: No blocks are blown away.<br>
+                1: Only the ones affected by gravity.<br>
+                2: Any block is affected.
+            </td>
             <td data-label="Default">2</td>
         </tr>
         <tr>
             <td data-label="Variable">WaterSimulator</td>
-            <td data-label="Meaning"></td>
+            <td data-label="Meaning">
+                Sets the water simulator.<br>
+                Vanilla: Notchian-like behaviour.<br>
+                Floody: A way more aggressive water distribution.<br>
+                Vaporise: Water will disappear (mostly used for nether behaviour).<br>
+                null: No water simulation.<br>
+                Vanilla and Floody can be further manipulated. See {{3.14 - here}}.
+            </td>
             <td data-label="Default">Vanilla</td>
         </tr>
         <tr>
             <td data-label="Variable">LavaSimulator</td>
-            <td data-label="Meaning"></td>
+            <td data-label="Meaning">
+                Sets the lava simulator.<br>
+                Vanilla: Notchian-like behaviour.<br>
+                Floody: A way more aggressive lava distribution.<br>
+                Vaporise: Lava will disappear.<br>
+                null: No lava simulation.<br>
+                Vanilla and Floody can be further manipulated. See {{3.15 - here}}.
+            </td>
             <td data-label="Default">Vanilla</td>
         </tr>
         <tr>
@@ -46,7 +65,11 @@
         </tr>
         <tr>
             <td data-label="Variable">RedstoneSimulator</td>
-            <td data-label="Meaning"></td>
+            <td data-label="Meaning">
+                Sets the redstone simulator.<br>
+                Incremental: notchian-like behaviour.<br>
+                noop: disables redstone.
+            </td>
             <td data-label="Default">Incremental</td>
         </tr>
         </tbody>
