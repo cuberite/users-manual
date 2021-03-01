@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td data-label="Variable">UnusedChunkCap</td>
-                <td data-label="Meaning">Maximum number of chunks in memory before the server starts to start an early save (default are five minutes).</td>
+                <td data-label="Meaning">Maximum number of chunks in memory before the server starts to start an early save (See below).</td>
                 <td data-label="Default">1000</td>
             </tr>
             <tr>
@@ -62,3 +62,31 @@
         </tbody>
     </table>
 </figure>
+
+<h4>Unused Chunk Cap</h4>
+<p>
+    A chunk is a 16x16x256 segment of blocks. Cuberite performs a save cycle every 5 minutes.
+    In a save cycle, all unused chunks are saved to disk and then removed from RAM. Saves cause
+    a drop in memory usage. If the number of unused chunks waiting to be saved exceeds
+    <code>UnusedChunkCap</code>, Cuberite will perform an early save cycle to free RAM earlier.
+</p>
+
+<p>
+    If Cuberite is using too much RAM when the server is under load, lowering <code>UnusedChunkCap</code>
+    from its default of 1000 may help significantly. Setting the value to 0 means chunks are always saved
+    immediately when they are no longer used. Alternatively, if you'd like Cuberite to maximize performance
+    and utilize more RAM, increase <code>UnusedChunkCap</code>.
+</p>
+
+<p>
+    The effect of <code>UnusedChunkCap</code> will likely be unnoticeable on light load, when the cap
+    is never being reached and save cycles are being performed in 5 minutes intervals. In contrast to that,
+    the effect is often significant when travelling fast and loading many chunks, such as flying
+    at high speed.
+</p>
+
+<p>
+    The optimal value varies depending on settings, system hardware, and playstyle. We currently have no
+    official recommended value, and recommend trial and error. A more intuitive setting is planned for the
+    future, where the exact amount of maximum RAM desired is configured.
+</p>
