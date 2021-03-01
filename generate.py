@@ -113,12 +113,12 @@ def linkify(text):
 
 def generate_toc(sections):
 	toc = ["<div id=\"toc\">"]
-	for s in sorted(sections):
+	for s in sorted(sections, key=lambda s: int(split_section(s)[0])):
 		# Add the Section Header.
 		toc.append("<a href=\"#" + split_section(s)[0] + "\" class=\"section-header\">"  + s + "</a>")
 		toc.append("<ul>")
 		# Now the subsections.
-		for ss in sorted(sections[s]):
+		for ss in sorted(sections[s].keys(), key=lambda s: int(split_section(s)[0])):
 			toc.append("<li>" + generate_link(split_section(split_section(s)[0] + "." + ss)[0] + " - " + split_section(s)[0] + "." + ss) + "</li>")
 		toc += ["</ul>"]
 	toc.append("</div>")
