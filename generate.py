@@ -129,10 +129,10 @@ def generate_content(toc, sections):
 		content = []
 		content.append(toc)
 		content.append("<div id=\"manual-content\">")
-		for s in sorted(sections):
+		for s in sorted(sections, key=lambda s: int(split_section(s)[0])):
 			content.append("<section>")
 			content.append("<h2 id=\"" + split_section(s)[0] + "\">"  + s + "</h2>")
-			for ss in sorted(sections[s]):
+			for ss in sorted(sections[s].keys(), key=lambda s: int(split_section(s)[0])):
 				content.append("<section>")
 				content.append("<h3 id=\"" + split_section(s)[0] + "." + split_section(ss)[0] + "\">" + ss + "</h3>")
 				content.append(sections[s][ss])
