@@ -1,0 +1,31 @@
+<h4>Superflat world</h4>
+
+<p>
+	To generate a Superflat world, change the values under the <code>[Generator]</code> section to:
+</p>
+<figure class="codebox">
+<pre><code>BiomeGen=Constant
+ConstantBiome=Plains
+HeightGen=Flat
+FlatHeight=3
+ShapeGen=HeightMap
+SeaLevel=0
+Finishers=Villages
+</code></pre>
+</figure>
+
+<h4>Empty world</h4>
+<p>
+	To generate a world that only contains air, change the values under the <code>[Generator]</code> section to:
+</p>
+<figure class="codebox">
+<pre><code>BiomeGen=Constant
+ShapeGen=HeightMap
+HeightGen=Flat
+FlatHeight=0
+CompositionGen=SameBlock
+SameBlockType=air
+SameBlockBedrocked=0
+Finishers=
+</code></pre>
+</figure>
