@@ -471,7 +471,7 @@ You can read more in depth about the different methods <a href="http://cuberite.
             </td>
             <td>
                 This is a old relict. The server previously used HeightGenerators instead of ShapeGenerators.
-                This is deprecated and wont yield any overhangs or similar.
+                This is deprecated and won't yield any overhangs or similar.
                 This enables the property: "HeightGen"
             </td>
         </tr>
@@ -577,6 +577,13 @@ The settings for the HeightMap Shape Generator
 
 <figure>
     <table>
+        <thead>
+            <tr>
+                <th>Generator Type</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+
         <tr>
             <td>Flat</td>
             <td></td>
@@ -610,60 +617,50 @@ The settings for the HeightMap Shape Generator
 
 <figure>
     <table>
-        <tr>
-            <td>
-                <strong>Biomal</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>BiomalNoise3D</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>Classic</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>DebugBiomes</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>DistortedHeightmap</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>End</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>Nether</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>Noise3D</strong>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <strong>SameBlock</strong>
-            </td>
-            <td>Fills everything with the same Block.</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Generator Type</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Biomal</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>BiomalNoise3D</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Classic</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DebugBiomes</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DistortedHeightmap</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>End</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nether</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Noise3D</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SameBlock</td>
+                <td>Fills everything with the same Block.</td>
+            </tr>
+        </tbody>
     </table>
 </figure>
 
@@ -672,7 +669,7 @@ The settings for the HeightMap Shape Generator
 <h4 id="Generator_Composable_Finishers">Finishers</h4>
 
 <p id="Default_Finishers">
-    RoughRavines, WormNestCaves, WaterLakes, WaterSprings, LavaLakes, LavaSprings, OreNests, Mineshafts, Trees, Villages, SinglePieceStructures: JungleTemple|WitchHut|DesertPyramid|DesertWell, TallGrass, SprinkleFoliage, Ice, Snow, Lilypads, BottomLava, DeadBushes, NaturalPatches, PreSimulator, Animals, OverworldClumpFlowers
+    <!-- RoughRavines, WormNestCaves, WaterLakes, WaterSprings, LavaLakes, LavaSprings, OreNests, Mineshafts, Trees, Villages, SinglePieceStructures: JungleTemple|WitchHut|DesertPyramid|DesertWell, TallGrass, SprinkleFoliage, Ice, Snow, Lilypads, BottomLava, DeadBushes, NaturalPatches, PreSimulator, Animals, OverworldClumpFlowers -->
 </p>
 <figure>
     <table>
@@ -883,23 +880,30 @@ The settings for the HeightMap Shape Generator
                         <li>DesertPyramid</li>
                         <li>DesertWell</li>
                     </ul>
-                    You may select those by adding SinglePieceStructures:%YourChoices% separated by "|"
+                    You may select those by adding SinglePieceStructures:%YourChoices% separated by "|"<br>
+                    If you want to add custom models you need to add them in the Prefabs/SinglePieceStructures folder
+                    and add the file name without the file ending to the list.
                 </td>
             </tr>
             <tr>
                 <td>TallGrass</td>
+                <td>Adds the tall grass and fern to the world.</td>
             </tr>
             <tr>
                 <td>SprinkleFoliage</td>
+                <td>Generates the small flowers and similar blocks.</td>
             </tr>
             <tr>
                 <td>Ice</td>
+                <td>Adds ice to the world.</td>
             </tr>
             <tr>
                 <td>Snow</td>
+                <td>Adds snow to the world.</td>
             </tr>
             <tr>
                 <td>Lilypads</td>
+                <td>Adds lilypads to the world.</td>
             </tr>
             <tr>
                 <td>BottomLava</td>
@@ -924,31 +928,18 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>PreSimulator</td>
+                <td>The calculates the behaviour of different blocks at the point of generation instead of ticking it. This saves performance.</td>
+                <td>PreSimulatorFallingBlocks=1<br>
+                    PreSimulatorWater=1<br>
+                    PreSimulatorLava=1<br></td>
             </tr>
             <tr>
                 <td>Animals</td>
             </tr>
             <tr>
                 <td>OverworldClumpFlowers</td>
+                <td>Places flowers into the world</td>
             </tr>
         </tbody>
     </table>
 </figure>
-
-CompositionGen
-CompositionGenCacheSize=64
-
-BiomeGenCacheSize=16
-BiomeGenMultiCacheLength=128
-
-PreSimulatorFallingBlocks=1
-PreSimulatorWater=1
-PreSimulatorLava=1
-
-OverworldClumpFlowers-1=Forest, -2, 2; ForestHills, -3, 2; FlowerForest = yellowflower; redflower; lilac; rosebush
-OverworldClumpFlowers-2=Plains, -2, 1; SunflowerPlains = yellowflower; redflower; azurebluet; redtulip; orangetulip; whitetulip; pinktulip; oxeyedaisy
-OverworldClumpFlowers-3=SunflowerPlains, 1, 2 = sunflower
-OverworldClumpFlowers-4=FlowerForest, 2, 5 = allium; redtulip; orangetulip; whitetulip; pinktulip; oxeyedaisy
-OverworldClumpFlowers-5=Swampland; SwamplandM = brownmushroom; redmushroom; blueorchid
-OverworldClumpFlowers-6=MushroomIsland; MushroomShore; MegaTaiga; MegaTaigaHills; MegaSpruceTaiga; MegaSpruceTaigaHills = brownmushroom; redmushroom
-OverworldClumpFlowers-7=RoofedForest, 1, 5; RoofedForestM, 1, 5 = rosebush; peony; lilac; grass
