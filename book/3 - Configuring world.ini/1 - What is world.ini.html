@@ -16,21 +16,13 @@
 </p>
 
 <p>
-	The <code>world.ini</code> file is split into many different sections, each with a name surrounded in square brackets. For example {{3.2 - <code>[SpawnPosition]</code>}} is a section. Each section contains configuration options related to a specific feature of Cuberite.
+	The <code>world.ini</code> file is split into many different sections, each with a name surrounded in square brackets. For example {{3.4 - <code>[SpawnPosition]</code>}} is a section. Each section contains configuration options related to a specific feature of Cuberite.
 </p>
 
 <h4>Default Settings</h4>
 
 <figure class="codebox">
-<pre><code>[SpawnProtect]
-ProtectRadius=10
-
-[WorldLimit]
-LimitRadius=0
-
-[Difficulty]
-WorldDifficulty=1
-
+<pre><code>
 [General]
 Dimension=Overworld
 UnusedChunkCap=1000
@@ -45,10 +37,10 @@ BroadcastDeathMessages=1
 BroadcastAchievementMessages=1
 
 [SpawnPosition]
-MaxViewDistance=12
-X=0.000000
-Y=0.000000
-Z=0.000000
+MaxViewDistance=10
+X=0.500000
+Y=115.000000
+Z=0.500000
 PregenerateDistance=20
 
 [Storage]
@@ -58,20 +50,6 @@ CompressionFactor=6
 [Plants]
 MaxCactusHeight=3
 MaxSugarcaneHeight=3
-IsBeetrootsBonemealable=1
-IsCactusBonemealable=0
-IsCarrotsBonemealable=1
-IsCropsBonemealable=1
-IsGrassBonemealable=1
-IsMelonStemBonemealable=1
-IsMelonBonemealable=0
-IsPotatoesBonemealable=1
-IsPumpkinStemBonemealable=1
-IsPumpkinBonemealable=0
-IsSaplingBonemealable=1
-IsSugarcaneBonemealable=0
-IsBigFlowerBonemealable=1
-IsTallGrassBonemealable=1
 
 [Physics]
 DeepSnow=1
@@ -112,7 +90,7 @@ EndWorldName=world_the_end
 BiomeGen=Grown
 ShapeGen=BiomalNoise3D
 CompositionGen=Biomal
-Finishers=RoughRavines, WormNestCaves, WaterLakes, WaterSprings, LavaLakes, LavaSprings, OreNests, Mineshafts, Trees, Villages, TallGrass, SprinkleFoliage, Ice, Snow, Lilypads, BottomLava, DeadBushes, NaturalPatches, PreSimulator, Animals
+Finishers=RoughRavines, WormNestCaves, WaterLakes, WaterSprings, LavaLakes, LavaSprings, OreNests, Mineshafts, Trees, Villages, SinglePieceStructures: JungleTemple|WitchHut|DesertPyramid|DesertWell, TallGrass, SprinkleFoliage, Ice, Snow, Lilypads, BottomLava, DeadBushes, NaturalPatches, PreSimulator, Animals, OverworldClumpFlowers
 Generator=Composable
 BiomeGenCacheSize=16
 BiomeGenMultiCacheLength=128
@@ -169,6 +147,13 @@ BottomLavaLevel=10
 PreSimulatorFallingBlocks=1
 PreSimulatorWater=1
 PreSimulatorLava=1
+OverworldClumpFlowers-1=Forest, -2, 2; ForestHills, -3, 2; FlowerForest = yellowflower; redflower; lilac; rosebush
+OverworldClumpFlowers-2=Plains, -2, 1; SunflowerPlains = yellowflower; redflower; azurebluet; redtulip; orangetulip; whitetulip; pinktulip; oxeyedaisy
+OverworldClumpFlowers-3=SunflowerPlains, 1, 2 = sunflower
+OverworldClumpFlowers-4=FlowerForest, 2, 5 = allium; redtulip; orangetulip; whitetulip; pinktulip; oxeyedaisy
+OverworldClumpFlowers-5=Swampland; SwamplandM = brownmushroom; redmushroom; blueorchid
+OverworldClumpFlowers-6=MushroomIsland; MushroomShore; MegaTaiga; MegaTaigaHills; MegaSpruceTaiga; MegaSpruceTaigaHills = brownmushroom; redmushroom
+OverworldClumpFlowers-7=RoofedForest, 1, 5; RoofedForestM, 1, 5 = rosebush; peony; lilac; grass
 
 [WaterSimulator]
 Falloff=1
@@ -187,7 +172,7 @@ Flammability=50
 ReplaceFuelChance=50000
 
 [Seed]
-Seed=586392587
+Seed=775375601
 
 [WaterSprings]
 HeightDistribution=0, 0; 10, 10; 11, 75; 16, 83; 20, 83; 24, 78; 32, 62; 40, 40; 44, 15; 48, 7; 56, 2; 64, 1; 255, 0
@@ -199,5 +184,21 @@ Chance=9
 
 [Animals]
 AnimalSpawnChunkPercentage=10
+
+[SpawnProtect]
+ProtectRadius=10
+
+[Difficulty]
+WorldDifficulty=1
+
+[WorldLimit]
+LimitRadius=0
 </code></pre>
 </figure>
+<aside class="infobox">
+	This configuration file is automatically generated during world creation.
+	The following paragraphs will explain every entry in the order it's contained in the file.
+	In the the last paragraph are some examples for useful configurations.
+	To reset the configuration to default just stop the sever, delete the ini-File and restart. Please keep in mind that
+	the new file will create a different world.
+</aside>
