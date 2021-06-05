@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage("Prepare") {
             steps {
-                sh 'pip3 install html5validator'
+                sh 'sudo pip3 install html5validator'
             }
         }
         stage("Build") {
