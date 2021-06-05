@@ -1,14 +1,8 @@
 pipeline {
     agent {
-        docker 'debian'
+        docker 'cuberite/docker-ci/users-manual:latest'
     }
     stages {
-        stage("Prepare") {
-            steps {
-                sh 'sudo apt-get install python3-pip python3'
-                sh 'sudo pip3 install html5validator'
-            }
-        }
         stage("Build") {
             steps {
                 sh 'python3 generate.py'
