@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage("Prepare") {
             steps {
-                sh 'sudo apt-get install python3-pip python3'
-                sh 'sudo pip3 install html5validator'
+                sh 'apt-get install python3-pip python3'
+                sh 'pip3 install html5validator'
             }
         }
         stage("Build") {
