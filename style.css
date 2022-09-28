@@ -28,7 +28,6 @@
 	vertical-align: baseline;
 }
 html {
-	animation: fadein .7s;
 	background: hsl(0, 0%, 96%);
 	color: hsl(0, 0%, 25%);
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -37,6 +36,9 @@ html {
 	margin: 0 auto;
 	max-width: 46em;
 	padding: 4% 1.250em 5em;
+}
+body {
+	animation: fadein .7s;
 }
 h1,
 h2,
