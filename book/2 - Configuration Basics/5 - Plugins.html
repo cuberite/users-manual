@@ -1,47 +1,38 @@
 <p>
-	Plugins are an important method of customisation for Cuberite. There are many different first and third-party plugins available.
+	插件是定制Cuberite的重要方法。有许多不同的第一和第三方插件可用。
 </p>
-
 <p>
-	Cuberite plugins are written in Lua, and interact with the server through an
-	 <a href="https://api.cuberite.org/">extensive API</a>. They are
-	designed to be easy to write for anyone with basic programming experience,
-	so if existing plugins don't fill your need you can easily write your own plugins.
-	If you want to learn how to write your own plugins, check out
-	<a href="https://api.cuberite.org/Writing-a-Cuberite-plugin.html">the guide</a>.
+	Cuberite插件是用Lua编写的，并通过
+	 <a href="https://api.cuberite.org/">广泛的API</a>.是的
+	设计成易于编写的任何人有基本编程经验，
+	因此，如果现有的插件不能满足您的需求，您可以轻松地编写自己的插件。
+	如果您想学习如何编写自己的插件，请查看
+	<a href="https://api.cuberite.org/Writing-a-Cuberite-plugin.html">指南。</a>.
 </p>
-
 <p>
-	Cuberite has a <a href="https://plugins.cuberite.org/">plugin repository</a>
-	where you can upload your plugins publicly and download plugins others have
-	released.
+	Cuberite有一个插件库<a href="https://plugins.cuberite.org/">plugin repository</a>
+	在那里你可以公开上传你的插件和下载其他人的插件
+	释放了
 </p>
-
-<h4>Activating a plugin</h4>
-
+<h4>激活插件</h4>
 <p>
-	After downloading a plugin, you need to put it in the <code>Plugins/</code> directory.
-	You should then edit the <code>[Plugins]</code> sections of the <code>settings.ini</code> file and add a plugin entry there.
-	Below is an example of adding a plugin called <code>MyNewPlugin</code>.
+	下载插件后，您需要将其放入Plugins/目录中。<code>Plugins/</code> directory.
+	然后，您应该编辑settings.ini文件的[Plugins]部分，并在那里添加一个插件条目。<code>[Plugins]</code> sections of the <code>settings.ini</code> file and add a plugin entry there.
+	下面是一个添加名为MyNewPlugin的插件的示例。<code>MyNewPlugin</code>.
 </p>
-
 <figure class="codebox">
-<pre><code>[Plugins]
-Core=1
-ChatLog=1
-MyNewPlugin=1
-MyDisabledPlugin=0
+<pre><code>[插件]
+核心= 1
+聊天记录= 1
+MyNewPlugin = 1
+MyDisabledPlugin = 0
 </code></pre>
 </figure>
-
-<h4>Writing a plugin</h4>
-
+<h4>编写插件</h4>
 <p>
-	To get started with writing Cuberite plugins, read this <a href="https://api.cuberite.org/Writing-a-Cuberite-plugin.html">article</a>. Cuberite Plugins are written with the Lua programming language. Cuberite has a well-documented <a href="https://api.cuberite.org/">API</a>.
+	要开始编写Cuberite插件，请阅读本文。<a href="https://api.cuberite.org/Writing-a-Cuberite-plugin.html">article</a>. Cuberite插件使用Lua编程语言编写。Cuberite有一个完整的API。<a href="https://api.cuberite.org/">API</a>.
 </p>
-
-<h4>You're good to go!</h4>
-
+<h4>你可以走了! </h4>
 <p>
-	If you have read this far, you should now have enough knowledge to operate a Cuberite server. The rest of this book covers more features and further configuration options in greater depth. 
+	如果你已经读到这里，你现在应该有足够的知识来操作Cuberite服务器。本书的其余部分将更深入地介绍更多的功能和进一步的配置选项。 
 </p>
