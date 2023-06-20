@@ -1,48 +1,47 @@
 <p>
-	Cuberite can be configured by editing various files. Below is a list of all such files:
+	可以通过编辑各种文件来配置Cuberite。以下是所有此类文件的列表：
 </p>
 
 <dl>
 	<dt>settings.ini</dt>
 	<dd>
-		The main configuration file, which contains server-wide configuration variables.
+		主配置文件，其中包含服务器范围的配置变量。
 	</dd>
 	<dt>webadmin.ini</dt>
 	<dd>
-		Allows you to tweak the web admin interface, which is available at <code>http://localhost:8080</code> or <code>http://&lt;Server IP address&gt;:8080</code> by default.
-	</dd>
+		允许您调整Web管理界面，默认情况下，该界面位于<code>http：//localhost：8080</code>或<code>http：//&lt;服务器IP地址&gt;：8080</code>。</dd>
 	<dt>&lt;World name&gt;/world.ini</dt>
 	<dd>
-		This file configures world-specific aspects. This is where you choose your game mode. See {{3.3 - GameMode}}.
-		Note that each world has its own <code>world.ini</code> file, each stored in <code>&lt;World name&gt;/world.ini</code>.
+		此文件配置特定于世界的方面。这是您选择游戏模式的地方。看 {{3.3 - GameMode}}.
+		请注意，每个世界都有自己的<code>world.ini</code>文件，每个文件都存储在 <code>&lt;World name&gt;/world.ini</code>.
 	</dd>
 	<dt>monsters.ini</dt>
 	<dd>
-		Allows you to tweak monster behaviour.
+		允许你调整怪物的行为。
 	</dd>
 	<dt>motd.txt</dt>
 	<dd>
-		The Message of the Day, which is shown to players upon joining your server.
+		当日的消息，在加入您的服务器时向玩家显示。
 	</dd>
 	<dt>crafting.txt, brewing.txt, furnace.txt</dt>
 	<dd>
-		These three files allow you to tweak crafting, brewing, and furnace recipes.
+		这三个文件允许您调整手工制作，酿造和熔炉食谱。
 	</dd>
 	<dt>plugins/...</dt>
 	<dd>
-		Many plugins have their own configuration files. For instance, the WorldEdit config is <code>plugins/WorldEdit/config.cfg</code>
+		许多插件都有自己的配置文件。例如，WorldEdit配置为 <code>plugins/WorldEdit/config.cfg</code>
 	</dd>
 	<dt>favicon.png</dt>
 	<dd>
-		This is the icon that will appear in the Minecraft server list. You may replace it with your own.
-		The icon dimensions musts be 64x64.
+		这是将出现在Minecraft服务器列表中的图标。你可以用你自己的代替它。
+		图标尺寸必须为64x64。
 	</dd>
 	<dt>items.ini</dt>
 	<dd>
-		Edit item IDs. You probably shouldn't edit this file unless you know what you're doing.
+		编辑项目ID。除非您知道自己在做什么，否则可能不应该编辑此文件。
 	</dd>
 </dl>
 
 <aside class="infobox">
-	In all <code>.ini</code> files, lines starting with <code>;</code> are comments, and in all <code>.txt</code> files, lines starting with <code>#</code> are comments.
+	在所有<code>.ini</code>文件中，以;开头的行<code></code>是注释，在所有<code>.txt</code>文件中，以#开头的行<code></code>是注释。
 </aside>
