@@ -1,37 +1,36 @@
-users-manual
+用户手册
 ============
 
-A User's Manual for Cuberite
+库贝莱特用户手册
 
-There is an automatically updated version of the manual at [book.cuberite.org](https://book.cuberite.org), which updates every hour if a new commit has been pushed to this repository.
+在 [book.cuberite.org]（https://book.cuberite.org） 有一个自动更新的手册版本，如果将新提交推送到此存储库，则每小时更新一次。
 
-
-Developers' Area
+开发者专区
 ----------------
 
-This book is structured as individual HTML snippets for each chapter. The filename describes the section number and also the name of the section, separated by " - ".
+本书的结构是每章的单独HTML片段。文件名描述节号和节的名称，用“ - ”分隔。
 
-A sample input directory structure would be:
+示例输入目录结构为：
 
-    /
-    |> 0 - Introduction/
-    |   |> 1 - Intro.html
-    |   |> 2 - Notes.html
-    |> 1 - Setting Up/
-    |   |> 1 - Downloading.html
-    |   |> 2 - Running.html
+/
+    |> 0 - 简介/
+    |  |> 1 - 简介.html
+    |  |> 2 - 备注.html
+    |> 1 - 设置/
+    |  |> 1 - 正在下载.html
+    |  |> 2 - 正在运行.html
 
-The idea is that the generator, combines the files to form 2 outputs - one standalone HTML page with all sections integrated and internal links, and another with each file (or section?) being a separate page. At the moment the generator only compiles to a single page, but multiple page is planned.
+这个想法是生成器将文件组合成 2 个输出 - 一个独立的 HTML 页面，所有部分都集成了内部链接，另一个每个文件（或部分？）都是一个单独的页面。目前，生成器仅编译为单个页面，但计划为多个页面。
 
-Here is a guide to writing:
+这是写作指南：
 
-Links to another section are automatically generated like so - `{{Section Number - Text of Link}}`.
+指向另一个部分的链接是自动生成的，如下所示 - “{{部分编号 - 链接文本}}”。
 
-Here is a list of semantically correct and styled HTML elements for specific purposes:
+以下是用于特定目的的语义正确和样式化的 HTML 元素列表：
 
- * `<p>` For Paragraphs
- * `<h4>` For Headings
- * `<aside class="infobox">` For information tangentially related to the content.
- * `<aside class="warnbox">` For a warning related to the content.
- * `<figure class="codebox">` For a code sample, with nested `<pre>` and `<code>` tags. Optionally with a `<figcaption>` for a caption.
- * `<figure class="imgbox"` For an image/screenshot. Optionally with a `<figcaption>` for a caption.
+* '<p>' 对于段落
+ * '<h4>' 用于标题
+ * '<side class=“infobox”>' 用于与内容相关的信息。
+ * '<side class=“warnbox”>' 表示与内容相关的警告。
+ * '<figure class=“codebox”>' 对于代码示例，带有嵌套的“”<pre>和<code>“”标记。（可选）使用“<figcaption>”作为标题。
+ * '<figure class=“imgbox”' 用于图像/屏幕截图。（可选）使用“<figcaption>”作为标题。
