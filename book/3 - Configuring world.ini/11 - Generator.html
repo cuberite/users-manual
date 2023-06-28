@@ -1,15 +1,15 @@
 <p>
-    Specifies setting for the generator of this world. This is the most powerful tool when customizing worlds.
+    指定此世界的生成器的设置。这是自定义世界时最强大的工具。
 </p>
 
 <aside class="warnbox">
-    When modifying this please be aware that already generated worlds won't connect seamlessly to the newly generated
-    terrain. Also keep in mind that worlds created from other generators (e.g. the notchian generator) <strong>won't</strong> connect seamlessly either!
+    修改时请注意，已经生成的世界不会无缝连接到新生成的世界
+    地形。还要记住，由其他生成器（例如缺口<strong>生成器）创建</strong>的世界也不会无缝连接！
 </aside>
 
 <aside class="infobox">
-    The choice of generator will highly impact the other choices you'll have afterwards.<br>
-    This section is not completely finished because there is some ancient code for generation. This needs more research - 12xx12
+   生成器的选择将极大地影响您之后的其他选择。<br>
+    本节尚未完全完成，因为有一些古老的生成代码。这需要更多的研究 - 12xx12
 </aside>
 
 <!-- Todo: Add pictures for each generator and one for the failed generators when connecting to another world.-->
@@ -41,16 +41,16 @@
 
 <br><hr><br>
 
-<h4 id="Generator_Composable">Composable Generator</h4>
-The composable generator is a very powerful tool. You can mix and match different methods of generation and customize them.<br>
-This results in many different options for you to choose:<br>
+<h4 id="Generator_Composable">可组合发电机</h4>
+可组合生成器是一个非常强大的工具。您可以混合和匹配不同的生成方法并对其进行自定义。<br>
+这导致许多不同的选项供您选择：<br>
 
 <figure>
     <table>
         <tr>
-            <td><a href="#Generator_Composable_BiomeGen">BiomeGen</a></td>
+            <td><a href="#Generator_Composable_BiomeGen">生物基因</a></td>
             <td>
-                This value will determine the way the server chooses the biomes.
+                此值将决定服务器选择生物群系的方式。
             </td>
             <td>
                 Grown
@@ -59,16 +59,16 @@ This results in many different options for you to choose:<br>
         <tr>
             <td><a href="#Generator_Composable_ShapeGen">ShapeGen</a></td>
             <td>
-                This determines the way the world is shaped.
+                这决定了世界的形成方式。
             </td>
-            <td>BiomalNoise3D</td>
+            <td>生物不良噪音3D</td>
         </tr>
         <tr>
-            <td><a href="#Generator_Composable_CompositionGen">CompositionGen</a></td>
+            <td><a href="#Generator_Composable_CompositionGen">作曲世代</a></td>
             <td>
-                This determines the way the generator fills the actual blocks.
+                这决定了生成器填充实际块的方式。
             </td>
-            <td>Biomal</td>
+            <td>生物</td>
         </tr>
         <tr>
             <td>CompositionGenCacheSize</td>
@@ -76,9 +76,9 @@ This results in many different options for you to choose:<br>
             <td>64</td>
         </tr>
         <tr>
-            <td><a href="#Generator_Composable_Finishers">Finishers</a></td>
+            <td><a href="#Generator_Composable_Finishers">整理者</a></td>
             <td></td>
-            <td><a href="#Default_Finishers">Default Finishers</a></td>
+            <td><a href="#Default_Finishers">默认整理器</a></td>
         </tr>
         <tr>
             <td></td>
@@ -90,27 +90,27 @@ This results in many different options for you to choose:<br>
 
 <br><hr>
 
-<h4 id="Generator_Composable_BiomeGen">BiomeGen</h4>
-You can read more in depth about the different methods <a href="http://cuberite.xoft.cz/docs/Generator.html#biomegen">here</a>
+<h4 id="Generator_Composable_BiomeGen">生物基因</h4>
+您可以更深入地阅读有关不同方法的信息 <a href="http://cuberite.xoft.cz/docs/Generator.html#biomegen">这里</a>
 
 <figure>
     <table>
         <tbody>
         <tr>
             <td>
-                <strong>Constant</strong>
+                <strong>不断</strong>
             </td>
             <td>
-                The constant biome generator (just one biome).<br>
-                Options:
+                恒定的生物群系生成器（只有一个生物群系）。<br>
+                选项:
                 <figure>
                     <table>
                         <tr>
                             <td>
-                                ConstantBiome
+                                恒定生物组
                             </td>
                             <td>
-                                Will determine the biome generated. See <a href="https://api.cuberite.org/Globals.html#EMCSBiome">list of available biomes</a> without the leading "bi".
+                                将决定生成的生物群系。看 <a href="https://api.cuberite.org/Globals.html#EMCSBiome">可用生物群系列表</a> without the leading "bi".
                             </td>
                         </tr>
                     </table>
@@ -119,27 +119,27 @@ You can read more in depth about the different methods <a href="http://cuberite.
         </tr>
         <tr>
             <td>
-                <strong>Checkerboard</strong>
+                <strong>棋盘</strong>
             </td>
             <td>
-                Will generate biomes in a checkerboard layout. You can set the size of the squares and the used biomes.<br>
-                Options:
+                将在棋盘布局中生成生物群系。您可以设置方块的大小和使用的生物群系。<br>
+                选项:
                 <figure>
                     <table>
                         <tr>
                             <td>
-                                CheckerBoardBiomes
+                                棋盘生物群落
                             </td>
                             <td>
-                                List of biomes. Separated by ",". Optionally you can set a frequency by appending ":%integer%" to any biome.
+                                生物群系列表。用“,”分隔。或者，您可以通过将“:%integer%”附加到任何生物群系来设置频率。
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                CheckerboardBiomeSize
+                                棋盘生物尺寸
                             </td>
                             <td>
-                                Size of the squares.
+                                正方形的大小。
                             </td>
                         </tr>
                     </table>
@@ -148,10 +148,10 @@ You can read more in depth about the different methods <a href="http://cuberite.
         </tr>
         <tr>
             <td>
-                <strong>Voronoi</strong>
+                <strong>沃罗诺伊</strong>
             </td>
             <td>
-                Options:
+                选项:
                 <figure>
                     <table>
                         <tr>
