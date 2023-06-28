@@ -4,15 +4,15 @@
 
 <aside class="warnbox">
     修改时请注意，已经生成的世界不会无缝连接到新生成的世界
-    地形。还要记住，由其他生成器（例如缺口<strong>生成器）创建</strong>的世界也不会无缝连接！
+    地形。还要记住，由其他生成器（例如缺口生成器）创建的世界<strong>不会</strong> 无缝连接!
 </aside>
 
 <aside class="infobox">
-   生成器的选择将极大地影响您之后的其他选择。<br>
+    生成器的选择将极大地影响您之后的其他选择。<br>
     本节尚未完全完成，因为有一些古老的生成代码。这需要更多的研究 - 12xx12
 </aside>
 
-<!-- Todo: Add pictures for each generator and one for the failed generators when connecting to another world.-->
+<!-- 待办事项：为每个生成器添加图片，并在连接到另一个世界时为发生故障的生成器添加一张图片。-->
 
 <figure>
     <table>
@@ -27,13 +27,13 @@
             <tr>
                 <td>Generator</td>
                 <td>
-                    Various types of generators:
+                    各种类型的发电机:
                     <ul>
-                        <li><a href="#Generator_Composable">Composable</a></li>
-                        <li>Noise3D</li>
+                        <li><a href="#Generator_Composable">可组合</a></li>
+                        <li>噪音3D</li>
                     </ul>
                 </td>
-                <td>Composable</td>
+                <td>可组合</td>
             </tr>
         </tbody>
     </table>
@@ -41,14 +41,14 @@
 
 <br><hr><br>
 
-<h4 id="Generator_Composable">可组合发电机</h4>
+<h4 id="Generator_Composable">Composable Generator</h4>
 可组合生成器是一个非常强大的工具。您可以混合和匹配不同的生成方法并对其进行自定义。<br>
 这导致许多不同的选项供您选择：<br>
 
 <figure>
     <table>
         <tr>
-            <td><a href="#Generator_Composable_BiomeGen">生物基因</a></td>
+            <td><a href="#Generator_Composable_BiomeGen">BiomeGen</a></td>
             <td>
                 此值将决定服务器选择生物群系的方式。
             </td>
@@ -61,14 +61,14 @@
             <td>
                 这决定了世界的形成方式。
             </td>
-            <td>生物不良噪音3D</td>
+            <td>BiomalNoise3D</td>
         </tr>
         <tr>
-            <td><a href="#Generator_Composable_CompositionGen">作曲世代</a></td>
+            <td><a href="#Generator_Composable_CompositionGen">CompositionGen</a></td>
             <td>
                 这决定了生成器填充实际块的方式。
             </td>
-            <td>生物</td>
+            <td>Biomal</td>
         </tr>
         <tr>
             <td>CompositionGenCacheSize</td>
@@ -76,9 +76,9 @@
             <td>64</td>
         </tr>
         <tr>
-            <td><a href="#Generator_Composable_Finishers">整理者</a></td>
+            <td><a href="#Generator_Composable_Finishers">Finishers</a></td>
             <td></td>
-            <td><a href="#Default_Finishers">默认整理器</a></td>
+            <td><a href="#Default_Finishers">Default Finishers</a></td>
         </tr>
         <tr>
             <td></td>
@@ -90,7 +90,7 @@
 
 <br><hr>
 
-<h4 id="Generator_Composable_BiomeGen">生物基因</h4>
+<h4 id="Generator_Composable_BiomeGen">BiomeGen</h4>
 您可以更深入地阅读有关不同方法的信息 <a href="http://cuberite.xoft.cz/docs/Generator.html#biomegen">这里</a>
 
 <figure>
@@ -98,7 +98,7 @@
         <tbody>
         <tr>
             <td>
-                <strong>不断</strong>
+                <strong>Constant</strong>
             </td>
             <td>
                 恒定的生物群系生成器（只有一个生物群系）。<br>
@@ -107,7 +107,7 @@
                     <table>
                         <tr>
                             <td>
-                                恒定生物组
+                                ConstantBiome
                             </td>
                             <td>
                                 将决定生成的生物群系。看 <a href="https://api.cuberite.org/Globals.html#EMCSBiome">可用生物群系列表</a> without the leading "bi".
@@ -119,7 +119,7 @@
         </tr>
         <tr>
             <td>
-                <strong>棋盘</strong>
+                <strong>Checkerboard</strong>
             </td>
             <td>
                 将在棋盘布局中生成生物群系。您可以设置方块的大小和使用的生物群系。<br>
@@ -128,15 +128,15 @@
                     <table>
                         <tr>
                             <td>
-                                棋盘生物群落
+                                CheckerBoardBiomes
                             </td>
                             <td>
-                                生物群系列表。用“,”分隔。或者，您可以通过将“:%integer%”附加到任何生物群系来设置频率。
+                                生物群系列表。用","分隔。或者，您可以通过将":%integer%"附加到任何生物群系来设置频率。
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                棋盘生物尺寸
+                                CheckerboardBiomeSize
                             </td>
                             <td>
                                 正方形的大小。
@@ -148,7 +148,7 @@
         </tr>
         <tr>
             <td>
-                <strong>沃罗诺伊</strong>
+                <strong>Voronoi</strong>
             </td>
             <td>
                 选项:
@@ -177,7 +177,7 @@
                 <strong>DistortedVoronoi</strong>
             </td>
             <td>
-                Options:
+                选项:
                 <figure>
                     <table>
                         <tr>
@@ -195,7 +195,7 @@
                 <strong>TwoLevel</strong>
             </td>
             <td>
-                Options:
+                选项:
                 <figure>
                     <table>
                         <tr>
@@ -259,7 +259,7 @@
                 <strong>MultiStepMap</strong>
             </td>
             <td>
-                Options:
+                选项:
                 <figure>
                     <table>
                         <tr>
@@ -308,8 +308,8 @@
 <h4 id="Generator_Composable_ShapeGen">ShapeGen</h4>
 
 <p>
-    The Shape generator determines the shape of the world. Depending on what your choose it can create overhangs.
-    So two blocks facing air at the top.
+    形状生成器确定世界的形状。根据您的选择，它可以创建悬垂。
+    所以两个块在顶部面向空气。
 </p>
 
 <figure>
@@ -319,13 +319,13 @@
                 <strong>BiomalNoise3D</strong>
             </td>
             <td>
-                This generates a terrain shape by combining a lerp of two 3D noises with a vertical linear gradient.<br>
-                Options:
+                这将通过将两个 3D 噪声与垂直线性渐变相结合来生成地形形状。<br>
+                选项:
                 <figure>
                     <table>
                         <tr>
                             <td>SeaLevel</td>
-                            <td>The sea level generated from the generator</td>
+                            <td>发电机产生的海平面</td>
                         </tr>
                         <tr>
                             <td>BiomalNoise3DFrequencyX</td>
@@ -377,7 +377,7 @@
                         </tr>
                         <tr>
                             <td>BiomalNoise3DBaseAmplitude</td>
-                            <td>All those options will modify the look of the world. They influence the randomness so you can't 100% say what they will actually do.</td>
+                            <td>所有这些选项都将改变世界的外观。它们会影响随机性，因此您无法100%说出它们实际上会做什么。</td>
                         </tr>
                     </table>
                 </figure>
@@ -389,12 +389,12 @@
             </td>
             <td>
 
-                Options:
+                选项:
                 <figure>
                     <table>
                         <tr>
                             <td>SeaLevel</td>
-                            <td>The sea level generated from the generator</td>
+                            <td>发电机产生的海平面</td>
                         </tr>
                         <tr>
                             <td>DistortedHeightmapFrequencyX</td>
@@ -414,11 +414,11 @@
         </tr>
         <tr>
             <td>
-                <strong>End</strong>
+                <strong>end</strong>
             </td>
             <td>
-                The ShapeGenerator used for the end.<br>
-                Options:
+                用于末端的形状生成器。<br>
+                选项:
                 <figure>
                     <table>
                         <tr>
@@ -467,12 +467,12 @@
         </tr>
         <tr>
             <td>
-                <strong><a href="#Generator_Composable_HeightMap">HeightMap</a></strong>
+                <strong><a href="#Generator_Composable_HeightMap">高度图</a></strong>
             </td>
             <td>
-                This is a old relict. The server previously used HeightGenerators instead of ShapeGenerators.
-                This is deprecated and won't yield any overhangs or similar.
-                This enables the property: "HeightGen"
+               这是一个古老的遗迹。服务器以前使用 HeightGenerators 而不是 ShapeGenerators。
+                这已弃用，不会产生任何悬垂或类似内容。
+                这将启用属性：“HeightGen”
             </td>
         </tr>
         <tr>
@@ -481,7 +481,7 @@
             </td>
             <td>
 
-                Options:
+                选项:
                 <figure>
                     <table>
                         <tr>
@@ -545,8 +545,8 @@
                 <strong>TwoHeights</strong>
             </td>
             <td>
-                Merges two HeightMaps generated from the same as DistortedHeightMap
-                Options:
+                合并从与扭曲高度地图相同的两个高度映射
+                选项:
                 <figure>
                     <table>
                         <tr>
@@ -571,9 +571,9 @@ Default: Biomal
 
 <br><hr>
 
-<h4 id="Generator_Composable_HeightMap">Height Map</h4>
+<h4 id="Generator_Composable_HeightMap">高度图</h4>
 
-The settings for the HeightMap Shape Generator
+高度贴图形状生成器的设置
 
 <figure>
     <table>
@@ -658,7 +658,7 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>SameBlock</td>
-                <td>Fills everything with the same Block.</td>
+                <td>用同一个块填充所有内容。</td>
             </tr>
         </tbody>
     </table>
@@ -683,7 +683,7 @@ The settings for the HeightMap Shape Generator
         <tbody>
             <tr>
                 <td>RoughRavines</td>
-                <td>Creates the big ravines.</td>
+                <td>创造大沟壑。</td>
                 <td>
                     <figure>
                         <table>
@@ -741,7 +741,7 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>WormNestCaves</td>
-                <td>Creates the small caves going through the ground.</td>
+                <td>创建穿过地面的小洞穴。</td>
                 <td>
                     <figure>
                         <table>
@@ -760,7 +760,7 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>WaterLakes</td>
-                <td>Creates the water lakes at sea level.</td>
+                <td>在海平面上创建水湖。</td>
                 <td>
                     <figure>
                         <table>
@@ -773,11 +773,11 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>WaterSprings</td>
-                <td>Creates the one-block water springs.</td>
+                <td>创建单块水泉。</td>
             </tr>
             <tr>
                 <td>LavaLakes</td>
-                <td>Creates the laval lakes at sea level.</td>
+                <td>在海平面上创建拉瓦尔湖。</td>
                 <td>
                     <figure>
                         <table>
@@ -790,15 +790,15 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>LavaSprings</td>
-                <td>Creates the one-block lava springs.</td>
+                <td>创建单块熔岩泉。</td>
             </tr>
             <tr>
                 <td>OreNests</td>
-                <td>Creates the ores in the ground.</td>
+                <td>在地下创建矿石。</td>
             </tr>
             <tr>
                 <td>Mineshafts</td>
-                <td>Creates Mineshafts</td>
+                <td>创建矿井</td>
                 <td>
                     <figure>
                         <table>
@@ -826,11 +826,11 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>Trees</td>
-                <td>Creates the trees (and tree-like [e.g. Mushroom]) structures.</td>
+                <td>创建树木（和树状[例如蘑菇]）结构。</td>
             </tr>
             <tr>
                 <td>Villages</td>
-                <td>Creates the villages</td>
+                <td>创建村庄</td>
                 <td>
                     <figure>
                         <table>
@@ -855,7 +855,7 @@ The settings for the HeightMap Shape Generator
                             <tr>
                                 <td>VillagePrefabs</td>
                                 <td>
-                                    There are multiple Villages available:
+                                    有多个购物村可用：
                                     <ul>
                                         <li>AlchemistVillage</li>
                                         <li>JapaneseVillage</li>
@@ -871,43 +871,43 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>SinglePieceStructures</td>
-                <td>Creates Structures that consist of single piece.</td>
+                <td>创建由单个部分组成的结构。</td>
                 <td>
-                    You have a choice of:
+                    您可以选择：
                     <ul>
                         <li>JungleTemple</li>
                         <li>WitchHut</li>
                         <li>DesertPyramid</li>
                         <li>DesertWell</li>
                     </ul>
-                    You may select those by adding SinglePieceStructures:%YourChoices% separated by "|"<br>
-                    If you want to add custom models you need to add them in the Prefabs/SinglePieceStructures folder
-                    and add the file name without the file ending to the list.
+                    您可以通过添加 SinglePieceStructures：%YourChoices% 以“|”分隔来选择它们<br>
+                    如果要添加自定义模型，则需要将它们添加到预制件/单件结构文件夹中
+                    并将文件名添加到列表中，而不以文件结尾。
                 </td>
             </tr>
             <tr>
                 <td>TallGrass</td>
-                <td>Adds the tall grass and fern to the world.</td>
+                为<td>世界增添高草和蕨类植物。</td>
             </tr>
             <tr>
                 <td>SprinkleFoliage</td>
-                <td>Generates the small flowers and similar blocks.</td>
+                <td>生成小花朵和类似的方块。</td>
             </tr>
             <tr>
                 <td>Ice</td>
-                <td>Adds ice to the world.</td>
+                <td>为世界增添冰块。</td>
             </tr>
             <tr>
                 <td>Snow</td>
-                <td>Adds snow to the world.</td>
+                <td>为世界增添雪。</td>
             </tr>
             <tr>
                 <td>Lilypads</td>
-                <td>Adds lilypads to the world.</td>
+                <td>为世界增添睡莲。</td>
             </tr>
             <tr>
                 <td>BottomLava</td>
-                <td>Places the lava at the bottom of the world.</td>
+                <td>将熔岩置于世界底部。</td>
                 <td>
                     <figure>
                         <table>
@@ -928,7 +928,7 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>PreSimulator</td>
-                <td>The calculates the behaviour of different blocks at the point of generation instead of ticking it. This saves performance.</td>
+                <td>计算不同块在生成时的行为，而不是勾选它。这样可以节省性能。</td>
                 <td>PreSimulatorFallingBlocks=1<br>
                     PreSimulatorWater=1<br>
                     PreSimulatorLava=1<br></td>
@@ -938,7 +938,7 @@ The settings for the HeightMap Shape Generator
             </tr>
             <tr>
                 <td>OverworldClumpFlowers</td>
-                <td>Places flowers into the world</td>
+                <td>将鲜花推向世界</td>
             </tr>
         </tbody>
     </table>
