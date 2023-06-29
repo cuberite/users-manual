@@ -1,0 +1,60 @@
+<p>
+	本节指定 Cuberite 是否应保存世界块，以及坐标文件的压缩级别。
+</p>
+
+<h4>可用选项 </h4>
+
+<figure>
+<table>
+	<thead>
+		<tr>
+			<th>Variable</th>
+			<th>Meaning</th>
+			<th>Default</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td data-label="Variable">Schema</td>
+			<td data-label="Meaning">指定是否应保存世界区块。可能是“默认”，“铁砧”和“健忘”之一。有关其说明，请参见下表。</td>
+			<td data-label="Default">Default</td>
+		</tr>
+		<tr>
+			<td data-label="Variable">CompressionFactor</td>
+			<td data-label="Meaning">坐标定位文件应压缩多少。较低的值意味着更大的文件大小，但性能略有提高，较高的值意味着文件大小略小，性能也低得多。建议仅保留默认值。</td>
+			<td data-label="Default">6</td>
+		</tr>
+	</tbody>
+</table>
+</figure>
+
+<h4>架构选项</h4>
+
+<figure>
+<table>
+	<thead>
+		<tr>
+			<th>Schema</th>
+			<th>File Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td data-label="Schema">Default</td>
+			<td data-label="File Type">.mca</td>
+			<td data-label="Description">目前这只是铁砧的别名。</td>
+		</tr>
+		<tr>
+			<td data-label="Schema">Anvil</td>
+			<td data-label="File Type">.mca</td>
+			<td data-label="Description">保存块。儲存與其他與 Minecraft 相關的工具和程式相容。MCA文件存储在世界文件夹的“区域”子文件夹中，并在世界文件夹内生成“level.dat”文件。</td>
+		</tr>
+		<tr>
+			<td data-label="Schema">Forgetful</td>
+			<td data-label="File Type">N/A</td>
+			<td data-label="Description">不保存块。一旦卸载块，对世界的更改就会丢失，这使得这对于只读公共服务器很有用。请注意，Cuberite 仍将使用其他架构加载块。</td>
+		</tr>
+	</tbody>
+</table>
+</figure>
