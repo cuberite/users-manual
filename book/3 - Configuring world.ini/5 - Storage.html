@@ -1,8 +1,8 @@
 <p>
-	This section specifies if Cuberite should save world chunks or not, as well as the compression level for world files.
+	本节指定 Cuberite 是否应保存世界块，以及坐标文件的压缩级别。
 </p>
 
-<h4>Available Options</h4>
+<h4>可用选项</h4>
 
 <figure>
 <table>
@@ -16,19 +16,19 @@
 	<tbody>
 		<tr>
 			<td data-label="Variable">Schema</td>
-			<td data-label="Meaning">Specifies if world chunks should be saved or not. May be one of "Default", "Anvil" and "Forgetful". See table below for their description.</td>
+			<td data-label="Meaning">指定是否应保存世界区块。可能是“默认”，“铁砧”和“健忘”之一。有关其说明，请参见下表。</td>
 			<td data-label="Default">Default</td>
 		</tr>
 		<tr>
 			<td data-label="Variable">CompressionFactor</td>
-			<td data-label="Meaning">How much the world files should be compressed. Lower values mean much larger file sizes, but slightly increased performance, and higher values mean slightly smaller file sizes and much lower performance. It is recommended just to keep with the default.</td>
+			<td data-label="Meaning">坐标定位文件应压缩多少。较低的值意味着更大的文件大小，但性能略有提高，较高的值意味着文件大小略小，性能也低得多。建议仅保留默认值。</td>
 			<td data-label="Default">6</td>
 		</tr>
 	</tbody>
 </table>
 </figure>
 
-<h4>Schema Options</h4>
+<h4>架构选项</h4>
 
 <figure>
 <table>
@@ -43,17 +43,17 @@
 		<tr>
 			<td data-label="Schema">Default</td>
 			<td data-label="File Type">.mca</td>
-			<td data-label="Description">This is just an alias for Anvil at the moment.</td>
+			<td data-label="Description">目前这只是铁砧的别名。</td>
 		</tr>
 		<tr>
 			<td data-label="Schema">Anvil</td>
 			<td data-label="File Type">.mca</td>
-			<td data-label="Description">Saves chunks. Storage is compatible with other Minecraft-related tools and programs. MCA files are stored in the "region" subfolder of the world folder, and a "level.dat" file is generated inside the world folder.</td>
+			<td data-label="Description">保存块。儲存與其他與 Minecraft 相關的工具和程式相容。MCA文件存储在世界文件夹的“区域”子文件夹中，并在世界文件夹内生成“level.dat”文件。</td>
 		</tr>
 		<tr>
 			<td data-label="Schema">Forgetful</td>
 			<td data-label="File Type">N/A</td>
-			<td data-label="Description">Doesn't save chunks. Changes to the world are lost as soon as the chunks are unloaded, making this useful for read-only public servers. Please note that Cuberite will still load chunks using other schemas.</td>
+			<td data-label="Description">不保存块。一旦卸载块，对世界的更改就会丢失，这使得这对于只读公共服务器很有用。请注意，Cuberite 仍将使用其他架构加载块。</td>
 		</tr>
 	</tbody>
 </table>
