@@ -1,0 +1,945 @@
+<p>
+    Specifies setting for the generator of this world. This is the most powerful tool when customizing worlds.
+</p>
+
+<aside class="warnbox">
+    When modifying this please be aware that already generated worlds won't connect seamlessly to the newly generated
+    terrain. Also keep in mind that worlds created from other generators (e.g. the notchian generator) <strong>won't</strong> connect seamlessly either!
+</aside>
+
+<aside class="infobox">
+    The choice of generator will highly impact the other choices you'll have afterwards.<br>
+    This section is not completely finished because there is some ancient code for generation. This needs more research - 12xx12
+</aside>
+
+<!-- Todo: Add pictures for each generator and one for the failed generators when connecting to another world.-->
+
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Meaning</th>
+                <th>Default</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Generator</td>
+                <td>
+                    Various types of generators:
+                    <ul>
+                        <li><a href="#Generator_Composable">Composable</a></li>
+                        <li>Noise3D</li>
+                    </ul>
+                </td>
+                <td>Composable</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<br><hr><br>
+
+<h4 id="Generator_Composable">Composable Generator</h4>
+The composable generator is a very powerful tool. You can mix and match different methods of generation and customize them.<br>
+This results in many different options for you to choose:<br>
+
+<figure>
+    <table>
+        <tr>
+            <td><a href="#Generator_Composable_BiomeGen">BiomeGen</a></td>
+            <td>
+                This value will determine the way the server chooses the biomes.
+            </td>
+            <td>
+                Grown
+            </td>
+        </tr>
+        <tr>
+            <td><a href="#Generator_Composable_ShapeGen">ShapeGen</a></td>
+            <td>
+                This determines the way the world is shaped.
+            </td>
+            <td>BiomalNoise3D</td>
+        </tr>
+        <tr>
+            <td><a href="#Generator_Composable_CompositionGen">CompositionGen</a></td>
+            <td>
+                This determines the way the generator fills the actual blocks.
+            </td>
+            <td>Biomal</td>
+        </tr>
+        <tr>
+            <td>CompositionGenCacheSize</td>
+            <td></td>
+            <td>64</td>
+        </tr>
+        <tr>
+            <td><a href="#Generator_Composable_Finishers">Finishers</a></td>
+            <td></td>
+            <td><a href="#Default_Finishers">Default Finishers</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</figure>
+
+<br><hr>
+
+<h4 id="Generator_Composable_BiomeGen">BiomeGen</h4>
+You can read more in depth about the different methods <a href="http://cuberite.xoft.cz/docs/Generator.html#biomegen">here</a>
+
+<figure>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <strong>Constant</strong>
+            </td>
+            <td>
+                The constant biome generator (just one biome).<br>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>
+                                ConstantBiome
+                            </td>
+                            <td>
+                                Will determine the biome generated. See <a href="https://api.cuberite.org/Globals.html#EMCSBiome">list of available biomes</a> without the leading "bi".
+                            </td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Checkerboard</strong>
+            </td>
+            <td>
+                Will generate biomes in a checkerboard layout. You can set the size of the squares and the used biomes.<br>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>
+                                CheckerBoardBiomes
+                            </td>
+                            <td>
+                                List of biomes. Separated by ",". Optionally you can set a frequency by appending ":%integer%" to any biome.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                CheckerboardBiomeSize
+                            </td>
+                            <td>
+                                Size of the squares.
+                            </td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Voronoi</strong>
+            </td>
+            <td>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>VoronoiCellSize</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>VoronoiJitterSize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>VoronoiOddRowOffset</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>DistortedVoronoi</strong>
+            </td>
+            <td>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>DistortedVoronoiCellSize</td>
+                        </tr>
+                        <tr>
+                            <td>DistortedVoronoiBiomes</td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>TwoLevel</strong>
+            </td>
+            <td>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>TwoLevelLargeCellSize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelSmallCellSize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortXOctave1Freq</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortXOctave1Amp</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortXOctave2Freq</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortXOctave2Amp</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortXOctave3Amp</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortZOctave1Freq</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortZOctave1Amp</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortZOctave2Freq</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortZOctave2Amp</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortZOctave3Freq</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoLevelDistortZOctave3Amp</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>MultiStepMap</strong>
+            </td>
+            <td>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>MultiStepMapOceanCellSize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>MultiStepMapMushroomIslandSize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>MultiStepMapRiverCellSize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>MultiStepMapRiverWidth</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>MultiStepMapLandBiomeSize</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </figure>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>GrownProt</strong>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Grown</strong>
+            </td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</figure>
+
+<br><hr>
+
+<h4 id="Generator_Composable_ShapeGen">ShapeGen</h4>
+
+<p>
+    The Shape generator determines the shape of the world. Depending on what your choose it can create overhangs.
+    So two blocks facing air at the top.
+</p>
+
+<figure>
+    <table>
+        <tr>
+            <td>
+                <strong>BiomalNoise3D</strong>
+            </td>
+            <td>
+                This generates a terrain shape by combining a lerp of two 3D noises with a vertical linear gradient.<br>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>SeaLevel</td>
+                            <td>The sea level generated from the generator</td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DFrequencyY</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DBaseFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DBaseFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DChoiceFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DChoiceFrequencyY</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DChoiceFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DAirThreshold</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DNumChoiceOctaves</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DNumDensityOctaves</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DNumBaseOctaves</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BiomalNoise3DBaseAmplitude</td>
+                            <td>All those options will modify the look of the world. They influence the randomness so you can't 100% say what they will actually do.</td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>DistortedHeightmap</strong>
+            </td>
+            <td>
+
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>SeaLevel</td>
+                            <td>The sea level generated from the generator</td>
+                        </tr>
+                        <tr>
+                            <td>DistortedHeightmapFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>DistortedHeightmapFrequencyY</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>DistortedHeightmapFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>End</strong>
+            </td>
+            <td>
+                The ShapeGenerator used for the end.<br>
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>EndGenAirThresholdMainIsland</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenAirThresholdOtherIslands</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenMainIslandSize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenBaseHeight</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenTerrainTopMultipler</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenTerrainBottomMultiptder</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenVoidOffsetNoiseMultiptder</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenFrequencyY</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>EndGenFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong><a href="#Generator_Composable_HeightMap">HeightMap</a></strong>
+            </td>
+            <td>
+                This is a old relict. The server previously used HeightGenerators instead of ShapeGenerators.
+                This is deprecated and won't yield any overhangs or similar.
+                This enables the property: "HeightGen"
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Noise3D</strong>
+            </td>
+            <td>
+
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>Noise3DHeightAmplification</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DMidPoint</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DFrequencyY</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DBaseFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DBaseFrequencyY</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DBaseFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DAirThreshold</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DNumChoiceOctaves</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DNumDensityOctaves</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DNumBaseOctaves</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise3DBaseAmplitude</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>TwoHeights</strong>
+            </td>
+            <td>
+                Merges two HeightMaps generated from the same as DistortedHeightMap
+                Options:
+                <figure>
+                    <table>
+                        <tr>
+                            <td>TwoHeightsFrequencyX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoHeightsFrequencyY</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TwoHeightsFrequencyZ</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </figure>
+            </td>
+        </tr>
+    </table>
+</figure>
+Default: Biomal
+
+<br><hr>
+
+<h4 id="Generator_Composable_HeightMap">Height Map</h4>
+
+The settings for the HeightMap Shape Generator
+
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th>Generator Type</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td>Flat</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Classic</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>MinMax</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Mountains</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Steppy</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Biomal</td>
+            <td></td>
+        </tr>
+    </table>
+</figure>
+
+<br><hr>
+
+<h4 id="Generator_Composable_CompositionGen">CompositionGen</h4>
+
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th>Generator Type</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Biomal</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>BiomalNoise3D</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Classic</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DebugBiomes</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DistortedHeightmap</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>End</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nether</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Noise3D</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SameBlock</td>
+                <td>Fills everything with the same Block.</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<br><hr>
+
+<h4 id="Generator_Composable_Finishers">Finishers</h4>
+
+<p id="Default_Finishers">
+    <!-- RoughRavines, WormNestCaves, WaterLakes, WaterSprings, LavaLakes, LavaSprings, OreNests, Mineshafts, Trees, Villages, SinglePieceStructures: JungleTemple|WitchHut|DesertPyramid|DesertWell, TallGrass, SprinkleFoliage, Ice, Snow, Lilypads, BottomLava, DeadBushes, NaturalPatches, PreSimulator, Animals, OverworldClumpFlowers -->
+</p>
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th>Finisher</th>
+                <th>Functions</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>RoughRavines</td>
+                <td>Creates the big ravines.</td>
+                <td>
+                    <figure>
+                        <table>
+                            <tr>
+                                <td>RoughRavinesGridSize</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxOffset</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxSize</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMinSize</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxCenterWidth</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMinCenterWidth</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxRoughness</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMinRoughness</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxFloorHeightEdge</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMinFloorHeightEdge</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxFloorHeightCenter</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMinFloorHeightCenter</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxCeilingHeightEdge</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMinCeilingHeightEdge</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMaxCeilingHeightCenter</td>
+                            </tr>
+                            <tr>
+                                <td>RoughRavinesMinCeilingHeightCenter</td>
+                            </tr>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>WormNestCaves</td>
+                <td>Creates the small caves going through the ground.</td>
+                <td>
+                    <figure>
+                        <table>
+                            <tr>
+                                <td>WormNestCavesSize</td>
+                            </tr>
+                            <tr>
+                                <td>WormNestCavesGrid</td>
+                            </tr>
+                            <tr>
+                                <td>WormNestMaxOffset</td>
+                            </tr>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>WaterLakes</td>
+                <td>Creates the water lakes at sea level.</td>
+                <td>
+                    <figure>
+                        <table>
+                            <tr>
+                                <td>WaterLakesProbability</td>
+                            </tr>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>WaterSprings</td>
+                <td>Creates the one-block water springs.</td>
+            </tr>
+            <tr>
+                <td>LavaLakes</td>
+                <td>Creates the laval lakes at sea level.</td>
+                <td>
+                    <figure>
+                        <table>
+                            <tr>
+                                <td>LavaLakesProbability</td>
+                            </tr>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>LavaSprings</td>
+                <td>Creates the one-block lava springs.</td>
+            </tr>
+            <tr>
+                <td>OreNests</td>
+                <td>Creates the ores in the ground.</td>
+            </tr>
+            <tr>
+                <td>Mineshafts</td>
+                <td>Creates Mineshafts</td>
+                <td>
+                    <figure>
+                        <table>
+                            <tr>
+                                <td>MineShaftsGridSize</td>
+                            </tr>
+                            <tr>
+                                <td>MineShaftsMaxOffset</td>
+                            </tr>
+                            <tr>
+                                <td>MineShaftsMaxSystemSize</td>
+                            </tr>
+                            <tr>
+                                <td>MineShaftsChanceCorridor</td>
+                            </tr>
+                            <tr>
+                                <td>MineShaftsChanceCrossing</td>
+                            </tr>
+                            <tr>
+                                <td>MineShaftsChanceStaircase</td>
+                            </tr>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>Trees</td>
+                <td>Creates the trees (and tree-like [e.g. Mushroom]) structures.</td>
+            </tr>
+            <tr>
+                <td>Villages</td>
+                <td>Creates the villages</td>
+                <td>
+                    <figure>
+                        <table>
+                            <tr>
+                                <td>VillageGridSize</td>
+                            </tr>
+                            <tr>
+                                <td>VillageMaxOffset</td>
+                            </tr>
+                            <tr>
+                                <td>VillageMaxDepth</td>
+                            </tr>
+                            <tr>
+                                <td>VillageMaxSize</td>
+                            </tr>
+                            <tr>
+                                <td>VillageMinDensity</td>
+                            </tr>
+                            <tr>
+                                <td>VillageMaxDensity</td>
+                            </tr>
+                            <tr>
+                                <td>VillagePrefabs</td>
+                                <td>
+                                    There are multiple Villages available:
+                                    <ul>
+                                        <li>AlchemistVillage</li>
+                                        <li>JapaneseVillage</li>
+                                        <li>PlainsVillage</li>
+                                        <li>SandVillage</li>
+                                        <li>SandFlatRoofVillage</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>SinglePieceStructures</td>
+                <td>Creates Structures that consist of single piece.</td>
+                <td>
+                    You have a choice of:
+                    <ul>
+                        <li>JungleTemple</li>
+                        <li>WitchHut</li>
+                        <li>DesertPyramid</li>
+                        <li>DesertWell</li>
+                    </ul>
+                    You may select those by adding SinglePieceStructures:%YourChoices% separated by "|"<br>
+                    If you want to add custom models you need to add them in the Prefabs/SinglePieceStructures folder
+                    and add the file name without the file ending to the list.
+                </td>
+            </tr>
+            <tr>
+                <td>TallGrass</td>
+                <td>Adds the tall grass and fern to the world.</td>
+            </tr>
+            <tr>
+                <td>SprinkleFoliage</td>
+                <td>Generates the small flowers and similar blocks.</td>
+            </tr>
+            <tr>
+                <td>Ice</td>
+                <td>Adds ice to the world.</td>
+            </tr>
+            <tr>
+                <td>Snow</td>
+                <td>Adds snow to the world.</td>
+            </tr>
+            <tr>
+                <td>Lilypads</td>
+                <td>Adds lilypads to the world.</td>
+            </tr>
+            <tr>
+                <td>BottomLava</td>
+                <td>Places the lava at the bottom of the world.</td>
+                <td>
+                    <figure>
+                        <table>
+                            <tr>
+                                <td>
+                                    BottomLavaLevel
+                                </td>
+                            </tr>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>DeadBushes</td>
+            </tr>
+            <tr>
+                <td>NaturalPatches</td>
+            </tr>
+            <tr>
+                <td>PreSimulator</td>
+                <td>The calculates the behaviour of different blocks at the point of generation instead of ticking it. This saves performance.</td>
+                <td>PreSimulatorFallingBlocks=1<br>
+                    PreSimulatorWater=1<br>
+                    PreSimulatorLava=1<br></td>
+            </tr>
+            <tr>
+                <td>Animals</td>
+            </tr>
+            <tr>
+                <td>OverworldClumpFlowers</td>
+                <td>Places flowers into the world</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>

@@ -1,0 +1,60 @@
+<p>
+	This section specifies if Cuberite should save world chunks or not, as well as the compression level for world files.
+</p>
+
+<h4>Available Options</h4>
+
+<figure>
+<table>
+	<thead>
+		<tr>
+			<th>Variable</th>
+			<th>Meaning</th>
+			<th>Default</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td data-label="Variable">Schema</td>
+			<td data-label="Meaning">Specifies if world chunks should be saved or not. May be one of "Default", "Anvil" and "Forgetful". See table below for their description.</td>
+			<td data-label="Default">Default</td>
+		</tr>
+		<tr>
+			<td data-label="Variable">CompressionFactor</td>
+			<td data-label="Meaning">How much the world files should be compressed. Lower values mean much larger file sizes, but slightly increased performance, and higher values mean slightly smaller file sizes and much lower performance. It is recommended just to keep with the default.</td>
+			<td data-label="Default">6</td>
+		</tr>
+	</tbody>
+</table>
+</figure>
+
+<h4>Schema Options</h4>
+
+<figure>
+<table>
+	<thead>
+		<tr>
+			<th>Schema</th>
+			<th>File Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td data-label="Schema">Default</td>
+			<td data-label="File Type">.mca</td>
+			<td data-label="Description">This is just an alias for Anvil at the moment.</td>
+		</tr>
+		<tr>
+			<td data-label="Schema">Anvil</td>
+			<td data-label="File Type">.mca</td>
+			<td data-label="Description">Saves chunks. Storage is compatible with other Minecraft-related tools and programs. MCA files are stored in the "region" subfolder of the world folder, and a "level.dat" file is generated inside the world folder.</td>
+		</tr>
+		<tr>
+			<td data-label="Schema">Forgetful</td>
+			<td data-label="File Type">N/A</td>
+			<td data-label="Description">Doesn't save chunks. Changes to the world are lost as soon as the chunks are unloaded, making this useful for read-only public servers. Please note that Cuberite will still load chunks using other schemas.</td>
+		</tr>
+	</tbody>
+</table>
+</figure>

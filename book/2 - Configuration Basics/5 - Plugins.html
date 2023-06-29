@@ -1,0 +1,47 @@
+<p>
+	Plugins are an important method of customisation for Cuberite. There are many different first and third-party plugins available.
+</p>
+
+<p>
+	Cuberite plugins are written in Lua, and interact with the server through an
+	 <a href="https://api.cuberite.org/">extensive API</a>. They are
+	designed to be easy to write for anyone with basic programming experience,
+	so if existing plugins don't fill your need you can easily write your own plugins.
+	If you want to learn how to write your own plugins, check out
+	<a href="https://api.cuberite.org/Writing-a-Cuberite-plugin.html">the guide</a>.
+</p>
+
+<p>
+	Cuberite has a <a href="https://plugins.cuberite.org/">plugin repository</a>
+	where you can upload your plugins publicly and download plugins others have
+	released.
+</p>
+
+<h4>Activating a plugin</h4>
+
+<p>
+	After downloading a plugin, you need to put it in the <code>Plugins/</code> directory.
+	You should then edit the <code>[Plugins]</code> sections of the <code>settings.ini</code> file and add a plugin entry there.
+	Below is an example of adding a plugin called <code>MyNewPlugin</code>.
+</p>
+
+<figure class="codebox">
+<pre><code>[Plugins]
+Core=1
+ChatLog=1
+MyNewPlugin=1
+MyDisabledPlugin=0
+</code></pre>
+</figure>
+
+<h4>Writing a plugin</h4>
+
+<p>
+	To get started with writing Cuberite plugins, read this <a href="https://api.cuberite.org/Writing-a-Cuberite-plugin.html">article</a>. Cuberite Plugins are written with the Lua programming language. Cuberite has a well-documented <a href="https://api.cuberite.org/">API</a>.
+</p>
+
+<h4>You're good to go!</h4>
+
+<p>
+	If you have read this far, you should now have enough knowledge to operate a Cuberite server. The rest of this book covers more features and further configuration options in greater depth. 
+</p>

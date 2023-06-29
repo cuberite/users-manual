@@ -1,0 +1,204 @@
+<p>
+	It is possible to configure many different aspects of individual worlds with Cuberite. Configuration options include:
+</p>
+
+<ul>
+	<li>Changing the spawn point of a world.</li>
+	<li>Changing the game mode of a world.</li>
+	<li>Changing the world generator, so as to change the terrain generated.</li>
+	<li>Changing the types of plants that generate in the world.</li>
+	<li>Changing which types of animals are allowed to spawn.</li>
+	<li>There are many more things that can be done, and these are just examples.</li>
+</ul>
+
+<p>
+	All this configuration can be done through one file. It is called <code>world.ini</code> and can be found in each world's individual folder. When a world is first created by Cuberite, the file is filled out with default values that are fairly close to vanilla minecraft.
+</p>
+
+<p>
+	The <code>world.ini</code> file is split into many different sections, each with a name surrounded in square brackets. For example {{3.4 - <code>[SpawnPosition]</code>}} is a section. Each section contains configuration options related to a specific feature of Cuberite.
+</p>
+
+<h4>Default Settings</h4>
+
+<figure class="codebox">
+<pre><code>
+[General]
+Dimension=Overworld
+UnusedChunkCap=1000
+IsDaylightCycleEnabled=1
+Gamemode=0
+Weather=0
+WorldAgeMS=0
+TimeInTicks=0
+
+[Broadcasting]
+BroadcastDeathMessages=1
+BroadcastAchievementMessages=1
+
+[SpawnPosition]
+MaxViewDistance=10
+X=0.500000
+Y=115.000000
+Z=0.500000
+PregenerateDistance=20
+
+[Storage]
+Schema=Default
+CompressionFactor=6
+
+[Plants]
+MaxCactusHeight=3
+MaxSugarcaneHeight=3
+
+[Physics]
+DeepSnow=1
+ShouldLavaSpawnFire=1
+TNTShrapnelLevel=2
+WaterSimulator=Vanilla
+LavaSimulator=Vanilla
+SandInstantFall=0
+RedstoneSimulator=Incremental
+
+[Mechanics]
+CommandBlocksEnabled=0
+PVPEnabled=1
+UseChatPrefixes=1
+MinNetherPortalWidth=2
+MaxNetherPortalWidth=21
+MinNetherPortalHeight=3
+MaxNetherPortalHeight=21
+
+[Monsters]
+VillagersShouldHarvestCrops=1
+AnimalsOn=1
+Types=bat, cavespider, chicken, cow, creeper, guardian, horse, mooshroom, ocelot, pig, rabbit, sheep, silverfish, skeleton, slime, spider, squid, wolf, zombie
+
+[Weather]
+MaxSunnyTicks=180000
+MinSunnyTicks=12000
+MaxRainTicks=24000
+MinRainTicks=12000
+MaxThunderStormTicks=15600
+MinThunderStormTicks=3600
+
+[LinkedWorlds]
+NetherWorldName=world_nether
+EndWorldName=world_the_end
+
+[Generator]
+BiomeGen=Grown
+ShapeGen=BiomalNoise3D
+CompositionGen=Biomal
+Finishers=RoughRavines, WormNestCaves, WaterLakes, WaterSprings, LavaLakes, LavaSprings, OreNests, Mineshafts, Trees, Villages, SinglePieceStructures: JungleTemple|WitchHut|DesertPyramid|DesertWell, TallGrass, SprinkleFoliage, Ice, Snow, Lilypads, BottomLava, DeadBushes, NaturalPatches, PreSimulator, Animals, OverworldClumpFlowers
+Generator=Composable
+BiomeGenCacheSize=16
+BiomeGenMultiCacheLength=128
+SeaLevel=62
+BiomalNoise3DFrequencyX=40.000000
+BiomalNoise3DFrequencyY=40.000000
+BiomalNoise3DFrequencyZ=40.000000
+BiomalNoise3DBaseFrequencyX=40.000000
+BiomalNoise3DBaseFrequencyZ=40.000000
+BiomalNoise3DChoiceFrequencyX=40.000000
+BiomalNoise3DChoiceFrequencyY=80.000000
+BiomalNoise3DChoiceFrequencyZ=40.000000
+BiomalNoise3DAirThreshold=0.000000
+BiomalNoise3DNumChoiceOctaves=4
+BiomalNoise3DNumDensityOctaves=6
+BiomalNoise3DNumBaseOctaves=6
+BiomalNoise3DBaseAmplitude=1.000000
+CompositionGenCacheSize=64
+RoughRavinesGridSize=256
+RoughRavinesMaxOffset=128
+RoughRavinesMaxSize=128
+RoughRavinesMinSize=64
+RoughRavinesMaxCenterWidth=8.000000
+RoughRavinesMinCenterWidth=2.000000
+RoughRavinesMaxRoughness=0.200000
+RoughRavinesMinRoughness=0.050000
+RoughRavinesMaxFloorHeightEdge=8.000000
+RoughRavinesMinFloorHeightEdge=30.000000
+RoughRavinesMaxFloorHeightCenter=20.000000
+RoughRavinesMinFloorHeightCenter=6.000000
+RoughRavinesMaxCeilingHeightEdge=56.000000
+RoughRavinesMinCeilingHeightEdge=38.000000
+RoughRavinesMaxCeilingHeightCenter=58.000000
+RoughRavinesMinCeilingHeightCenter=36.000000
+WormNestCavesSize=64
+WormNestCavesGrid=96
+WormNestMaxOffset=32
+WaterLakesProbability=25
+LavaLakesProbability=10
+MineShaftsGridSize=512
+MineShaftsMaxOffset=256
+MineShaftsMaxSystemSize=160
+MineShaftsChanceCorridor=600
+MineShaftsChanceCrossing=200
+MineShaftsChanceStaircase=200
+VillageGridSize=384
+VillageMaxOffset=128
+VillageMaxDepth=2
+VillageMaxSize=128
+VillageMinDensity=50
+VillageMaxDensity=80
+VillagePrefabs=PlainsVillage, SandVillage
+BottomLavaLevel=10
+PreSimulatorFallingBlocks=1
+PreSimulatorWater=1
+PreSimulatorLava=1
+OverworldClumpFlowers-1=Forest, -2, 2; ForestHills, -3, 2; FlowerForest = yellowflower; redflower; lilac; rosebush
+OverworldClumpFlowers-2=Plains, -2, 1; SunflowerPlains = yellowflower; redflower; azurebluet; redtulip; orangetulip; whitetulip; pinktulip; oxeyedaisy
+OverworldClumpFlowers-3=SunflowerPlains, 1, 2 = sunflower
+OverworldClumpFlowers-4=FlowerForest, 2, 5 = allium; redtulip; orangetulip; whitetulip; pinktulip; oxeyedaisy
+OverworldClumpFlowers-5=Swampland; SwamplandM = brownmushroom; redmushroom; blueorchid
+OverworldClumpFlowers-6=MushroomIsland; MushroomShore; MegaTaiga; MegaTaigaHills; MegaSpruceTaiga; MegaSpruceTaigaHills = brownmushroom; redmushroom
+OverworldClumpFlowers-7=RoofedForest, 1, 5; RoofedForestM, 1, 5 = rosebush; peony; lilac; grass
+
+[WaterSimulator]
+Falloff=1
+TickDelay=5
+NumNeighborsForSource=2
+
+[LavaSimulator]
+Falloff=2
+TickDelay=30
+NumNeighborsForSource=-1
+
+[FireSimulator]
+BurnStepTimeFuel=500
+BurnStepTimeNonfuel=100
+Flammability=50
+ReplaceFuelChance=50000
+
+[Seed]
+Seed=775375601
+
+[WaterSprings]
+HeightDistribution=0, 0; 10, 10; 11, 75; 16, 83; 20, 83; 24, 78; 32, 62; 40, 40; 44, 15; 48, 7; 56, 2; 64, 1; 255, 0
+Chance=24
+
+[LavaSprings]
+HeightDistribution=0, 0; 10, 5; 11, 45; 48, 2; 64, 1; 255, 0
+Chance=9
+
+[Animals]
+AnimalSpawnChunkPercentage=10
+
+[SpawnProtect]
+ProtectRadius=10
+
+[Difficulty]
+WorldDifficulty=1
+
+[WorldLimit]
+LimitRadius=0
+</code></pre>
+</figure>
+<aside class="infobox">
+	This configuration file is automatically generated during world creation.
+	The following paragraphs will explain every entry in the order it's contained in the file.
+	In the the last paragraph are some examples for useful configurations.
+	To reset the configuration to default just stop the sever, delete the ini-File and restart. Please keep in mind that
+	the new file will create a different world.
+</aside>

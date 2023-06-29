@@ -1,0 +1,45 @@
+<p>
+	Cuberite supports multiple worlds. Each world has its own <code>world.ini</code> file.
+	Additional Worlds can be added by editing <code>settings.ini</code>.
+	This is explained in the example below.
+</p>
+
+<h4>Adding Worlds</h4>
+
+<figure class="codebox">
+<pre><code>[Worlds]
+DefaultWorld=world
+World=world_nether
+World=world_the_end
+World=myNewWorld
+World=HappyLand
+</code></pre>
+</figure>
+
+<p>
+	In the example above, 2 extra worlds are added to the server.
+	Note that this automatically creates 2 additional configuration files, namely <code>myNewWorld/world.ini</code>
+	and <code>HappyLand/world.ini</code>.
+</p>
+
+<h4>Dimensions (World types)</h4>
+
+<p>
+	To create a nether type world, you should append the <code>_nether</code> suffix to your world name,
+	e.g. <code>World=myHellishWorld_nether</code>. This creates a <code>world.ini</code> preconfigured as a nether.
+	For end worlds, the same rules apply, append the <code>_the_end</code> suffix to your world name.
+	Once a default <code>world.ini</code> is created, you are free to tweak it to your liking.
+</p>
+
+<p>
+	The <code>_nether</code> and <code>_the_end</code> suffixes are only used when no <code>world.ini</code> exists,
+	and guide the server in choosing the contents of the default world.ini it's about to create.
+	When a world.ini is present, the suffixes do not matter any more and the dimension is dictated
+	by the <code>Dimension</code> option inside each <code>world.ini</code>.
+
+	The <code>_end</code> suffix is treated like <code>_the_end</code> suffix for compatibility with previous Cuberite versions.
+</p>
+
+<p>
+	The rest of this section deals with linking worlds and travelling between them.
+</p>

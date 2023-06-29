@@ -1,0 +1,77 @@
+<p>
+    Specifies setting for internal physics setup.
+</p>
+
+<h4>Available Options</h4>
+
+<figure>
+    <table>
+        <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Meaning</th>
+            <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Variable">DeepSnow</td>
+            <td data-label="Meaning">Enables/Disables that snow can stack up on itself during downfall.</td>
+            <td data-label="Default">1</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">ShouldLavaSpawnFire</td>
+            <td data-label="Meaning">Enables/Disables the ability of lava to spawn fire on surrounding blocks. Boolean: Can be 0 or 1.</td>
+            <td data-label="Default">1</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">TNTShrapnelLevel</td>
+            <td data-label="Meaning">
+                Sets the blocks that should fly away after an explosion. This is disabled at the moment.<br>
+                <strong>0:</strong> No blocks are blown away.<br>
+                <strong>1:</strong> Only the ones affected by gravity.<br>
+                <strong>2:</strong> Any block is affected.
+            </td>
+            <td data-label="Default">2</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">WaterSimulator</td>
+            <td data-label="Meaning">
+                Sets the water simulator.<br>
+                <strong>Vanilla:</strong> Notchian-like behaviour.<br>
+                <strong>Floody:</strong> A way more aggressive water distribution.<br>
+                <strong>Vaporise:</strong> Water will disappear (mostly used for nether behaviour).<br>
+                <strong>null:</strong> No water simulation.<br>
+                Vanilla and Floody can be further manipulated. See {{3.14 - here}}.
+            </td>
+            <td data-label="Default">Vanilla</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">LavaSimulator</td>
+            <td data-label="Meaning">
+                Sets the lava simulator.<br>
+                <strong>Vanilla:</strong> Notchian-like behaviour.<br>
+                <strong>Floody:</strong> A way more aggressive lava distribution.<br>
+                <strong>Vaporise:</strong> Lava will disappear.<br>
+                <strong>null:</strong> No lava simulation.<br>
+                Vanilla and Floody can be further manipulated. See {{3.15 - here}}.
+            </td>
+            <td data-label="Default">Vanilla</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">SandInstantFall</td>
+            <td data-label="Meaning">Enables/Disables the falling animation for sand. Boolean: 0 -> Animation, 1 -> No animation.</td>
+            <td data-label="Default">0</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">RedstoneSimulator</td>
+            <td data-label="Meaning">
+                Sets the redstone simulator.<br>
+                <strong>Incremental:</strong> notchian-like behaviour.<br>
+                <strong>noop:</strong> disables redstone.
+            </td>
+            <td data-label="Default">Incremental</td>
+        </tr>
+        </tbody>
+    </table>
+</figure>

@@ -1,0 +1,92 @@
+<p>
+    Specifies the spawn point for new players. The coordinates are absolute, in blocks, and may be fractional. If any of the values are missing, Cuberite provides a default.
+</p>
+
+<h4>Available Options</h4>
+
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Meaning</th>
+                <th>Default</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Variable">Dimension</td>
+                <td data-label="Meaning">The Dimension of this World. Can be: Overworld, Nether, End</td>
+                <td data-label="Default">Overworld</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">UnusedChunkCap</td>
+                <td data-label="Meaning">Maximum number of chunks in memory before the server starts to start an early save (See below).</td>
+                <td data-label="Default">1000</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">IsDaylightCycleEnabled</td>
+                <td data-label="Meaning">Enables/Disables the Server to stop time in the world. Boolean: Can be 0 or 1.</td>
+                <td data-label="Default">1</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">GameMode</td>
+                <td data-label="Meaning">
+                    0 means Survival mode<br>
+                    1 means Creative mode<br>
+                    2 means Adventure mode<br>
+                    3 means Spectator mode
+                </td>
+                <td data-label="Default">0</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">Weather</td>
+                <td data-label="Meaning">
+                    The current weather in the world. This is set by the server on shutdown and will be replaced if edited while the server is running!<br>
+                    0 means clear weather<br>
+                    1 means rainy weather<br>
+                    2 means thunderstorm<br>
+                </td>
+                <td data-label="Default">0</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">WorldAgeMS</td>
+                <td data-label="Meaning">Age of the world in milliseconds. Internal use only.</td>
+                <td data-label="Default">None</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">TimeInTicks</td>
+                <td data-label="Meaning">This is used to keep track of the ingame time of the world measured in Ticks. In be in the range of [0, 20000].</td>
+                <td data-label="Default">None</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<h4>Unused Chunk Cap</h4>
+<p>
+    A chunk is a 16x16x256 segment of blocks. Cuberite performs a save cycle every 5 minutes.
+    In a save cycle, all unused chunks are saved to disk and then removed from RAM. Saves cause
+    a drop in memory usage. If the number of unused chunks waiting to be saved exceeds
+    <code>UnusedChunkCap</code>, Cuberite will perform an early save cycle to free RAM earlier.
+</p>
+
+<p>
+    If Cuberite is using too much RAM when the server is under load, lowering <code>UnusedChunkCap</code>
+    from its default of 1000 may help significantly. Setting the value to 0 means chunks are always saved
+    immediately when they are no longer used. Alternatively, if you'd like Cuberite to maximize performance
+    and utilize more RAM, increase <code>UnusedChunkCap</code>.
+</p>
+
+<p>
+    The effect of <code>UnusedChunkCap</code> will likely be unnoticeable on light load, when the cap
+    is never being reached and save cycles are being performed in 5 minutes intervals. In contrast to that,
+    the effect is often significant when travelling fast and loading many chunks, such as flying
+    at high speed.
+</p>
+
+<p>
+    The optimal value varies depending on settings, system hardware, and playstyle. We currently have no
+    official recommended value, and recommend trial and error. A more intuitive setting is planned for the
+    future, where the exact amount of maximum RAM desired is configured.
+</p>
