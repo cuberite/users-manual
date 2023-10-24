@@ -1,0 +1,45 @@
+<p>
+	Cuberite支持多个世界。每个世界都有自己的<code>world.ini</code>文件。
+	可以通过编辑<code>settings.ini</code>添加其他世界。
+	下面的示例对此进行了解释。
+</p>
+
+<h4>添加世界</h4>
+
+<figure class="codebox">
+<pre><code>[Worlds]
+DefaultWorld=world
+World=world_nether
+World=world_the_end
+World=myNewWorld
+World=HappyLand
+</code></pre>
+</figure>
+
+<p>
+	在上面的示例中，将 2 个额外的世界添加到服务器。
+	请注意，这会自动创建 2 个额外的配置文件，即 <code>myNewWorld/world.ini</code>
+	和<code>HappyLand/world.ini</code>.
+</p>
+
+<h4>尺寸（世界类型）</h4>
+
+<p>
+	要创建下界类型世界，您应该将<code>_nether</code>后缀附加到您的世界名称中，
+	例如，<code>世界=myHellishWorld_nether</code>。这创造了一个预先配置为下界<code>的world.ini</code>。
+	对于末地世界，相同的规则适用，将<code>_the_end</code>后缀附加到您的世界名称中。
+	创建默认<code>world.ini</code>后，您可以根据自己的喜好自由调整它。
+</p>
+
+<p>
+	<code>_nether</code>和<code>_the_end</code>后缀仅在没有世界时才使用<code>world.ini</code>，
+	并指导服务器选择它即将创建的默认内容world.ini。
+	当一个world.ini存在时，后缀不再重要，维度被决定。
+	通过每个世界内的<code>维度</code>选项<code>world.ini</code>。
+
+	<code>_end</code>后缀被视为<code>_the_end</code>后缀，以便与以前的 Cuberite 版本兼容。
+</p>
+
+<p>
+	本节的其余部分涉及连接世界并在它们之间旅行。
+</p>

@@ -1,0 +1,92 @@
+<p>
+    指定新玩家的生成点。坐标是绝对的，以块为单位，并且可以是小数。如果缺少任何值，则 Cuberite 提供默认值。
+</p>
+
+<h4>可用选项</h4>
+
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Meaning</th>
+                <th>Default</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Variable">Dimension</td>
+                <td data-label="Meaning">这个世界的维度。可以是：主世界，下界，尽头</td>
+                <td data-label="Default">Overworld</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">UnusedChunkCap</td>
+                <td data-label="Meaning">服务器开始提前保存之前内存中的最大区块数（见下文）。</td>
+                <td data-label="Default">1000</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">IsDaylightCycleEnabled</td>
+                <td data-label="Meaning">启用/禁用服务器以停止世界时间。布尔值：可以是 0 或 1。</td>
+                <td data-label="Default">1</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">GameMode</td>
+                <td data-label="Meaning">
+                    0 表示生存模式<br>
+                    1 表示创建模式<br>
+                    2 表示冒险模式<br>
+                    3 表示旁观者模式
+                </td>
+                <td data-label="Default">0</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">Weather</td>
+                <td data-label="Meaning">
+                    世界当前天气。这是由服务器在关闭时设置的，如果在服务器运行时进行编辑，将被替换！<br>
+                    0 表示天气<br>晴朗
+                    1 表示阴雨天气<br>
+                    2 表示雷暴<br>
+                </td>
+                <td data-label="Default">0</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">WorldAgeMS</td>
+                <td data-label="Meaning">以毫秒为单位的世界年龄。仅限内部使用。</td>
+                <td data-label="Default">None</td>
+            </tr>
+            <tr>
+                <td data-label="Variable">TimeInTicks</td>
+                <td data-label="Meaning">这用于跟踪以刻度为单位的世界的游戏内时间。在 [0， 20000] 的范围内。</td>
+                <td data-label="Default">None</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<h4>Unused Chunk Cap</h4>
+<p>
+    块是 16x16x256 的块段。Cuberite 每 5 分钟执行一次保存周期。
+    在保存周期中，所有未使用的块都保存到磁盘，然后从 RAM 中删除。拯救事业
+    内存使用量下降。如果等待保存的未使用区块数超过
+    <code>未使用的ChunkCap</code>，Cuberite将执行早期保存周期以更早地释放RAM。
+</p>
+
+<p>
+    如果Cuberite在服务器负载不足时使用过多的RAM，则降低<code>未使用的ChunkCap</code>
+    从其默认值 1000 可能会有很大帮助。将值设置为 0 表示始终保存区块
+    当它们不再使用时立即。或者，如果您希望Cuberite最大限度地提高性能
+    并利用更多的RAM，增加<code>未使用的ChunkCap</code>。
+</p>
+
+<p>
+    <code>未使用的ChunkCap</code>在轻负载时可能不会注意到，当上限
+    永远不会达到，并且每隔 5 分钟执行一次保存周期。与此相反，
+    当快速旅行和装载许多块（例如飞行）时，效果通常很明显
+    在高速下。
+</p>
+
+<p>
+    最佳值因设置、系统硬件和游戏风格而异。我们目前没有
+    官方推荐值，并建议试错。计划为
+    将来，配置所需的最大 RAM 的确切数量。
+</p>
