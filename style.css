@@ -244,11 +244,11 @@ button {
 		color: #2A7C97;
 	}
 	th {
-		background: rgba(0, 0, 0, .7);
+		background: rgba(255, 255, 255, .12);
 	}
 	td,
 	.codebox {
-		background: rgba(0, 0, 0, .4);
+		background: rgba(255, 255, 255, .06);
 	}
 	.infobox {
 		background: #2E3946;
@@ -290,7 +290,6 @@ button {
 		content: attr(data-label);
 		display: block;
 		float: left;
-		font-family: montserratregular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		margin: 0 1.000em 0 0;
 		text-transform: uppercase;
 	}
