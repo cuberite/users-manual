@@ -1,0 +1,77 @@
+<p>
+    指定内部物理设置的设置。
+</p>
+
+<h4>可用选项</h4>
+
+<figure>
+    <table>
+        <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Meaning</th>
+            <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Variable">DeepSnow</td>
+            <td data-label="Meaning">启用/禁用雪在倒塌期间会自行堆积。</td>
+            <td data-label="Default">1</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">ShouldLavaSpawnFire</td>
+            <td data-label="Meaning">启用/禁用熔岩在周围方块上产生火焰的能力。布尔值：可以是 0 或 1。</td>
+            <td data-label="Default">1</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">TNTShrapnelLevel</td>
+            <td data-label="Meaning">
+                设置爆炸后应飞走的方块。目前已禁用此功能。<br>
+                <strong>0：</strong>没有块被吹走。<br>
+                <strong>1：</strong>只有那些受重力影响的。<br>
+                <strong>2：</strong>任何块都会受到影响。
+            </td>
+            <td data-label="Default">2</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">WaterSimulator</td>
+            <td data-label="Meaning">
+                设置水上模拟器。<br>
+                <strong>Vanilla：</strong>类似诺奇的行为。<br>
+                <strong>Floody：</strong>一种更积极的配水方式。<br>
+                <strong>Vaporise：</strong>水会消失（主要用于下界行为）。<br>
+                <strong>null：</strong>没有水模拟。<br>
+                Vanilla和Floody可以进一步操纵。请参阅 {{3.14 - 此处}}。
+            </td>
+            <td data-label="Default">Vanilla</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">LavaSimulator</td>
+            <td data-label="Meaning">
+                设置熔岩模拟器。<br>
+                <strong>Vanilla：</strong>类似诺奇的行为。<br>
+                <strong>Floody：</strong>一种更具侵略性的熔岩分布方式。<br>
+                <strong>Vaporise：</strong>熔岩会消失。<br>
+                <strong>null：</strong>没有熔岩模拟。<br>
+                Vanilla和Floody可以进一步操纵。请参阅 {{3.15 - 此处}}。
+            </td>
+            <td data-label="Default">Vanilla</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">SandInstantFall</td>
+            <td data-label="Meaning">启用/禁用沙子的下落动画。布尔值：0 -> 动画，1 -> 无动画。</td>
+            <td data-label="Default">0</td>
+        </tr>
+        <tr>
+            <td data-label="Variable">RedstoneSimulator</td>
+            <td data-label="Meaning">
+                设置红石模拟器。<br>
+                <strong>Incremental:</strong> 类似诺奇的行为。<br>
+                <strong>noop:</strong> 禁用红石.
+            </td>
+            <td data-label="Default">Incremental</td>
+        </tr>
+        </tbody>
+    </table>
+</figure>
